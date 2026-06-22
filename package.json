@@ -1,0 +1,45 @@
+{
+    "name": "@symbiosis/sdk-types",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "main": "./dist/esm/index.js",
+    "module": "./dist/esm/index.js",
+    "types": "./dist/esm/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/esm/index.d.ts",
+            "import": "./dist/esm/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "rm -rf dist/esm && tsc && fix-esm-import-path dist/esm",
+        "typecheck": "tsc --noEmit",
+        "test": "vitest run",
+        "dep-audit": "npm ls ethers @ethersproject/providers @ethersproject/contracts tronweb @solana/web3.js @ton/ton 2>/dev/null; echo done"
+    },
+    "dependencies": {
+        "@ethersproject/address": "^5.8.0",
+        "@ethersproject/bytes": "^5.8.0",
+        "@ethersproject/keccak256": "^5.8.0",
+        "@ethersproject/solidity": "^5.8.0",
+        "@ethersproject/strings": "^5.8.0",
+        "big.js": "^5.2.2",
+        "bignumber.js": "^9.0.1",
+        "bs58check": "^4.0.0",
+        "decimal.js-light": "^2.5.0",
+        "jsbi": "^3.1.1",
+        "tiny-invariant": "^1.1.0",
+        "tiny-warning": "^1.0.3",
+        "toformat": "^2.0.0"
+    },
+    "devDependencies": {
+        "@types/big.js": "^4.0.5",
+        "fix-esm-import-path": "^1.10.3",
+        "typescript": "^5.9.3",
+        "vitest": "^4.0.16"
+    }
+}

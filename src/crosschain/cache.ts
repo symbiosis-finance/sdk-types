@@ -1,0 +1,71 @@
+type CacheItem = {
+    result?: unknown
+    exception?: unknown
+    expiresAt: number
+}
+
+type NotVoid<T> = void extends T ? never : T
+
+export class Cache {
+    private data = new Map<string, CacheItem>()
+    constructor(
+        public maxSize?: number,
+        pruneIntervalSeconds?: number
+    ) {
+        if (pruneIntervalSeconds !== undefined && pruneIntervalSeconds > 0) {
+            setInterval(() => this.prune(), pruneIntervalSeconds * 1000)
+        }
+    }
+
+    get size(): number {
+        return this.data.size
+    }
+
+    prune(): number {
+        const now = Math.floor(Date.now() / 1000)
+        let pruned = 0
+        for (const [key, entry] of this.data) {
+            if (entry.expiresAt <= now) {
+                this.data.delete(key)
+                pruned++
+            }
+        }
+        return pruned
+    }
+
+    async get<T>(
+        key: string[],
+        func: () => Promise<NotVoid<T>>,
+        ttl: number = Number.MAX_SAFE_INTEGER,
+        cacheExceptions: boolean = false
+    ): Promise<T> {
+        const stringKey = key.join('-')
+        const now = Math.floor(Date.now() / 1000)
+        const cached = this.data.get(stringKey)
+        if (cached && now < cached.expiresAt) {
+            if (cached.exception) throw cached.exception
+            else return cached.result as T
+        }
+        const set = (result?: T, exception?: unknown) => {
+            if (this.maxSize !== undefined && this.data.size >= this.maxSize) {
+                this.prune()
+            }
+            if (this.maxSize === undefined || this.data.size < this.maxSize) {
+                this.data.set(stringKey, {
+                    result: result,
+                    exception: exception,
+                    expiresAt: now + ttl,
+                })
+            }
+        }
+
+        try {
+            const result = await func()
+            set(result)
+            return result
+        } catch (exc) {
+            if (cacheExceptions) set(undefined, exc)
+            throw exc
+        }
+    }
+}

@@ -1,0 +1,160 @@
+function unwrapErrorMessage(error: unknown): string {
+    if (error instanceof AggregateSdkError) {
+        if (error.formatted) {
+            return error.message
+        }
+    }
+    if (error instanceof AggregateError) {
+        const errors = error.errors
+            .map((e: unknown) => {
+                return unwrapErrorMessage(e)
+            })
+            .join(', ')
+        return `${error.message} [${errors}]`
+    } else if (error instanceof Error) {
+        return error.message
+    } else if (typeof error === 'string' && error.length > 0) {
+        return error
+    } else if (typeof error === 'number') {
+        return `${error}`
+    } else if (typeof error === 'object') {
+        return JSON.stringify(error)
+    } else {
+        return `${error}`
+    }
+}
+
+export class AggregateSdkError extends AggregateError {
+    public readonly formatted: boolean = false
+    constructor(errors: unknown[], message?: string) {
+        super(errors, message)
+        this.message = unwrapErrorMessage(this)
+        this.formatted = true
+    }
+}
+
+export class SdkError extends Error {
+    constructor(message: string, cause?: unknown) {
+        super(message)
+
+        this.message = `[${this.constructor.name}] ${message}`
+        this.name = this.constructor.name
+
+        if (cause) {
+            this.message = `${this.message}. Cause: ${unwrapErrorMessage(cause)}`
+        }
+    }
+}
+
+// input
+export class InputError extends SdkError {}
+
+export class LimitError extends InputError {}
+export class AmountTooLowError extends LimitError {}
+export class AmountTooHighError extends LimitError {}
+export class AmountLessThanFeeError extends LimitError {}
+
+export class SlippageError extends InputError {}
+export class SlippageTooLowError extends SlippageError {}
+export class SlippageTooHighError extends SlippageError {}
+
+export class PriceImpactTooHighError extends InputError {}
+
+export class UnsupportedPairError extends InputError {}
+export class InvalidAddressError extends InputError {}
+
+// routing
+export class RoutingError extends SdkError {}
+export class NoRouteError extends RoutingError {}
+export class NoTransitTokenError extends RoutingError {}
+export class NoRepresentationFoundError extends RoutingError {}
+
+// advisor
+export class AdvisorError extends SdkError {}
+
+// Changelly
+export class ChangellyError extends SdkError {}
+export class ChangellyTickerNotFoundError extends ChangellyError {}
+
+// ChainFlip
+export class ChainFlipError extends SdkError {}
+
+// ThorChain
+export class ThorChainError extends SdkError {}
+
+// trade
+export class TradeError extends SdkError {}
+
+export class WrapTradeError extends TradeError {}
+
+export class UniV2TradeError extends TradeError {}
+
+export class UniV3TradeError extends TradeError {}
+
+export class UniV4TradeError extends TradeError {}
+
+export class IzumiTradeError extends TradeError {}
+
+export class OpenOceanTradeError extends TradeError {}
+
+export class OneInchTradeError extends TradeError {}
+
+export class DedustTradeError extends TradeError {}
+
+export class StonFiTradeError extends TradeError {}
+
+export class RaydiumTradeError extends TradeError {}
+
+export class JupiterTradeError extends TradeError {}
+
+export class KyberSwapTradeError extends TradeError {}
+
+export class ZeroXTradeError extends TradeError {}
+
+export class AggregatorTradeError extends TradeError {}
+
+enum SwapAggregatorErrorCategory {
+    RateLimit = 'rate_limit',
+    SwapAggregatorError = 'swap_aggregator_error',
+    LiquidityError = 'liquidity_error',
+    TokenError = 'token_error',
+    BigIntError = 'bigint_error',
+    ExceedPlan = 'exceed_plan',
+    OracleError = 'oracle_error',
+    Unknown = 'unknown',
+}
+
+const aggregatorCategoryPatterns: Record<SwapAggregatorErrorCategory, (string | RegExp)[]> = {
+    [SwapAggregatorErrorCategory.RateLimit]: ['rate limit', 'too many requests', 'the limit of requests', /\b429\b/],
+    [SwapAggregatorErrorCategory.SwapAggregatorError]: [
+        'swap error', // 1inch
+        'cannot create trade', // uni v2
+        'no path found', // izumi
+        'route not found', // uni v3
+    ],
+    [SwapAggregatorErrorCategory.OracleError]: ['oneinch oracle'],
+    [SwapAggregatorErrorCategory.ExceedPlan]: ['plan has been exceeded'],
+    [SwapAggregatorErrorCategory.LiquidityError]: ['insufficient liquidity', 'No avail liquidity'],
+    [SwapAggregatorErrorCategory.BigIntError]: ['converted to bigint', 'to a bigint'],
+    [SwapAggregatorErrorCategory.TokenError]: ['not valid token'],
+    [SwapAggregatorErrorCategory.Unknown]: ['unknown'],
+}
+
+export function aggregatorErrorToText(reason: string) {
+    const lowerCaseReason = reason.toLowerCase()
+
+    for (const [category, patterns] of Object.entries(aggregatorCategoryPatterns) as [
+        SwapAggregatorErrorCategory,
+        (string | RegExp)[],
+    ][]) {
+        for (const pattern of patterns) {
+            if (typeof pattern === 'string') {
+                if (lowerCaseReason.includes(pattern.toLowerCase())) return category
+            } else if (pattern.test(lowerCaseReason)) {
+                return category
+            }
+        }
+    }
+
+    return SwapAggregatorErrorCategory.Unknown
+}
