@@ -18,6 +18,7 @@ export enum TradeProvider {
     UNI_V4 = 'uni-v4',
     KYBER_SWAP = 'kyber-swap',
     ZERO_X = '0x',
+    BITGET = 'bitget',
     INTENT_SOLVER = 'intent-solver',
 }
 
