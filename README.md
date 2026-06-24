@@ -9,5 +9,3 @@ Web3-light shared layer for Symbiosis — the **types, configs, and entities** u
 - **`crosschain/`** — shared API DTO types (`types.ts`), chain constants & labels, trade types/helpers, Tron types, and a lightweight `Symbiosis` client (config + cache + pure lookups only).
 - **`crypto/`** — pure address helpers (e.g. `tronAddress`, base58 ↔ EVM).
 - **root** — `constants.ts` (`ChainId`, …), `utils.ts`, `errors.ts`, and the `index.ts` barrel.
-
-Heavier concerns live elsewhere by design: **routing/swapping** in the API, and **on-chain tracking** in `@symbiosis/sdk-tracker`.
