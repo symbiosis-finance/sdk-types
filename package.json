@@ -1,6 +1,6 @@
 {
     "name": "@symbiosis/sdk-types",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "private": true,
     "type": "module",
     "main": "./dist/esm/index.js",
@@ -19,7 +19,7 @@
         "build": "rm -rf dist/esm && tsc && fix-esm-import-path dist/esm",
         "typecheck": "tsc --noEmit",
         "test": "vitest run",
-        "dep-audit": "npm ls ethers @ethersproject/providers @ethersproject/contracts tronweb @solana/web3.js @ton/ton 2>/dev/null; echo done"
+        "build-config-cache": "tsx ./scripts/config-cache/build.ts && prettier --write --ignore-unknown src/crosschain/config/cache/*.json"
     },
     "dependencies": {
         "@ethersproject/address": "^5.8.0",
@@ -28,17 +28,23 @@
         "@ethersproject/solidity": "^5.8.0",
         "@ethersproject/strings": "^5.8.0",
         "big.js": "^5.2.2",
-        "bignumber.js": "^9.0.1",
         "bs58check": "^4.0.0",
         "decimal.js-light": "^2.5.0",
         "jsbi": "^3.1.1",
         "tiny-invariant": "^1.1.0",
-        "tiny-warning": "^1.0.3",
         "toformat": "^2.0.0"
     },
     "devDependencies": {
+        "@ethersproject/abi": "^5.8.0",
+        "@ethersproject/constants": "^5.8.0",
+        "@ethersproject/contracts": "^5.8.0",
+        "@ethersproject/providers": "^5.8.0",
         "@types/big.js": "^4.0.5",
+        "@types/node": "^22.0.0",
+        "ethers": "^5.6.8",
         "fix-esm-import-path": "^1.10.3",
+        "prettier": "^3.0.0",
+        "tsx": "^4.21.0",
         "typescript": "^5.9.3",
         "vitest": "^4.0.16"
     }

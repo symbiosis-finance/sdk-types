@@ -1,6 +1,6 @@
 import { ChainId } from '../../constants'
 import { Token } from '../../entities'
-import { CHANGELLY_NATIVE_CHAINS } from '../appConstants'
+import { CHANGELLY_NATIVE_CHAINS } from '../constants'
 import type { Config } from '../types'
 
 export const config: Config = {

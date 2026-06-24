@@ -342,8 +342,6 @@ export const SOLIDITY_TYPE_MAXIMA = {
 
 export const NATIVE_TOKEN_ADDRESS = '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE' as const
 
-// Pure chain predicates ported from js-sdk chainUtils/*.
-// isBtcChainId is reimplemented zero-web3 (the original enumerates bitcoinjs-lib BTC_NETWORKS).
 export function isTronChainId(chainId: ChainId): boolean {
     return [ChainId.TRON_MAINNET, ChainId.TRON_TESTNET].includes(chainId)
 }
@@ -368,5 +366,5 @@ export function isQuaiChainId(chainId: ChainId | undefined): boolean {
     return chainId === ChainId.QUAI_MAINNET
 }
 
-// NOTE: isEvmChainId lives in ./crosschain/appConstants to avoid a module-init cycle
+// NOTE: isEvmChainId lives in ./crosschain/constants to avoid a module-init cycle
 // (it depends on isChangellyNativeChainId, which lives alongside the Changelly data there).

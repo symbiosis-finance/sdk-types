@@ -1,6 +1,6 @@
 import type { ChainId } from '../../../constants'
 import { Token, wrappedToken } from '../../../entities'
-import { NoTransitTokenError, SdkError } from '../../../sdkError'
+import { NoTransitTokenError, SdkError } from '../../../errors'
 import type { ConfigName } from '../../types'
 import type { OmniPoolConfig } from '../../types'
 import beta from './beta.json' with { type: 'json' }

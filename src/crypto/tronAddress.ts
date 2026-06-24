@@ -1,3 +1,4 @@
+import { hexlify } from '@ethersproject/bytes'
 import bs58check from 'bs58check'
 
 const ADDRESS_PREFIX_REGEX = /^(41)/
@@ -33,7 +34,10 @@ export function tronAddressToEvm(address: string): string {
         `tronAddressToEvm: invalid decoded length ${payload.length} (expected 21)`
       )
     }
-    hex = Buffer.from(payload).toString('hex')
+    // hexlify (already a dep, used in pair.ts) returns '0x'-prefixed lowercase hex;
+    // slice(2) drops the prefix to match the bare '41…' form the regex below rewrites.
+    // Byte-identical to Buffer.from(payload).toString('hex') but with no Node `Buffer` global.
+    hex = hexlify(payload).slice(2)
   }
   return hex.replace(ADDRESS_PREFIX_REGEX, '0x')
 }

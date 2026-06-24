@@ -1,11 +1,3 @@
-/**
- * Pure trade math helpers extracted from js-sdk 3.11.60 (crosschain/chainUtils/evm.ts).
- * Only the zero-web3 functions are ported here; the rest of evm.ts is web3-heavy.
- *
- * EXCLUDED (web3): calculateGasMargin (uses @ethersproject BigNumber), getInternalId,
- * computeSlippageAdjustedAmounts (uses Field/Trade only — but lives next to web3 code; pure
- * variant getMinAmount is ported below), and all RPC/provider helpers.
- */
 import JSBI from 'jsbi'
 
 import type { BigintIsh } from '../constants'

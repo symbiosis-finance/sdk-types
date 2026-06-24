@@ -2,7 +2,7 @@ import type { ChainId } from '../constants'
 import type { Chain } from '../entities'
 import { chains, Token, wrappedToken } from '../entities'
 import { formatBytes32String } from '@ethersproject/strings'
-import { NoTransitTokenError, SdkError } from '../sdkError'
+import { NoTransitTokenError, SdkError } from '../errors'
 import { Cache } from './cache'
 import { ConfigCache } from './config/cache/cache'
 import type { Id, OmniPoolInfo, TokenInfo } from './config/cache/types'
@@ -15,9 +15,8 @@ import type { ChainConfig, Config, ConfigName, EvmAddress, OmniPoolConfig, Overr
 export type { ConfigName } from './types'
 
 /**
- * Lightweight, web3-free Symbiosis client.
- * Holds config + cache + clientId and exposes pure lookups only.
- * Routing/swapping/contract/provider/tracking logic lives in the api (js-sdk retired).
+ * Lightweight Symbiosis client: holds config + cache + clientId and exposes pure lookups only.
+ * Routing, swapping, contracts, providers and tracking live in the api, not here.
  */
 export class Symbiosis {
     public readonly configName: ConfigName
@@ -232,7 +231,4 @@ export class Symbiosis {
 
         return this.config.revertableAddress.default
     }
-
-    // NOTE: validateLimits is BLOCKED — it calls parseUnits from @ethersproject/units
-    // which is forbidden by the zero-web3 dep audit. Excluded from the slim class.
 }

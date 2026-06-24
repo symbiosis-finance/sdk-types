@@ -7,8 +7,7 @@ import type { SwapLabel } from './labels'
 import { TradeProvider } from './tradeType'
 import type { OneInchProtocols } from './tradeType'
 
-// Local structural aliases to keep sdk-types free of web3 deps.
-// These mirror the shapes the SDK's type definitions reference (erased at build).
+// Structural stand-ins for the ethers types, defined locally (erased at build).
 export type BytesLike = string | ArrayLike<number>
 export type BigNumber = { _hex: string; _isBigNumber: boolean }
 export type TransactionRequest = {
@@ -22,17 +21,15 @@ export type TransactionRequest = {
     [key: string]: unknown
 }
 
-// Real canonical definitions re-exported for consumers of this module.
 export type { TronTransactionData }
 export { TradeProvider }
 export type { OneInchProtocols }
 export type { SwapLabel }
 
-// Opaque placeholders for heavy SDK-internal class refs that sdk-types never instantiates.
-// The app uses these only in type positions; they are erased at runtime.
-/** Opaque alias used by SwapExactInParams — avoids circular import with the real (slim) Symbiosis. */
+// Opaque placeholders for class refs sdk-types never instantiates — used only in type
+// positions and erased at runtime.
+/** Opaque alias used by SwapExactInParams — avoids a circular import with Symbiosis. */
 type Symbiosis = unknown
-/** Opaque placeholder — real class lives in api/js-sdk; sdk-types never instantiates it. */
 export type PartnerFeeCollector = unknown
 /**
  * Opaque placeholder for the SymbiosisTrade class. SwapExactInResult.tradeA/tradeC reference it,
@@ -413,4 +410,38 @@ export type PriceImpactCounterParams = {
     tokenAmountFrom: TokenAmount
     tokenTo: Token
     priceImpact: Percent
+}
+
+export interface DiscountTier {
+    amount: string
+    discount: number
+}
+
+export enum PendingRequestState {
+    Default = 0,
+    Sent,
+    Reverted,
+}
+
+export type PendingRequestType = 'burn' | 'synthesize' | 'burn-v2' | 'burn-v2-revert' | 'synthesize-v2'
+
+export interface PendingRequest {
+    originalFromTokenAmount: TokenAmount
+    fromTokenAmount: TokenAmount
+    transactionHash: string
+    state: PendingRequestState
+    internalId: string
+    externalId: string
+    type: PendingRequestType
+    from: string
+    to: string
+    revertableAddress: string
+    chainIdFrom: ChainId
+    chainIdTo: ChainId
+    revertChainId: ChainId
+}
+
+export interface BtcDepositAcceptedResult {
+    commitTx: string
+    btcConfig: BtcConfig
 }

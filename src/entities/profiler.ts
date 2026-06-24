@@ -1,43 +1,9 @@
+// Shared type only. `ProfilerItem` is part of the swap-result DTO (`timeLog?: ProfilerItem[]`
+// in crosschain/types.ts), so the client receives it. The `Profiler` class itself is
+// backend-only routing instrumentation and lives in the api core (api/src/core/entities/profiler.ts).
 export interface ProfilerItem {
     name: string
     start: number
     stop: number
     duration?: number
-}
-
-export class Profiler {
-    private start: number
-    private stop: number
-    private list: ProfilerItem[]
-
-    constructor() {
-        const now = Date.now()
-        this.start = now
-        this.stop = now
-        this.list = []
-    }
-
-    public tick(name: string) {
-        const now = Date.now()
-        this.list.push({
-            name,
-            start: this.stop,
-            stop: now,
-        })
-        this.stop = now
-    }
-
-    public toString(): ProfilerItem[] {
-        const list = this.list.map((i) => {
-            return { ...i, duration: i.stop - i.start }
-        })
-
-        list.push({
-            name: 'TOTAL',
-            start: this.start,
-            stop: this.stop,
-            duration: this.stop - this.start,
-        })
-        return list.filter((i) => i.duration > 1)
-    }
 }
