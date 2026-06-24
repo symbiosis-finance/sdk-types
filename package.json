@@ -1,8 +1,16 @@
 {
     "name": "@symbiosis/sdk-types",
     "version": "0.0.1",
-    "private": true,
+    "description": "Web3-light shared Symbiosis SDK — types, configs, and entities used by both the app client and the API.",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/symbiosis-finance/sdk-types.git"
+    },
     "type": "module",
+    "publishConfig": {
+        "access": "public"
+    },
     "main": "./dist/esm/index.js",
     "module": "./dist/esm/index.js",
     "types": "./dist/esm/index.d.ts",
@@ -17,6 +25,7 @@
     ],
     "scripts": {
         "build": "rm -rf dist/esm && tsc && fix-esm-import-path dist/esm",
+        "prepublishOnly": "npm run build",
         "typecheck": "tsc --noEmit",
         "test": "vitest run",
         "build-config-cache": "tsx ./scripts/config-cache/build.ts && prettier --write --ignore-unknown src/crosschain/config/cache/*.json"
