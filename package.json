@@ -1,6 +1,6 @@
 {
     "name": "@symbiosis-finance/sdk-types",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Web3-light shared Symbiosis SDK — types, configs, and entities used by both the app client and the API.",
     "license": "MIT",
     "repository": {
