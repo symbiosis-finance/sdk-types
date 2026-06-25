@@ -518,6 +518,7 @@ export enum ChainFlipChainId {
     Bitcoin = 3,
     Arbitrum = 4,
     Solana = 5,
+    Tron = 7,
 }
 
 export enum ChainFlipAssetId {
@@ -531,6 +532,8 @@ export enum ChainFlipAssetId {
     USDT = 8,
     SOL = 9,
     solUSDC = 10,
+    Trx = 17,
+    TrxUsdt = 18,
 }
 
 export interface ChainFlipToken {
@@ -582,6 +585,18 @@ const CF_ETH_USDC_TOKEN = new Token({
     icons: {
         large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
         small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+    },
+})
+
+export const TRON_USDT = new Token({
+    name: 'Tether USDt',
+    symbol: 'USDT',
+    address: '0xa614f803b6fd780986a42c78ec9c7f77e6ded13c',
+    chainId: ChainId.TRON_MAINNET,
+    decimals: 6,
+    icons: {
+        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
+        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
     },
 })
 
@@ -641,6 +656,22 @@ export const CF_SOL_USDC: ChainFlipToken = {
     token: CF_SOL_USDC_TOKEN,
 }
 
+export const CF_TRON_USDT: ChainFlipToken = {
+    chainId: ChainFlipChainId.Tron,
+    assetId: ChainFlipAssetId.TrxUsdt,
+    chain: 'Tron',
+    asset: 'USDT',
+    token: TRON_USDT,
+}
+
+export const CF_TRON_TRX: ChainFlipToken = {
+    chainId: ChainFlipChainId.Tron,
+    assetId: ChainFlipAssetId.Trx,
+    chain: 'Tron',
+    asset: 'TRX',
+    token: GAS_TOKEN[ChainId.TRON_MAINNET],
+}
+
 export const CHAIN_FLIP_TOKENS: ChainFlipToken[] = [
     CF_BTC_BTC,
     CF_ETH_ETH,
@@ -649,6 +680,8 @@ export const CHAIN_FLIP_TOKENS: ChainFlipToken[] = [
     CF_ARB_USDC,
     CF_SOL_SOL,
     CF_SOL_USDC,
+    CF_TRON_USDT,
+    CF_TRON_TRX,
 ]
 
 const CHAIN_FLIP_TO_BTC_CONFIGS: ChainFlipConfig[] = [
@@ -676,5 +709,9 @@ const CHAIN_FLIP_FROM_SOLANA_CONFIGS: ChainFlipConfig[] = [
     { src: CF_SOL_USDC, dst: CF_ETH_USDC },
     { src: CF_SOL_USDC, dst: CF_ARB_ETH },
     { src: CF_SOL_USDC, dst: CF_ARB_USDC },
+    { src: CF_SOL_SOL, dst: CF_TRON_USDT },
+    { src: CF_SOL_USDC, dst: CF_TRON_USDT },
+    { src: CF_SOL_SOL, dst: CF_TRON_TRX },
+    { src: CF_SOL_USDC, dst: CF_TRON_TRX },
 ]
 export const CHAIN_FLIP_FROM_SOLANA_TOKENS_OUT = CHAIN_FLIP_FROM_SOLANA_CONFIGS.map((c) => c.dst.token)
