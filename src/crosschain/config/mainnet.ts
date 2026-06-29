@@ -1674,8 +1674,7 @@ export const config: Config = {
         },
         {
             id: ChainId.SEI_EVM_MAINNET,
-            rpc: 'https://sei-evm-rpc.stakeme.pro',
-            spareRpcs: ['https://evm-rpc.sei-apis.com', 'https://sei-public.nodies.app'],
+            rpc: 'https://evm-rpc.sei-apis.com',
             filterBlockOffset: 1000,
             stables: [
                 {
