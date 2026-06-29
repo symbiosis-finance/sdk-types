@@ -22,8 +22,8 @@
             "chainId": 97,
             "isNative": false,
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/64x64/11419.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/64x64/11419.png"
+                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/11419.png",
+                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/11419.png"
             },
             "deprecated": false,
             "address": "0xe015581A4e36eEbf170a3F4a686fa7606d511b13",
@@ -36,8 +36,8 @@
             "chainId": 11155111,
             "isNative": false,
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png",
+                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png"
             },
             "deprecated": false,
             "address": "0x41540e95B10383408cfE201974c88E6C3ef9323A",
@@ -50,8 +50,8 @@
             "chainId": 11155111,
             "isNative": false,
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png",
+                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png"
             },
             "deprecated": false,
             "address": "0x04cd23122a21f6c5F912FC7B9aBC508302899Dfb",
@@ -64,8 +64,8 @@
             "chainId": 11155111,
             "isNative": false,
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png",
+                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png"
             },
             "deprecated": false,
             "address": "0xeD86914A9478a066d82b2bE3E5B99A38BAaE23ce",
@@ -78,8 +78,8 @@
             "chainId": 43113,
             "isNative": false,
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png",
+                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png"
             },
             "deprecated": false,
             "address": "0x9374Ea7A11c5B185A6631effF22c015E71c67581",
@@ -106,8 +106,8 @@
             "chainId": 97,
             "isNative": false,
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png",
+                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png"
             },
             "chainFromId": 11155111,
             "deprecated": false,
@@ -122,8 +122,8 @@
             "chainId": 97,
             "isNative": false,
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png",
+                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png"
             },
             "chainFromId": 11155111,
             "deprecated": false,
@@ -138,8 +138,8 @@
             "chainId": 97,
             "isNative": false,
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png",
+                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png"
             },
             "chainFromId": 11155111,
             "deprecated": false,
@@ -154,8 +154,8 @@
             "chainId": 97,
             "isNative": false,
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png",
+                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png"
             },
             "chainFromId": 43113,
             "deprecated": false,
@@ -170,8 +170,8 @@
             "chainId": 11155111,
             "isNative": false,
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png",
+                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png"
             },
             "chainFromId": 43113,
             "deprecated": false,
