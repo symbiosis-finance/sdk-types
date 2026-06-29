@@ -104,6 +104,12 @@ export type ChainConfig = {
     stables: TokenConstructor[]
     metaRouter: Address
     metaRouterGateway: Address
+    // New metaRouter deployment (gateway-only approve + call). When present and the
+    // partner is NOT in the legacy list, approve and metaRoute both target
+    // metaRouterGatewayV2, and inner DEX swaps are executed by
+    // metaRouterExecutorDontApprove (which users must NOT approve). See metarouters.json.
+    metaRouterGatewayV2?: Address
+    metaRouterExecutorDontApprove?: Address
     multicallRouter: Address
     router: Address
     bridge: Address
@@ -222,6 +228,9 @@ export type OverrideConfig = {
     config?: Config
     configCache?: ConfigCacheData
     logger?: Logger
+    // Partner-ids (raw) kept on the legacy metaRouter scheme. Overrides
+    // DEFAULT_LEGACY_METAROUTER_PARTNER_IDS. See usesLegacyMetaRouter().
+    legacyMetaRouterPartnerIds?: string[]
 }
 
 export interface RevertableAddress {

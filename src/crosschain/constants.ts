@@ -715,3 +715,38 @@ const CHAIN_FLIP_FROM_SOLANA_CONFIGS: ChainFlipConfig[] = [
     { src: CF_SOL_USDC, dst: CF_TRON_TRX },
 ]
 export const CHAIN_FLIP_FROM_SOLANA_TOKENS_OUT = CHAIN_FLIP_FROM_SOLANA_CONFIGS.map((c) => c.dst.token)
+
+// Partner-ids (raw, before formatBytes32String) that must keep the LEGACY metaRouter
+// scheme: approve -> metaRouterGateway, call metaRoute -> metaRouter.
+// Many partners have our old metaRouters whitelisted in their own contracts, so
+// flipping them to the new gateway-only scheme would break their integrations.
+// Any partner-id NOT in this list (rango and all new partners) uses the new scheme:
+// approve & call both target metaRouterGatewayV2, inner swaps run on
+// metaRouterExecutorDontApprove.
+//
+// Hand-edit this default, or override per-deployment via
+// OverrideConfig.legacyMetaRouterPartnerIds (wired from the api config).
+// NB: rango is intentionally NOT here — the new scheme was built for it.
+export const DEFAULT_LEGACY_METAROUTER_PARTNER_IDS: string[] = [
+    'lifi',
+    'symbiosis-api', // discuss to exclude
+    'rubic',
+    'socket-io',
+    'zeno-bridges',
+    'kyberswap',
+    'rootstock',
+    'sats-terminal',
+    'torque-fi',
+    'quainance',
+    '1inch',
+    'binodex',
+    'changelly',
+    'chainspot.router',
+    'utila',
+    'letsexchange',
+    'dzap',
+    'prob.trade',
+    'intent-solver-rebalance',
+    'midex',
+    'sai-wallet',
+]
