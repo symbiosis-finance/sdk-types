@@ -1,4 +1,4 @@
-import { ChainId, isBtcChainId, isQuaiChainId, isSolanaChainId, isTonChainId, isTronChainId } from '../constants'
+import { ChainId, isBtcChainId, isPerpChainId, isQuaiChainId, isSolanaChainId, isTonChainId, isTronChainId } from '../constants'
 import type { EvmAddress } from './types'
 import { GAS_TOKEN, Token, WETH } from '../entities'
 
@@ -80,7 +80,7 @@ export const WETH_ONLY: ChainTokensList = {
     [ChainId.UNICHAIN_MAINNET]: [WETH[ChainId.UNICHAIN_MAINNET]],
     [ChainId.SONEIUM_MAINNET]: [WETH[ChainId.SONEIUM_MAINNET]],
     [ChainId.OPBNB_MAINNET]: [WETH[ChainId.OPBNB_MAINNET]],
-    [ChainId.HYPERLIQUID_MAINNET]: [WETH[ChainId.HYPERLIQUID_MAINNET]],
+    [ChainId.HYPEREVM_MAINNET]: [WETH[ChainId.HYPEREVM_MAINNET]],
     [ChainId.KATANA_MAINNET]: [WETH[ChainId.KATANA_MAINNET]],
     [ChainId.APECHAIN_MAINNET]: [WETH[ChainId.APECHAIN_MAINNET]],
     [ChainId.PLASMA_MAINNET]: [WETH[ChainId.PLASMA_MAINNET]],
@@ -161,7 +161,7 @@ export const MULTICALL_ADDRESSES: { [chainId in ChainId]?: EvmAddress } = {
     [ChainId.UNICHAIN_MAINNET]: '0xd8db4fb1fEf63045A443202d506Bcf30ef404160',
     [ChainId.SONEIUM_MAINNET]: '0xd8db4fb1fEf63045A443202d506Bcf30ef404160',
     [ChainId.OPBNB_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.HYPERLIQUID_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
+    [ChainId.HYPEREVM_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
     [ChainId.KATANA_MAINNET]: '0x6AEb9b27590387b8Fd0560C52f6B968C59C10Fab',
     [ChainId.APECHAIN_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
     [ChainId.PLASMA_MAINNET]: '0xd8db4fb1fEf63045A443202d506Bcf30ef404160',
@@ -218,7 +218,7 @@ export const COINGECKO_PLATFORMS = new Map([
     [ChainId.UNICHAIN_MAINNET, 'unichain'],
     [ChainId.SONEIUM_MAINNET, 'soneium'],
     [ChainId.OPBNB_MAINNET, 'opbnb'],
-    [ChainId.HYPERLIQUID_MAINNET, 'hyperevm'],
+    [ChainId.HYPEREVM_MAINNET, 'hyperevm'],
     [ChainId.KATANA_MAINNET, 'katana'],
     [ChainId.APECHAIN_MAINNET, 'apechain'],
     [ChainId.PLASMA_MAINNET, 'plasma'],
@@ -284,7 +284,7 @@ export const COINGECKO_GAS_TOKEN_IDS = new Map([
     [ChainId.UNICHAIN_MAINNET, 'ethereum'],
     [ChainId.SONEIUM_MAINNET, 'ethereum'],
     [ChainId.OPBNB_MAINNET, 'binancecoin'],
-    [ChainId.HYPERLIQUID_MAINNET, 'hyperliquid'],
+    [ChainId.HYPEREVM_MAINNET, 'hyperliquid'],
     [ChainId.KATANA_MAINNET, 'ethereum'],
     [ChainId.APECHAIN_MAINNET, 'apecoin'],
     [ChainId.PLASMA_MAINNET, 'plasma'],
@@ -497,6 +497,7 @@ export function isEvmChainId(chainId: ChainId | undefined): boolean {
         !isTonChainId(chainId) &&
         !isSolanaChainId(chainId) &&
         !isQuaiChainId(chainId) &&
+        !isPerpChainId(chainId) &&
         !isChangellyNativeChainId(chainId)
     )
 }

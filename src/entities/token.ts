@@ -936,8 +936,8 @@ export const WETH = {
             large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/7192.png',
         },
     }),
-    [ChainId.HYPERLIQUID_MAINNET]: new Token({
-        chainId: ChainId.HYPERLIQUID_MAINNET,
+    [ChainId.HYPEREVM_MAINNET]: new Token({
+        chainId: ChainId.HYPEREVM_MAINNET,
         address: '0x5555555555555555555555555555555555555555',
         decimals: 18,
         symbol: 'WHYPE',

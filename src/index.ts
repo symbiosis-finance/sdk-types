@@ -15,6 +15,7 @@ export {
     isTonChainId,
     isSolanaChainId,
     isQuaiChainId,
+    isPerpChainId,
 } from './constants'
 export type { BigintIsh, Icons } from './constants'
 

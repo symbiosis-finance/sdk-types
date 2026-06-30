@@ -63,6 +63,8 @@ export class Symbiosis {
             }
             if (overrideConfig?.limits) this.config.limits = overrideConfig.limits
             if (overrideConfig?.advisor) this.config.advisor = overrideConfig.advisor
+            if (overrideConfig?.solver) this.config.solver = overrideConfig.solver
+            if (overrideConfig?.perpbot) this.config.perpbot = overrideConfig.perpbot
             if (overrideConfig?.btcConfigs) this.config.btcConfigs = overrideConfig.btcConfigs
         }
 

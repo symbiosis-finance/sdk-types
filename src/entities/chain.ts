@@ -698,6 +698,29 @@ export const chains: Chain[] = [
             large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png',
         },
     }),
+    // Perp venues as non-EVM pseudo-chains (deposit destinations only).
+    new Chain({
+        id: ChainId.HYPERLIQUID_PERP_MAINNET,
+        name: 'Hyperliquid',
+        disabled: false,
+        explorer: 'https://app.hyperliquid.xyz',
+        icons: {
+            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/32196.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/32196.png',
+        },
+        evm: false,
+    }),
+    new Chain({
+        id: ChainId.LIGHTER_MAINNET,
+        name: 'Lighter',
+        disabled: false,
+        explorer: 'https://app.lighter.xyz',
+        icons: {
+            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/32196.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/32196.png',
+        },
+        evm: false,
+    }),
     new Chain({
         id: ChainId.GOAT_MAINNET,
         name: 'Goat',
@@ -779,7 +802,7 @@ export const chains: Chain[] = [
         },
     }),
     new Chain({
-        id: ChainId.HYPERLIQUID_MAINNET,
+        id: ChainId.HYPEREVM_MAINNET,
         name: 'HyperEVM',
         disabled: false,
         explorer: 'https://www.hyperscan.com',
