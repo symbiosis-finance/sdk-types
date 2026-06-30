@@ -170,6 +170,10 @@ export const WETH = {
     [ChainId.DOGE_MAINNET]: getFakeWETH(ChainId.DOGE_MAINNET),
     [ChainId.LTC_MAINNET]: getFakeWETH(ChainId.LTC_MAINNET),
     [ChainId.ZCASH_MAINNET]: getFakeWETH(ChainId.ZCASH_MAINNET),
+    [ChainId.HYPERLIQUID_PERP_MAINNET]: getFakeWETH(
+        ChainId.HYPERLIQUID_PERP_MAINNET
+    ),
+    [ChainId.LIGHTER_MAINNET]: getFakeWETH(ChainId.LIGHTER_MAINNET),
     // << FAKE
     [ChainId.TRON_MAINNET]: new Token({
         chainId: ChainId.TRON_MAINNET,

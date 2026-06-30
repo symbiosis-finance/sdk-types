@@ -133,4 +133,12 @@ export const GAS_TOKEN: Record<ChainId, Token> = {
         39734,
         6
     ),
+    // Pseudo-chains: no native gas; USDC (6 decimals) is the only relevant unit.
+    [ChainId.HYPERLIQUID_PERP_MAINNET]: GAS(
+        ChainId.HYPERLIQUID_PERP_MAINNET,
+        'USDC',
+        3408,
+        6
+    ),
+    [ChainId.LIGHTER_MAINNET]: GAS(ChainId.LIGHTER_MAINNET, 'USDC', 3408, 6),
 }

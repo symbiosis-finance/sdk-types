@@ -131,6 +131,11 @@ export type SolverConfig = {
     url: string
 }
 
+// Perpbot aggregator base URL (perp deposit zaps into Hyperliquid/Lighter)
+export type PerpbotConfig = {
+    url: string
+}
+
 export type OmniPoolConfig = {
     chainId: ChainId
     address: Address
@@ -178,6 +183,7 @@ export type Config = {
     fallbackReceiver: EvmAddress
     btcConfigs: BtcConfig[]
     solver?: SolverConfig
+    perpbot?: PerpbotConfig
 }
 
 export type OverrideChainConfig = {
@@ -219,6 +225,7 @@ export type OverrideConfig = {
     fetch?: typeof fetch
     advisor?: AdvisorConfig
     solver?: SolverConfig
+    perpbot?: PerpbotConfig
     oneInchConfig?: Partial<ApiConfig>
     openOceanConfig?: Partial<ApiConfig>
     zeroXConfig?: Partial<ApiConfig>
