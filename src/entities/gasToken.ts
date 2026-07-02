@@ -10,8 +10,8 @@ const GAS = (chainId: ChainId, symbol: string, iconId: number, decimals = 18, na
         chainId,
         decimals,
         icons: {
-            small: `https://s2.coinmarketcap.com/static/img/coins/64x64/${iconId}.png`,
-            large: `https://s2.coinmarketcap.com/static/img/coins/64x64/${iconId}.png`,
+            small: `https://s2.coinmarketcap.com/static/img/coins/128x128/${iconId}.png`,
+            large: `https://s2.coinmarketcap.com/static/img/coins/128x128/${iconId}.png`,
         },
     })
 
@@ -23,8 +23,8 @@ const TOKEN_AS_GAS = (chainId: ChainId, address: Address, symbol: string, iconId
         chainId,
         decimals,
         icons: {
-            small: `https://s2.coinmarketcap.com/static/img/coins/64x64/${iconId}.png`,
-            large: `https://s2.coinmarketcap.com/static/img/coins/64x64/${iconId}.png`,
+            small: `https://s2.coinmarketcap.com/static/img/coins/128x128/${iconId}.png`,
+            large: `https://s2.coinmarketcap.com/static/img/coins/128x128/${iconId}.png`,
         },
     })
 

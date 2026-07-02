@@ -88,8 +88,8 @@ export const config: Config = {
                 chainId: ChainId.BTC_MAINNET,
                 decimals: 8,
                 icons: {
-                    large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
-                    small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
+                    large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
+                    small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
                 },
             }),
             symBtc: {
@@ -106,8 +106,8 @@ export const config: Config = {
                 chainId: ChainId.BTC_MAINNET,
                 decimals: 8,
                 icons: {
-                    large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
-                    small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
+                    large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
+                    small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
                 },
             }),
             symBtc: {
@@ -124,8 +124,8 @@ export const config: Config = {
                 chainId: ChainId.BTC_MAINNET,
                 decimals: 8,
                 icons: {
-                    large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
-                    small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
+                    large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
+                    small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
                 },
             }),
             symBtc: {
@@ -179,8 +179,8 @@ export const config: Config = {
                     decimals: 6,
                     chainId: ChainId.ETH_MAINNET,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
                 {
@@ -190,7 +190,7 @@ export const config: Config = {
                     chainId: ChainId.ETH_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/15084.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
                     },
                 },
@@ -201,7 +201,7 @@ export const config: Config = {
                     chainId: ChainId.ETH_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -212,8 +212,8 @@ export const config: Config = {
                     chainId: ChainId.ETH_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
                     },
                 },
                 {
@@ -223,8 +223,8 @@ export const config: Config = {
                     chainId: ChainId.ETH_MAINNET,
                     decimals: 8,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3717.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3717.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3717.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3717.png',
                     },
                 },
                 {
@@ -234,7 +234,7 @@ export const config: Config = {
                     chainId: ChainId.ETH_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/29325.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/29325.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/29325.png',
                     },
                 },
@@ -245,7 +245,7 @@ export const config: Config = {
                     chainId: ChainId.ETH_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/32120.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32120.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32120.png',
                     },
                 },
@@ -256,8 +256,8 @@ export const config: Config = {
                     chainId: ChainId.ETH_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/18876.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/18876.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/18876.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/18876.png',
                     },
                 },
             ],
@@ -285,8 +285,8 @@ export const config: Config = {
                     decimals: 18,
                     chainId: ChainId.BSC_MAINNET,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
                 {
@@ -297,8 +297,8 @@ export const config: Config = {
                     decimals: 18,
                     chainId: ChainId.BSC_MAINNET,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/4687.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/4687.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4687.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4687.png',
                     },
                 },
                 {
@@ -308,7 +308,7 @@ export const config: Config = {
                     chainId: ChainId.BSC_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -319,7 +319,7 @@ export const config: Config = {
                     chainId: ChainId.BSC_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/4023.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4023.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4023.png',
                     },
                 },
@@ -330,7 +330,7 @@ export const config: Config = {
                     chainId: ChainId.BSC_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/15084.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
                     },
                 },
@@ -341,7 +341,7 @@ export const config: Config = {
                     chainId: ChainId.BSC_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/32120.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32120.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32120.png',
                     },
                 },
@@ -363,8 +363,8 @@ export const config: Config = {
                     chainId: ChainId.BSC_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/7192.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/7192.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/7192.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/7192.png',
                     },
                 },
                 {
@@ -374,8 +374,8 @@ export const config: Config = {
                     chainId: ChainId.BSC_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/38376.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/38376.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/38376.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/38376.png',
                     },
                 },
             ],
@@ -418,8 +418,8 @@ export const config: Config = {
                     decimals: 6,
                     chainId: ChainId.AVAX_MAINNET,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
                 {
@@ -430,8 +430,8 @@ export const config: Config = {
                     decimals: 6,
                     chainId: ChainId.AVAX_MAINNET,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
             ],
@@ -473,8 +473,8 @@ export const config: Config = {
                     decimals: 6,
                     chainId: ChainId.MATIC_MAINNET,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
                 {
@@ -484,7 +484,7 @@ export const config: Config = {
                     chainId: ChainId.MATIC_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -512,8 +512,8 @@ export const config: Config = {
                     decimals: 6,
                     chainId: ChainId.TELOS_MAINNET,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
             ],
@@ -540,8 +540,8 @@ export const config: Config = {
                     chainId: ChainId.KAVA_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
                     },
                 },
             ],
@@ -568,8 +568,8 @@ export const config: Config = {
                     decimals: 6,
                     chainId: ChainId.BOBA_MAINNET,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
             ],
@@ -597,8 +597,8 @@ export const config: Config = {
                     symbol: 'WSIS',
                     name: 'Wrapped SIS',
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/15084.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/15084.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
                     },
                 },
             ],
@@ -625,8 +625,8 @@ export const config: Config = {
                     chainId: ChainId.ZKSYNC_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
                 {
@@ -637,8 +637,8 @@ export const config: Config = {
                     chainId: ChainId.ZKSYNC_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
                 {
@@ -648,7 +648,7 @@ export const config: Config = {
                     chainId: ChainId.ZKSYNC_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -660,7 +660,7 @@ export const config: Config = {
                     chainId: ChainId.ZKSYNC_MAINNET,
                     decimals: 8,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3717.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3717.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3717.png',
                     },
                 },
@@ -671,7 +671,7 @@ export const config: Config = {
                     chainId: ChainId.ZKSYNC_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/15084.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
                     },
                 },
@@ -711,8 +711,8 @@ export const config: Config = {
                     chainId: ChainId.ARBITRUM_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
                 {
@@ -723,8 +723,8 @@ export const config: Config = {
                     chainId: ChainId.ARBITRUM_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
                 {
@@ -734,7 +734,7 @@ export const config: Config = {
                     chainId: ChainId.ARBITRUM_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -745,7 +745,7 @@ export const config: Config = {
                     chainId: ChainId.ARBITRUM_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/15084.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
                     },
                 },
@@ -756,8 +756,8 @@ export const config: Config = {
                     chainId: ChainId.ARBITRUM_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/18876.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/18876.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/18876.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/18876.png',
                     },
                 },
             ],
@@ -799,8 +799,8 @@ export const config: Config = {
                     chainId: ChainId.OPTIMISM_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
                 {
@@ -810,7 +810,7 @@ export const config: Config = {
                     chainId: ChainId.OPTIMISM_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -842,8 +842,8 @@ export const config: Config = {
                     chainId: ChainId.ARBITRUM_NOVA,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
                 {
@@ -853,7 +853,7 @@ export const config: Config = {
                     chainId: ChainId.ARBITRUM_NOVA,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -881,8 +881,8 @@ export const config: Config = {
                     chainId: ChainId.POLYGON_ZK,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
                 {
@@ -893,8 +893,8 @@ export const config: Config = {
                     chainId: ChainId.POLYGON_ZK,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
                 {
@@ -904,7 +904,7 @@ export const config: Config = {
                     chainId: ChainId.POLYGON_ZK,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -932,7 +932,7 @@ export const config: Config = {
                     chainId: ChainId.LINEA_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -943,8 +943,8 @@ export const config: Config = {
                     chainId: ChainId.LINEA_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
                 {
@@ -954,7 +954,7 @@ export const config: Config = {
                     chainId: ChainId.LINEA_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/15084.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
                     },
                 },
@@ -982,8 +982,8 @@ export const config: Config = {
                     chainId: ChainId.MANTLE_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
                 {
@@ -993,7 +993,7 @@ export const config: Config = {
                     chainId: ChainId.MANTLE_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -1021,7 +1021,7 @@ export const config: Config = {
                     chainId: ChainId.BASE_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -1032,8 +1032,8 @@ export const config: Config = {
                     chainId: ChainId.BASE_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
                 {
@@ -1043,7 +1043,7 @@ export const config: Config = {
                     chainId: ChainId.BASE_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/32120.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32120.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32120.png',
                     },
                 },
@@ -1070,8 +1070,8 @@ export const config: Config = {
                     chainId: ChainId.TRON_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
                     },
                 },
             ],
@@ -1098,7 +1098,7 @@ export const config: Config = {
                     chainId: ChainId.SCROLL_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -1109,8 +1109,8 @@ export const config: Config = {
                     chainId: ChainId.SCROLL_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
                 {
@@ -1120,7 +1120,7 @@ export const config: Config = {
                     chainId: ChainId.SCROLL_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/15084.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
                     },
                 },
@@ -1148,7 +1148,7 @@ export const config: Config = {
                     chainId: ChainId.MANTA_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -1159,8 +1159,8 @@ export const config: Config = {
                     chainId: ChainId.MANTA_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
             ],
@@ -1191,7 +1191,7 @@ export const config: Config = {
                     chainId: ChainId.METIS_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -1219,8 +1219,8 @@ export const config: Config = {
                     chainId: ChainId.BAHAMUT_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
                     },
                 },
                 {
@@ -1231,8 +1231,8 @@ export const config: Config = {
                     chainId: ChainId.BAHAMUT_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
             ],
@@ -1259,7 +1259,7 @@ export const config: Config = {
                     chainId: ChainId.MODE_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -1287,7 +1287,7 @@ export const config: Config = {
                     chainId: ChainId.RSK_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
                     },
                 },
@@ -1299,7 +1299,7 @@ export const config: Config = {
                     chainId: ChainId.RSK_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
                     },
                 },
@@ -1311,7 +1311,7 @@ export const config: Config = {
                     chainId: ChainId.RSK_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
@@ -1322,7 +1322,7 @@ export const config: Config = {
                     chainId: ChainId.RSK_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/32702.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32702.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32702.png',
                     },
                 },
@@ -1361,7 +1361,7 @@ export const config: Config = {
                     chainId: ChainId.BLAST_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -1389,7 +1389,7 @@ export const config: Config = {
                     chainId: ChainId.MERLIN_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3717.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3717.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3717.png',
                     },
                 },
@@ -1416,7 +1416,7 @@ export const config: Config = {
                     chainId: ChainId.ZKLINK_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -1444,7 +1444,7 @@ export const config: Config = {
                     chainId: ChainId.CORE_MAINNET,
                     decimals: 8,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
                     },
                 },
@@ -1472,7 +1472,7 @@ export const config: Config = {
                     chainId: ChainId.TAIKO_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -1500,7 +1500,7 @@ export const config: Config = {
                     chainId: ChainId.SEI_EVM_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
@@ -1512,7 +1512,7 @@ export const config: Config = {
                     chainId: ChainId.SEI_EVM_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
@@ -1524,7 +1524,7 @@ export const config: Config = {
                     chainId: ChainId.SEI_EVM_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
                     },
                 },
@@ -1552,7 +1552,7 @@ export const config: Config = {
                     chainId: ChainId.ZETACHAIN_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
@@ -1580,7 +1580,7 @@ export const config: Config = {
                     chainId: ChainId.CRONOS_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
@@ -1608,7 +1608,7 @@ export const config: Config = {
                     chainId: ChainId.FRAXTAL_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -1619,8 +1619,8 @@ export const config: Config = {
                     chainId: ChainId.FRAXTAL_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/36039.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/36039.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/36039.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/36039.png',
                     },
                 },
             ],
@@ -1647,7 +1647,7 @@ export const config: Config = {
                     chainId: ChainId.GRAVITY_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
@@ -1658,7 +1658,7 @@ export const config: Config = {
                     chainId: ChainId.GRAVITY_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/32120.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32120.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32120.png',
                     },
                 },
@@ -1686,7 +1686,7 @@ export const config: Config = {
                     chainId: ChainId.BSQUARED_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3717.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3717.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3717.png',
                     },
                 },
@@ -1713,8 +1713,8 @@ export const config: Config = {
                     chainId: ChainId.TON_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
                     },
                     attributes: {
                         ton: 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs',
@@ -1727,8 +1727,8 @@ export const config: Config = {
                     chainId: ChainId.TON_MAINNET,
                     decimals: 9,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/38376.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/38376.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/38376.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/38376.png',
                     },
                     attributes: {
                         ton: 'EQBKMfjX_a_dsOLm-juxyVZytFP7_KKnzGv6J01kGc72gVBp',
@@ -1759,7 +1759,7 @@ export const config: Config = {
                     chainId: ChainId.CRONOS_ZK_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
@@ -1787,7 +1787,7 @@ export const config: Config = {
                     chainId: ChainId.MORPH_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
@@ -1831,7 +1831,7 @@ export const config: Config = {
                     chainId: ChainId.GOAT_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
                     },
                 },
@@ -1859,7 +1859,7 @@ export const config: Config = {
                     chainId: ChainId.SONIC_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -1887,7 +1887,7 @@ export const config: Config = {
                     chainId: ChainId.ABSTRACT_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -1915,7 +1915,7 @@ export const config: Config = {
                     chainId: ChainId.GNOSIS_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
@@ -1926,7 +1926,7 @@ export const config: Config = {
                     chainId: ChainId.GNOSIS_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -1954,7 +1954,7 @@ export const config: Config = {
                     chainId: ChainId.BERACHAIN_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -1982,7 +1982,7 @@ export const config: Config = {
                     chainId: ChainId.UNICHAIN_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -2010,7 +2010,7 @@ export const config: Config = {
                     chainId: ChainId.SONEIUM_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -2038,7 +2038,7 @@ export const config: Config = {
                     chainId: ChainId.OPBNB_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -2049,8 +2049,8 @@ export const config: Config = {
                     chainId: ChainId.OPBNB_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/7192.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/7192.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/7192.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/7192.png',
                     },
                 },
             ],
@@ -2077,7 +2077,7 @@ export const config: Config = {
                     chainId: ChainId.HYPEREVM_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -2088,7 +2088,7 @@ export const config: Config = {
                     chainId: ChainId.HYPEREVM_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
@@ -2099,7 +2099,7 @@ export const config: Config = {
                     chainId: ChainId.HYPEREVM_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/18876.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/18876.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/18876.png',
                     },
                 },
@@ -2128,7 +2128,7 @@ export const config: Config = {
                     chainId: ChainId.KATANA_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -2139,7 +2139,7 @@ export const config: Config = {
                     chainId: ChainId.KATANA_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                     },
                 },
@@ -2150,7 +2150,7 @@ export const config: Config = {
                     chainId: ChainId.KATANA_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
@@ -2178,7 +2178,7 @@ export const config: Config = {
                     chainId: ChainId.APECHAIN_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/18876.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/18876.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/18876.png',
                     },
                 },
@@ -2206,8 +2206,8 @@ export const config: Config = {
                     chainId: ChainId.PLASMA_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
                     },
                 },
             ],
@@ -2234,7 +2234,7 @@ export const config: Config = {
                     chainId: ChainId.MONAD_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
                     },
                 },
@@ -2306,8 +2306,8 @@ export const config: Config = {
                     chainId: ChainId.QUAI_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/22354.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/22354.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/22354.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/22354.png',
                     },
                 },
             ],

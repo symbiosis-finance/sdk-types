@@ -61,8 +61,8 @@ export const config: Config = {
                     chainId: ChainId.BSC_TESTNET,
                     decimals: 9,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11419.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11419.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11419.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11419.png',
                     },
                 },
             ],
@@ -103,8 +103,8 @@ export const config: Config = {
                     decimals: 8,
                     chainId: ChainId.SEPOLIA_TESTNET,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
                     },
                 },
                 {
@@ -114,8 +114,8 @@ export const config: Config = {
                     decimals: 8,
                     chainId: ChainId.SEPOLIA_TESTNET,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
                     },
                 },
                 {
@@ -125,8 +125,8 @@ export const config: Config = {
                     decimals: 8,
                     chainId: ChainId.SEPOLIA_TESTNET,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
                     },
                 },
                 {
@@ -136,8 +136,8 @@ export const config: Config = {
                     chainId: ChainId.SEPOLIA_TESTNET,
                     decimals: 9,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11419.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11419.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11419.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11419.png',
                     },
                 },
             ],
@@ -167,8 +167,8 @@ export const config: Config = {
                     decimals: 8,
                     chainId: ChainId.AVAX_TESTNET,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
                     },
                 },
                 // {
@@ -178,8 +178,8 @@ export const config: Config = {
                 //     decimals: 8,
                 //     chainId: ChainId.AVAX_TESTNET,
                 //     icons: {
-                //         large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
-                //         small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
+                //         large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
+                //         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
                 //     },
                 // },
                 // {
@@ -189,8 +189,8 @@ export const config: Config = {
                 //     decimals: 9,
                 //     chainId: ChainId.AVAX_TESTNET,
                 //     icons: {
-                //         large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11419.png',
-                //         small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11419.png',
+                //         large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11419.png',
+                //         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11419.png',
                 //     },
                 // },
             ],
