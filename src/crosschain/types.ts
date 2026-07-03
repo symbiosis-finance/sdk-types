@@ -192,6 +192,8 @@ export type ApiConfig = {
 export type ChangellyConfig = {
     apiUrl: string
     privateKey: string
+    privateSwapPrivateKey?: string
+    privateSwapRefundAddress?: string
 }
 
 export type * from './config/cache/types'
@@ -346,6 +348,21 @@ export type OperationType =
     | 'private-swap'
     | 'intent-swap'
 
+export type PrivateSwapTradeRef = {
+    changellyTxId: string
+    depositAddress: string      // tradeA: source-chain deposit; tradeB: the XMR payinAddress
+    amountExpectedFrom: string
+    amountExpectedTo: string
+    currencyFrom: string
+    currencyTo: string
+}
+
+export type PrivateSwapData = {
+    tradeA: PrivateSwapTradeRef  // tokenA -> XMR (fixed); user sends to tradeA.depositAddress
+    tradeB: PrivateSwapTradeRef  // XMR -> tokenB (floating); depositAddress = XMR payinAddress
+    xmrAmount: string            // estimated intermediate XMR amount (human units)
+}
+
 // Result of swapExactIn() method.
 export type SwapExactInResult = SwapExactInTransactionPayload & {
     operationType: OperationType
@@ -364,6 +381,7 @@ export type SwapExactInResult = SwapExactInTransactionPayload & {
     tradeA?: SymbiosisTrade
     tradeC?: SymbiosisTrade
     changellyData?: ChangellyTransactionData
+    privateSwap?: PrivateSwapData
     permit2Approve?: { to: string; callData: string }
 }
 
