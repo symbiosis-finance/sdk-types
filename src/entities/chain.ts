@@ -27,8 +27,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://tonviewer.com',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11419.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11419.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11419.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11419.png',
         },
         evm: false,
     }),
@@ -38,8 +38,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://testnet.tonviewer.com',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11419.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11419.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11419.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11419.png',
         },
         evm: false,
     }),
@@ -49,8 +49,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://mempool.space',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
         },
         evm: false,
     }),
@@ -60,8 +60,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://mutinynet.com',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
         },
         evm: false,
     }),
@@ -71,8 +71,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://mempool.space/testnet4',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
         },
         evm: false,
     }),
@@ -192,8 +192,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://www.oklink.com/oec',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/294.png',
-            large: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/294.png',
+            small: 'https://s2.coinmarketcap.com/static/img/exchanges/128x128/294.png',
+            large: 'https://s2.coinmarketcap.com/static/img/exchanges/128x128/294.png',
         },
     }),
     new Chain({
@@ -202,8 +202,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://www.oklink.com/oec-test',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/294.png',
-            large: 'https://s2.coinmarketcap.com/static/img/exchanges/64x64/294.png',
+            small: 'https://s2.coinmarketcap.com/static/img/exchanges/128x128/294.png',
+            large: 'https://s2.coinmarketcap.com/static/img/exchanges/128x128/294.png',
         },
     }),
     new Chain({
@@ -242,8 +242,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://symbiosis-nitro-testnet.explorer.caldera.xyz',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/15084.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/15084.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
         },
     }),
     new Chain({
@@ -252,8 +252,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://symbiosis.calderaexplorer.xyz',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/15084.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/15084.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
         },
     }),
     new Chain({
@@ -282,8 +282,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://aurorascan.dev',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/14803.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/14803.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/14803.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/14803.png',
         },
     }),
     new Chain({
@@ -292,8 +292,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://testnet.aurorascan.dev',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/14803.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/14803.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/14803.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/14803.png',
         },
     }),
     new Chain({
@@ -302,8 +302,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://teloscan.io',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/4660.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/4660.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4660.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4660.png',
         },
     }),
     new Chain({
@@ -312,8 +312,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://testnet.teloscan.io',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/4660.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/4660.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4660.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4660.png',
         },
     }),
     new Chain({
@@ -322,8 +322,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://explorer-liberty20.shardeum.org',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/22353.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/22353.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/22353.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/22353.png',
         },
     }),
     new Chain({
@@ -332,8 +332,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://explorer.kava.io',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/4846.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/4846.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4846.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4846.png',
         },
     }),
     new Chain({
@@ -352,8 +352,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://era.zksync.network',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/24091.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/24091.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/24091.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/24091.png',
         },
     }),
     new Chain({
@@ -362,8 +362,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://arbiscan.io',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11841.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11841.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11841.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11841.png',
         },
     }),
     new Chain({
@@ -382,8 +382,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://optimistic.etherscan.io',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11840.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11840.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11840.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11840.png',
         },
     }),
     new Chain({
@@ -392,8 +392,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://explorer.zetachain.com',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/21259.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/21259.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/21259.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/21259.png',
         },
     }),
     new Chain({
@@ -402,8 +402,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://zkevm.polygonscan.com',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3890.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3890.png',
         },
     }),
     new Chain({
@@ -412,8 +412,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://tronscan.org',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1958.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1958.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1958.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1958.png',
         },
         evm: false,
     }),
@@ -423,8 +423,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://shasta.tronscan.org',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1958.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1958.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1958.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1958.png',
         },
         evm: false,
     }),
@@ -454,8 +454,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://explorer.mantle.xyz',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/27075.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/27075.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/27075.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/27075.png',
         },
     }),
     new Chain({
@@ -464,8 +464,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://explorer.testnet.mantle.xyz',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/27075.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/27075.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/27075.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/27075.png',
         },
     }),
     new Chain({
@@ -494,7 +494,7 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://pacific-explorer.manta.network',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/13631.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/13631.png',
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/13631.png',
         },
     }),
@@ -504,7 +504,7 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://explorer.metis.io',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/9640.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/9640.png',
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/9640.png',
         },
     }),
@@ -514,8 +514,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://www.oklink.com/x1-test',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3897.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3897.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3897.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3897.png',
         },
     }),
     new Chain({
@@ -524,8 +524,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://www.ftnscan.com',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/22615.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/22615.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/22615.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/22615.png',
         },
     }),
     new Chain({
@@ -574,8 +574,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://explorer.zklink.io',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/13039.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/13039.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/13039.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/13039.png',
         },
     }),
     new Chain({
@@ -594,8 +594,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://scan.coredao.org',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/23254.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/23254.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/23254.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/23254.png',
         },
     }),
     new Chain({
@@ -604,8 +604,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://taikoscan.io',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/31525.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/31525.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/31525.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/31525.png',
         },
     }),
     new Chain({
@@ -614,8 +614,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://seitrace.com',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/23149.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/23149.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/23149.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/23149.png',
         },
     }),
     new Chain({
@@ -624,8 +624,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://zetachain.blockscout.com',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/21259.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/21259.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/21259.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/21259.png',
         },
     }),
     new Chain({
@@ -634,8 +634,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://cronoscan.com',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3635.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3635.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3635.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3635.png',
         },
     }),
     new Chain({
@@ -644,8 +644,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://fraxscan.com',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/6952.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/6952.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/6952.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/6952.png',
         },
     }),
     new Chain({
@@ -654,8 +654,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://explorer.gravity.xyz',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/32120.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/32120.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32120.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32120.png',
         },
     }),
     new Chain({
@@ -674,8 +674,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://explorer.zkevm.cronos.org',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/33873.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/33873.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/33873.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/33873.png',
         },
     }),
     new Chain({
@@ -694,8 +694,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://explorer.solana.com',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5426.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5426.png',
         },
     }),
     new Chain({
@@ -714,8 +714,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://sonicscan.org',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/32684.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/32684.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32684.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32684.png',
         },
     }),
     new Chain({
@@ -734,8 +734,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://gnosisscan.io',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1659.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1659.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1659.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1659.png',
         },
     }),
     new Chain({
@@ -744,8 +744,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://berascan.com',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/24647.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/24647.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/24647.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/24647.png',
         },
     }),
     new Chain({
@@ -784,8 +784,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://www.hyperscan.com',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/32196.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/32196.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32196.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32196.png',
         },
     }),
     new Chain({
@@ -814,8 +814,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://plasmascan.to',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/36645.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/36645.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/36645.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/36645.png',
         },
     }),
     new Chain({
@@ -824,8 +824,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://monadscan.com',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/30495.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/30495.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/30495.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/30495.png',
         },
     }),
     new Chain({
@@ -844,8 +844,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://quaiscan.io',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/22354.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/22354.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/22354.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/22354.png',
         },
     }),
     new Chain({
@@ -854,8 +854,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://stellarchain.io',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/512.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/512.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/512.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/512.png',
         },
         evm: false,
     }),
@@ -865,8 +865,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://blockexplorer.one/xrp/mainnet',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/52.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/52.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/52.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/52.png',
         },
         evm: false,
     }),
@@ -876,8 +876,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://www.exploremonero.com',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/328.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/328.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/328.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/328.png',
         },
         evm: false,
     }),
@@ -887,8 +887,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://cardanoscan.io',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/2010.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/2010.png',
         },
         evm: false,
     }),
@@ -898,8 +898,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://blockexplorer.one/bitcoin-cash/mainnet',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1831.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1831.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1831.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1831.png',
         },
         evm: false,
     }),
@@ -909,8 +909,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://suiscan.xyz',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/20947.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/20947.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/20947.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/20947.png',
         },
         evm: false,
     }),
@@ -920,8 +920,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://www.cantonscan.com',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/37263.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/37263.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/37263.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/37263.png',
         },
         evm: false,
     }),
@@ -931,8 +931,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://dogechain.info',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/74.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/74.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/74.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/74.png',
         },
         evm: false,
     }),
@@ -942,8 +942,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://litecoinspace.org',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/2.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/2.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/2.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/2.png',
         },
         evm: false,
     }),
@@ -953,8 +953,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://blockexplorer.one/zcash/mainnet',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1437.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1437.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1437.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1437.png',
         },
         evm: false,
     }),

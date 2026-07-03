@@ -556,8 +556,8 @@ const CF_SOL_USDC_TOKEN = new Token({
     chainId: ChainId.SOLANA_MAINNET,
     decimals: 6,
     icons: {
-        large: `https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png`,
-        small: `https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png`,
+        large: `https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png`,
+        small: `https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png`,
     },
     attributes: {
         solana: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v',
@@ -571,8 +571,8 @@ const CF_ARB_USDC_TOKEN = new Token({
     name: 'USDC',
     symbol: 'USDC',
     icons: {
-        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
     },
 })
 
@@ -583,8 +583,8 @@ const CF_ETH_USDC_TOKEN = new Token({
     name: 'USDC',
     symbol: 'USDC',
     icons: {
-        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
-        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
     },
 })
 
@@ -595,8 +595,8 @@ export const TRON_USDT = new Token({
     chainId: ChainId.TRON_MAINNET,
     decimals: 6,
     icons: {
-        large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
-        small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
+        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
     },
 })
 
