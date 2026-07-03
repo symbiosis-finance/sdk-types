@@ -192,6 +192,8 @@ export type ApiConfig = {
 export type ChangellyConfig = {
     apiUrl: string
     privateKey: string
+    privateSwapPrivateKey?: string
+    privateSwapRefundAddress?: string
 }
 
 export type * from './config/cache/types'
@@ -253,6 +255,8 @@ export interface SwapExactInParams {
     depositoryEnabled?: boolean
     disabledProviders?: TradeProvider[]
     changellyExtraIdTo?: string // destination tag (XRP) or memo (XLM) for payout address
+    // Route the swap privately through Monero (XMR) via Changelly. Default false.
+    private?: boolean
     // EIP-712 signature for VotingEscrow gas discount.
     // undefined = fall back to legacy Symbiosis.setSignature() field; null = explicitly no signature.
     signature?: string | null
@@ -341,7 +345,13 @@ export type OperationType =
     | 'from-btc-swap'
     | 'changelly-trade'
     | 'changelly-deposit'
+    | 'private-swap'
     | 'intent-swap'
+
+export type PrivateSwapData = {
+    tradeATxId: string
+    tradeBTxId: string
+}
 
 // Result of swapExactIn() method.
 export type SwapExactInResult = SwapExactInTransactionPayload & {
@@ -361,6 +371,7 @@ export type SwapExactInResult = SwapExactInTransactionPayload & {
     tradeA?: SymbiosisTrade
     tradeC?: SymbiosisTrade
     changellyData?: ChangellyTransactionData
+    privateSwap?: PrivateSwapData
     permit2Approve?: { to: string; callData: string }
 }
 
