@@ -20,6 +20,7 @@ export enum TradeProvider {
     ZERO_X = '0x',
     BITGET = 'bitget',
     INTENT_SOLVER = 'intent-solver',
+    PERPBOT_BRIDGE = 'perpbot-bridge',
 }
 
 export type OneInchProtocols = string[]

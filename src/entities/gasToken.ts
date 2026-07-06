@@ -109,7 +109,7 @@ export const GAS_TOKEN: Record<ChainId, Token> = {
     [ChainId.UNICHAIN_MAINNET]: GAS(ChainId.UNICHAIN_MAINNET, 'ETH', 1027),
     [ChainId.SONEIUM_MAINNET]: GAS(ChainId.SONEIUM_MAINNET, 'ETH', 1027),
     [ChainId.OPBNB_MAINNET]: GAS(ChainId.OPBNB_MAINNET, 'BNB', 1839),
-    [ChainId.HYPERLIQUID_MAINNET]: GAS(ChainId.HYPERLIQUID_MAINNET, 'HYPE', 32196),
+    [ChainId.HYPEREVM_MAINNET]: GAS(ChainId.HYPEREVM_MAINNET, 'HYPE', 32196),
     [ChainId.KATANA_MAINNET]: GAS(ChainId.KATANA_MAINNET, 'ETH', 1027),
     [ChainId.APECHAIN_MAINNET]: GAS(ChainId.APECHAIN_MAINNET, 'APE', 18876),
     [ChainId.PLASMA_MAINNET]: GAS(ChainId.PLASMA_MAINNET, 'XPL', 36645),
@@ -133,4 +133,12 @@ export const GAS_TOKEN: Record<ChainId, Token> = {
         39734,
         6
     ),
+    // Pseudo-chains: no native gas; USDC (6 decimals) is the only relevant unit.
+    [ChainId.HYPERLIQUID_PERP_MAINNET]: GAS(
+        ChainId.HYPERLIQUID_PERP_MAINNET,
+        'USDC',
+        3408,
+        6
+    ),
+    [ChainId.LIGHTER_MAINNET]: GAS(ChainId.LIGHTER_MAINNET, 'USDC', 3408, 6),
 }

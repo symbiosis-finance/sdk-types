@@ -170,6 +170,10 @@ export const WETH = {
     [ChainId.DOGE_MAINNET]: getFakeWETH(ChainId.DOGE_MAINNET),
     [ChainId.LTC_MAINNET]: getFakeWETH(ChainId.LTC_MAINNET),
     [ChainId.ZCASH_MAINNET]: getFakeWETH(ChainId.ZCASH_MAINNET),
+    [ChainId.HYPERLIQUID_PERP_MAINNET]: getFakeWETH(
+        ChainId.HYPERLIQUID_PERP_MAINNET
+    ),
+    [ChainId.LIGHTER_MAINNET]: getFakeWETH(ChainId.LIGHTER_MAINNET),
     // << FAKE
     [ChainId.TRON_MAINNET]: new Token({
         chainId: ChainId.TRON_MAINNET,
@@ -932,8 +936,8 @@ export const WETH = {
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/7192.png',
         },
     }),
-    [ChainId.HYPERLIQUID_MAINNET]: new Token({
-        chainId: ChainId.HYPERLIQUID_MAINNET,
+    [ChainId.HYPEREVM_MAINNET]: new Token({
+        chainId: ChainId.HYPEREVM_MAINNET,
         address: '0x5555555555555555555555555555555555555555',
         decimals: 18,
         symbol: 'WHYPE',

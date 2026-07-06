@@ -2065,7 +2065,7 @@ export const config: Config = {
             multicallRouter: '0xb8f275fBf7A959F4BCE59999A2EF122A099e81A8',
         },
         {
-            id: ChainId.HYPERLIQUID_MAINNET,
+            id: ChainId.HYPEREVM_MAINNET,
             rpc: 'https://rpc.hyperliquid.xyz/evm',
             spareRpcs: [],
             filterBlockOffset: 500,
@@ -2074,7 +2074,7 @@ export const config: Config = {
                     name: 'Unit ETH',
                     symbol: 'UETH',
                     address: '0xbe6727b535545c67d5caa73dea54865b92cf7907',
-                    chainId: ChainId.HYPERLIQUID_MAINNET,
+                    chainId: ChainId.HYPEREVM_MAINNET,
                     decimals: 18,
                     icons: {
                         large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
@@ -2085,7 +2085,7 @@ export const config: Config = {
                     name: 'USD Coin',
                     symbol: 'USDC',
                     address: '0xb88339CB7199b77E23DB6E890353E22632Ba630f',
-                    chainId: ChainId.HYPERLIQUID_MAINNET,
+                    chainId: ChainId.HYPEREVM_MAINNET,
                     decimals: 6,
                     icons: {
                         large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
@@ -2096,7 +2096,7 @@ export const config: Config = {
                     name: 'ApeCoin',
                     symbol: 'APE',
                     address: '0xab11329560fa9c9c860bb21a9342215a1265bbb0',
-                    chainId: ChainId.HYPERLIQUID_MAINNET,
+                    chainId: ChainId.HYPEREVM_MAINNET,
                     decimals: 18,
                     icons: {
                         large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/18876.png',
