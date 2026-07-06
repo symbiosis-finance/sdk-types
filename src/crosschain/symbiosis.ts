@@ -4,7 +4,6 @@ import { chains, Token, wrappedToken } from '../entities'
 import { formatBytes32String } from '@ethersproject/strings'
 import { NoTransitTokenError, SdkError } from '../errors'
 import { Cache } from './cache'
-import { DEFAULT_LEGACY_METAROUTER_PARTNER_IDS } from './constants'
 import { ConfigCache } from './config/cache/cache'
 import type { Id, OmniPoolInfo, TokenInfo } from './config/cache/types'
 import { config as beta } from './config/beta'
@@ -25,8 +24,6 @@ export class Symbiosis {
     public readonly cache: Cache
     public readonly configCache: ConfigCache
     public readonly clientId: string
-    // legacy partner-ids as bytes32 (same encoding as clientId), for O(1) lookup
-    private readonly legacyMetaRouterClientIds: Set<string>
 
     public constructor(configName: ConfigName, clientId: string, overrideConfig?: OverrideConfig) {
         this.configName = configName
@@ -71,17 +68,6 @@ export class Symbiosis {
         this.cache = overrideConfig?.cache || new Cache()
         this.configCache = new ConfigCache(overrideConfig?.configCache || configName)
         this.clientId = formatBytes32String(clientId)
-        const legacyPartnerIds =
-            overrideConfig?.legacyMetaRouterPartnerIds ?? DEFAULT_LEGACY_METAROUTER_PARTNER_IDS
-        this.legacyMetaRouterClientIds = new Set(legacyPartnerIds.map(formatBytes32String))
-    }
-
-    /**
-     * Whether this partner must use the legacy metaRouter scheme (approve -> metaRouterGateway,
-     * call -> metaRouter). Partners not in the legacy list use the new gateway-only scheme.
-     */
-    public usesLegacyMetaRouter(): boolean {
-        return this.legacyMetaRouterClientIds.has(this.clientId)
     }
 
     public getBtcConfig(btc: Token) {

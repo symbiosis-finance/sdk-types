@@ -229,9 +229,6 @@ export type OverrideConfig = {
     config?: Config
     configCache?: ConfigCacheData
     logger?: Logger
-    // Partner-ids (raw) kept on the legacy metaRouter scheme. Overrides
-    // DEFAULT_LEGACY_METAROUTER_PARTNER_IDS. See usesLegacyMetaRouter().
-    legacyMetaRouterPartnerIds?: string[]
 }
 
 export interface RevertableAddress {
