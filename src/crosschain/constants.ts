@@ -179,6 +179,18 @@ export const MULTICALL_ADDRESSES: { [chainId in ChainId]?: EvmAddress } = {
     [ChainId.TEMPO_MAINNET]: '0x6AEb9b27590387b8Fd0560C52f6B968C59C10Fab',
 }
 
+export const MULTICALL_ROUTER_V2: Partial<Record<ChainId, EvmAddress>> = {
+    [ChainId.ETH_MAINNET]: '0x09D479E04D2dd46AaD77618435e5c639EA769264',
+    [ChainId.ARBITRUM_MAINNET]: '0x5ad095DE83693ba063941f2f2C5A0dF02383B651',
+    [ChainId.ZKSYNC_MAINNET]: '0x7D2172C9bf79263FFf6E456c423a5e3E69F9AA4b',
+    [ChainId.BSC_MAINNET]: '0xeB278638fFa33CC776230dE4FF88eD5142ed8c1A',
+    [ChainId.RSK_MAINNET]: '0xca506793a420e901bbca8066be5661e3c52c84c2',
+    [ChainId.CITREA_MAINNET]: '0xf85FC807D05d3Ab2309364226970aAc57b4e1ea4',
+    [ChainId.TEMPO_MAINNET]: '0x1cEaeda3D17936916D0F3E866Aa5Ef861F544840', // not used
+    [ChainId.AVAX_MAINNET]: '0x0F28F4a0250710adF2d95c7E7E297B2edD31AeC8',
+    [ChainId.TRON_MAINNET]: '0xFA18454b16d59b34d01a8eA0572Ab31B34098AAb',
+}
+
 // --- CoinGecko platform/gas-token maps ---
 
 export const COINGECKO_PLATFORMS = new Map([
@@ -311,135 +323,6 @@ export const COINGECKO_GAS_TOKEN_IDS = new Map([
     [ChainId.ZCASH_MAINNET, 'zcash'],
     [ChainId.TEMPO_MAINNET, ''], // NOTE: no gas token on tempo
 ])
-
-// --- TRON TRC20 ABI ---
-export const TRON_TRC20_ABI = [
-    {
-        inputs: [],
-        stateMutability: 'nonpayable',
-        type: 'constructor',
-    },
-    {
-        inputs: [
-            { indexed: true, name: 'owner', type: 'address' },
-            { indexed: true, name: 'spender', type: 'address' },
-            { name: 'value', type: 'uint256' },
-        ],
-        name: 'Approval',
-        type: 'event',
-    },
-    {
-        inputs: [
-            { indexed: true, name: 'from', type: 'address' },
-            { indexed: true, name: 'to', type: 'address' },
-            { name: 'value', type: 'uint256' },
-        ],
-        name: 'Transfer',
-        type: 'event',
-    },
-    {
-        outputs: [{ type: 'uint256' }],
-        constant: true,
-        inputs: [
-            { name: 'owner', type: 'address' },
-            { name: 'spender', type: 'address' },
-        ],
-        name: 'allowance',
-        stateMutability: 'view',
-        type: 'function',
-    },
-    {
-        outputs: [{ type: 'bool' }],
-        inputs: [
-            { name: 'spender', type: 'address' },
-            { name: 'value', type: 'uint256' },
-        ],
-        name: 'approve',
-        stateMutability: 'nonpayable',
-        type: 'function',
-    },
-    {
-        outputs: [{ type: 'uint256' }],
-        constant: true,
-        inputs: [{ name: 'account', type: 'address' }],
-        name: 'balanceOf',
-        stateMutability: 'view',
-        type: 'function',
-    },
-    {
-        outputs: [{ type: 'uint8' }],
-        inputs: [],
-        constant: true,
-        name: 'decimals',
-        stateMutability: 'view',
-        type: 'function',
-    },
-    {
-        outputs: [{ type: 'bool' }],
-        inputs: [
-            { name: 'spender', type: 'address' },
-            { name: 'subtractedValue', type: 'uint256' },
-        ],
-        name: 'decreaseAllowance',
-        stateMutability: 'nonpayable',
-        type: 'function',
-    },
-    {
-        outputs: [{ type: 'bool' }],
-        inputs: [
-            { name: 'spender', type: 'address' },
-            { name: 'addedValue', type: 'uint256' },
-        ],
-        name: 'increaseAllowance',
-        stateMutability: 'nonpayable',
-        type: 'function',
-    },
-    {
-        inputs: [],
-        outputs: [{ type: 'string' }],
-        constant: true,
-        name: 'name',
-        stateMutability: 'view',
-        type: 'function',
-    },
-    {
-        inputs: [],
-        outputs: [{ type: 'string' }],
-        constant: true,
-        name: 'symbol',
-        stateMutability: 'view',
-        type: 'function',
-    },
-    {
-        inputs: [],
-        outputs: [{ type: 'uint256' }],
-        constant: true,
-        name: 'totalSupply',
-        stateMutability: 'view',
-        type: 'function',
-    },
-    {
-        outputs: [{ type: 'bool' }],
-        inputs: [
-            { name: 'recipient', type: 'address' },
-            { name: 'amount', type: 'uint256' },
-        ],
-        name: 'transfer',
-        stateMutability: 'nonpayable',
-        type: 'function',
-    },
-    {
-        outputs: [{ type: 'bool' }],
-        inputs: [
-            { name: 'sender', type: 'address' },
-            { name: 'recipient', type: 'address' },
-            { name: 'amount', type: 'uint256' },
-        ],
-        name: 'transferFrom',
-        stateMutability: 'nonpayable',
-        type: 'function',
-    },
-] as const
 
 // --- Changelly constants + chain predicates ---
 

@@ -1,5 +1,5 @@
-import { ChainId } from '../../constants'
-import type { Address } from '../types'
+import { ChainId } from './constants'
+import type { Address } from './crosschain/types'
 
 // New metaRouter deployment (gateway-only approve + call). For partners NOT on the
 // legacy list, approve and metaRoute both target `gateway`, and inner DEX swaps are
