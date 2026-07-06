@@ -519,6 +519,48 @@ export function isChangellySupportedChainId(chainId: ChainId | undefined): boole
     return CHANGELLY_NATIVE_CHAIN_IDS.has(chainId) || CHANGELLY_TRADE_CHAIN_IDS.has(chainId)
 }
 
+// Maps a Changelly `blockchain` string (from getCurrenciesFull) to our ChainId.
+export const CHANGELLY_BLOCKCHAIN_TO_CHAIN_ID: Record<string, ChainId> = {
+    // EVM
+    ethereum: ChainId.ETH_MAINNET,
+    binance_smart_chain: ChainId.BSC_MAINNET,
+    BASE: ChainId.BASE_MAINNET,
+    arbitrum: ChainId.ARBITRUM_MAINNET,
+    optimism: ChainId.OPTIMISM_MAINNET,
+    polygon: ChainId.MATIC_MAINNET,
+    avaxc: ChainId.AVAX_MAINNET,
+    LINEA: ChainId.LINEA_MAINNET,
+    ZKSYNC: ChainId.ZKSYNC_MAINNET,
+    bera: ChainId.BERACHAIN_MAINNET,
+    sonic: ChainId.SONIC_MAINNET,
+    manta: ChainId.MANTA_MAINNET,
+    blast: ChainId.BLAST_MAINNET,
+    cronos: ChainId.CRONOS_MAINNET,
+    zetachain: ChainId.ZETACHAIN_MAINNET,
+    CORE: ChainId.CORE_MAINNET,
+    TAIKO: ChainId.TAIKO_MAINNET,
+    sei: ChainId.SEI_EVM_MAINNET,
+    kava: ChainId.KAVA_MAINNET,
+    plasma: ChainId.PLASMA_MAINNET,
+    mon: ChainId.MONAD_MAINNET,
+    // Non-EVM trade chains
+    tron: ChainId.TRON_MAINNET,
+    solana: ChainId.SOLANA_MAINNET,
+    ton: ChainId.TON_MAINNET,
+    bitcoin: ChainId.BTC_MAINNET,
+    // Changelly-native chains
+    litecoin: ChainId.LTC_MAINNET,
+    doge: ChainId.DOGE_MAINNET,
+    monero: ChainId.XMR_MAINNET,
+    ripple: ChainId.XRP_MAINNET,
+    stellar: ChainId.XLM_MAINNET,
+    cardano: ChainId.ADA_MAINNET,
+    bitcoin_cash: ChainId.BCH_MAINNET,
+    sui: ChainId.SUI_MAINNET,
+    cc: ChainId.CANTON_MAINNET,
+    zcash: ChainId.ZCASH_MAINNET,
+}
+
 // --- ChainFlip token/config data ---
 // Chain/asset ids are plain strings here, not @chainflip/sdk types.
 export enum ChainFlipChainId {
