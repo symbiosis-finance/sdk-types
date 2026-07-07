@@ -38,4 +38,14 @@ export * from './crypto/tronAddress'
 export { Symbiosis } from './crosschain/symbiosis'
 export { ConfigCache } from './crosschain/config/cache/cache'
 export * from './crosschain/config'
+export { getApprovableMetaRouter } from './metaRouters'
+export type { ApprovableMetaRouter } from './metaRouters'
+export {
+    getOnchainSwapRouter,
+    getOnchainZeroFeeSwapRouter,
+    getLegacyFeeCollector,
+    LEGACY_FEE_COLLECTOR_ADDRESSES,
+    LEGACY_ZERO_FEE_COLLECTOR_ADDRESSES,
+} from './onchainRouters'
+export type { OnchainSwapRouter } from './onchainRouters'
 export type { ConfigCacheData, Id, OmniPoolInfo, OmniPoolToken, TokenInfo } from './crosschain/config/cache/types'
