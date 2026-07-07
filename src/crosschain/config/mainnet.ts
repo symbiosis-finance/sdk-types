@@ -1729,7 +1729,6 @@ export const config: Config = {
         {
             id: ChainId.ZETACHAIN_MAINNET,
             rpc: 'https://zetachain-evm.blockpi.network/v1/rpc/public',
-            spareRpcs: ['https://zetachain-mainnet-archive.allthatnode.com:8545'],
             filterBlockOffset: 1000,
             stables: [
                 {
@@ -1763,7 +1762,7 @@ export const config: Config = {
             stables: [
                 {
                     name: 'USD Coin',
-                    symbol: 'USDC',
+                    symbol: 'USDC.e',
                     address: '0xc21223249ca28397b4b6541dffaecc539bff0c59',
                     chainId: ChainId.CRONOS_MAINNET,
                     decimals: 6,

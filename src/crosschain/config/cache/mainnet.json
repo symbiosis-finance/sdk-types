@@ -1192,7 +1192,7 @@
         },
         {
             "decimals": 6,
-            "symbol": "USDC",
+            "symbol": "USDC.e",
             "name": "USD Coin",
             "chainId": 25,
             "address": "0xc21223249CA28397B4B6541dfFaEcC539BfF0c59",

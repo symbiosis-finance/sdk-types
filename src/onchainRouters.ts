@@ -13,7 +13,7 @@ export interface OnchainSwapRouter {
     executor: EvmAddress
 }
 
-const ONCHAIN_SWAP_ROUTERS: Partial<Record<ChainId, OnchainSwapRouter>> = {
+export const ONCHAIN_SWAP_ROUTERS: Partial<Record<ChainId, OnchainSwapRouter>> = {
     [ChainId.TRON_MAINNET]: {
         gateway: '0x8328c7ca00c83b69503e56d80cec4934b6342e4a',
         executor: '0xa07e4f36a8d008302124f95d2e67c565d9c40bf9',
@@ -217,7 +217,7 @@ export function getOnchainSwapRouter(
 // Zero-fee on-chain routers used for on-chain zaps into Bitcoin (the Symbiosis on-chain fee
 // is waived there). Same gateway-only scheme as ONCHAIN_SWAP_ROUTERS. Only a few chains ship
 // one; callers fall back to the with-fee router above when a chain is missing here.
-const ONCHAIN_ZERO_FEE_SWAP_ROUTERS: Partial<
+export const ONCHAIN_ZERO_FEE_SWAP_ROUTERS: Partial<
     Record<ChainId, OnchainSwapRouter>
 > = {
     [ChainId.BSC_MAINNET]: {

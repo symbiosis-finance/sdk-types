@@ -46,6 +46,8 @@ export {
     getLegacyFeeCollector,
     LEGACY_FEE_COLLECTOR_ADDRESSES,
     LEGACY_ZERO_FEE_COLLECTOR_ADDRESSES,
+    ONCHAIN_SWAP_ROUTERS,
+    ONCHAIN_ZERO_FEE_SWAP_ROUTERS,
 } from './onchainRouters'
 export type { OnchainSwapRouter } from './onchainRouters'
 export type { ConfigCacheData, Id, OmniPoolInfo, OmniPoolToken, TokenInfo } from './crosschain/config/cache/types'

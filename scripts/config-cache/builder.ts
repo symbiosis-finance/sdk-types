@@ -6,7 +6,7 @@ import fs from 'fs'
 import type { TokenConstructor } from '../../src/entities'
 import { Token } from '../../src/entities'
 import ERC20 from './abis/ERC20.json' with { type: 'json' }
-import { isBtcChainId, isSolanaChainId, isTonChainId, isTronChainId } from '../../src/constants'
+import { isBtcChainId, isPerpChainId, isSolanaChainId, isTonChainId, isTronChainId } from '../../src/constants'
 import { isChangellyNativeChainId } from '../../src/crosschain/constants'
 import type { Bridge, Fabric, MetaRouter, OmniPool, Portal, Synthesis } from './contracts'
 import {
@@ -188,6 +188,7 @@ export class Builder {
                 isBtcChainId(chain.id) ||
                 isTonChainId(chain.id) ||
                 isSolanaChainId(chain.id) ||
+                isPerpChainId(chain.id) ||
                 isChangellyNativeChainId(chain.id)
             ) {
                 return
