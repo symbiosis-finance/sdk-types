@@ -716,8 +716,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://app.lighter.xyz',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/32196.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/32196.png',
+            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/39125.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/39125.png',
         },
         evm: false,
     }),
