@@ -96,6 +96,7 @@ export const WETH_ONLY: ChainTokensList = {
     [ChainId.CITREA_MAINNET]: [WETH[ChainId.CITREA_MAINNET]],
     [ChainId.QUAI_MAINNET]: [WETH[ChainId.QUAI_MAINNET]],
     [ChainId.TEMPO_MAINNET]: [WETH[ChainId.TEMPO_MAINNET]],
+    [ChainId.ROBINHOOD_MAINNET]: [WETH[ChainId.ROBINHOOD_MAINNET]],
 }
 
 export const MULTICALL_ADDRESSES: { [chainId in ChainId]?: EvmAddress } = {
@@ -177,6 +178,7 @@ export const MULTICALL_ADDRESSES: { [chainId in ChainId]?: EvmAddress } = {
     [ChainId.CITREA_MAINNET]: '0xA738e84fdE890Bc60b99AF7ccE43990E534304de',
     [ChainId.QUAI_MAINNET]: '0x007898652F1670d7211dB3Be09a9A77798103343',
     [ChainId.TEMPO_MAINNET]: '0x6AEb9b27590387b8Fd0560C52f6B968C59C10Fab',
+    [ChainId.ROBINHOOD_MAINNET]: '0xd8db4fb1fEf63045A443202d506Bcf30ef404160',
 }
 
 export const MULTICALL_ROUTER_V2: Partial<Record<ChainId, EvmAddress>> = {
@@ -256,6 +258,7 @@ export const COINGECKO_PLATFORMS = new Map([
     [ChainId.CANTON_MAINNET, 'canton-network'],
     [ChainId.ZCASH_MAINNET, 'zcash'],
     [ChainId.TEMPO_MAINNET, 'tempo'],
+    [ChainId.ROBINHOOD_MAINNET, 'robinhood'],
 ])
 
 export const COINGECKO_GAS_TOKEN_IDS = new Map([
@@ -322,6 +325,7 @@ export const COINGECKO_GAS_TOKEN_IDS = new Map([
     [ChainId.CANTON_MAINNET, 'canton-network'],
     [ChainId.ZCASH_MAINNET, 'zcash'],
     [ChainId.TEMPO_MAINNET, ''], // NOTE: no gas token on tempo
+    [ChainId.ROBINHOOD_MAINNET, 'ethereum'],
 ])
 
 // --- Changelly constants + chain predicates ---

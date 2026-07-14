@@ -170,9 +170,7 @@ export const WETH = {
     [ChainId.DOGE_MAINNET]: getFakeWETH(ChainId.DOGE_MAINNET),
     [ChainId.LTC_MAINNET]: getFakeWETH(ChainId.LTC_MAINNET),
     [ChainId.ZCASH_MAINNET]: getFakeWETH(ChainId.ZCASH_MAINNET),
-    [ChainId.HYPERLIQUID_PERP_MAINNET]: getFakeWETH(
-        ChainId.HYPERLIQUID_PERP_MAINNET
-    ),
+    [ChainId.HYPERLIQUID_PERP_MAINNET]: getFakeWETH(ChainId.HYPERLIQUID_PERP_MAINNET),
     [ChainId.LIGHTER_MAINNET]: getFakeWETH(ChainId.LIGHTER_MAINNET),
     // << FAKE
     [ChainId.TRON_MAINNET]: new Token({
@@ -1011,6 +1009,17 @@ export const WETH = {
         icons: {
             small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/22354.png',
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/22354.png',
+        },
+    }),
+    [ChainId.ROBINHOOD_MAINNET]: new Token({
+        chainId: ChainId.ROBINHOOD_MAINNET,
+        address: '0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73',
+        decimals: 18,
+        symbol: 'WETH',
+        name: 'Wrapped ETH',
+        icons: {
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
         },
     }),
 }

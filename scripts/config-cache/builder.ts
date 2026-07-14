@@ -227,6 +227,12 @@ export class Builder {
             }
 
             const metaRouterGatewayAddressFromConfig = chain.metaRouterGateway.toLowerCase()
+
+            if (metaRouterAddressFromConfig.toLowerCase() === metaRouterGatewayAddressFromConfig.toLowerCase()) {
+                console.log(chain.id, "New metarouter scheme applied")
+                return
+            }
+
             const metaRouter = this.metaRouter(chain.id)
             const metaRouterGatewayAddressFromContract = (await metaRouter.callStatic.metaRouterGateway()).toLowerCase()
 

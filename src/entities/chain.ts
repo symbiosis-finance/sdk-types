@@ -991,6 +991,16 @@ export const chains: Chain[] = [
             large: 'https://assets.coingecko.com/markets/images/22234/small/tempo.png?1773891479',
         },
     }),
+    new Chain({
+        id: ChainId.ROBINHOOD_MAINNET,
+        name: 'Robinhood',
+        disabled: false,
+        explorer: 'https://robinhoodchain.blockscout.com',
+        icons: {
+            small: 'https://cdn.robinhood.com/assets/generated_assets/hoodchain_docsite/rh_favicon_152.png',
+            large: 'https://cdn.robinhood.com/assets/generated_assets/hoodchain_docsite/rh_favicon_152.png',
+        },
+    }),
 ]
 
 export const getChainById = (chainId: ChainId | undefined): Chain | undefined => {

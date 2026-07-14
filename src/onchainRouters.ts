@@ -206,6 +206,10 @@ export const ONCHAIN_SWAP_ROUTERS: Partial<Record<ChainId, OnchainSwapRouter>> =
         gateway: '0x844e4a0ade23b1BA5642A8d0010E42aE4434Df30',
         executor: '0x43a5f731FDECfB37Ac25307ed275a41fF52820e7',
     },
+    [ChainId.ROBINHOOD_MAINNET]: {
+        gateway: '0x6AEb9b27590387b8Fd0560C52f6B968C59C10Fab',
+        executor: '0x145878e7527a442549eD2c8434B0477C676824fa',
+    },
 }
 
 export function getOnchainSwapRouter(
