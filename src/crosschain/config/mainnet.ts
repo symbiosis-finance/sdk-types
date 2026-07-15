@@ -2651,8 +2651,12 @@ export const config: Config = {
             ],
             router: '0x0000000000000000000000000000000000000000',
             dexFee: 0,
-            metaRouter: '0xAdB2d3b711Bb8d8Ea92ff70292c466140432c278',
-            metaRouterGateway: '0xce8f24a58d85ed5c5a6824f7be1f8d4711a0eb4c',
+            // New-metaRouter-only chain: the metaRouter contract is the gateway (approve & call
+            // both target it). The gateway delegates inner swaps to a dedicated executor, so the
+            // legacy scheme must use metaRouterExecutor instead of metaRouter for the inner swap.
+            metaRouter: '0xcE8f24A58D85eD5c5A6824f7be1F8d4711A0eb4C',
+            metaRouterGateway: '0xcE8f24A58D85eD5c5A6824f7be1F8d4711A0eb4C',
+            metaRouterExecutor: '0xAdB2d3b711Bb8d8Ea92ff70292c466140432c278',
             bridge: '0x5523985926Aa12BA58DC5Ad00DDca99678D7227E',
             synthesis: '0x0000000000000000000000000000000000000000',
             portal: '0x292fC50e4eB66C3f6514b9E402dBc25961824D62',

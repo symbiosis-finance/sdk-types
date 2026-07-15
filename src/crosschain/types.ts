@@ -104,6 +104,10 @@ export type ChainConfig = {
     stables: TokenConstructor[]
     metaRouter: Address
     metaRouterGateway: Address
+    // Inner-swap executor for the legacy scheme. Only needed on new-metaRouter-only chains where
+    // metaRouter points at the new gateway (which delegates inner swaps to a dedicated executor
+    // instead of running them itself). When absent, the legacy scheme executes via metaRouter.
+    metaRouterExecutor?: Address
     multicallRouter: Address
     router: Address
     bridge: Address
