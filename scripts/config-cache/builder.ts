@@ -228,8 +228,9 @@ export class Builder {
 
             const metaRouterGatewayAddressFromConfig = chain.metaRouterGateway.toLowerCase()
 
-            if (metaRouterAddressFromConfig.toLowerCase() === metaRouterGatewayAddressFromConfig.toLowerCase()) {
-                console.log(chain.id, "New metarouter scheme applied")
+            // FIXME
+            if (chain.id === ChainId.ROBINHOOD_MAINNET) {
+                console.log(chain.id, 'Skip metaRouterGateway check for Robinhood')
                 return
             }
 

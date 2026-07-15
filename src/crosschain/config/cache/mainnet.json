@@ -8,50 +8,50 @@
             "coinGeckoId": "usd-coin",
             "id": 0,
             "tokens": [
-                { "index": 0, "tokenId": 122 },
-                { "index": 1, "tokenId": 129 },
-                { "index": 2, "tokenId": 137 },
-                { "index": 3, "tokenId": 138 },
-                { "index": 4, "tokenId": 142 },
-                { "index": 5, "tokenId": 128 },
-                { "index": 6, "tokenId": 143 },
-                { "index": 7, "tokenId": 150 },
-                { "index": 8, "tokenId": 154 },
-                { "index": 9, "tokenId": 156 },
-                { "index": 10, "tokenId": 158 },
-                { "index": 11, "tokenId": 149 },
-                { "index": 12, "tokenId": 136 },
-                { "index": 13, "tokenId": 164 },
-                { "index": 14, "tokenId": 141 },
-                { "index": 15, "tokenId": 167 },
-                { "index": 16, "tokenId": 162 },
-                { "index": 17, "tokenId": 140 },
-                { "index": 18, "tokenId": 170 },
-                { "index": 19, "tokenId": 172 },
-                { "index": 20, "tokenId": 175 },
-                { "index": 21, "tokenId": 159 },
-                { "index": 22, "tokenId": 181 },
-                { "index": 23, "tokenId": 178 },
-                { "index": 24, "tokenId": 144 },
-                { "index": 25, "tokenId": 190 },
-                { "index": 26, "tokenId": 191 },
-                { "index": 27, "tokenId": 193 },
-                { "index": 28, "tokenId": 192 },
-                { "index": 29, "tokenId": 196 },
-                { "index": 30, "tokenId": 199 },
-                { "index": 31, "tokenId": 202 },
-                { "index": 32, "tokenId": 203 },
-                { "index": 33, "tokenId": 207 },
-                { "index": 34, "tokenId": 182 },
-                { "index": 35, "tokenId": 180 },
-                { "index": 36, "tokenId": 219 },
-                { "index": 37, "tokenId": 177 },
-                { "index": 38, "tokenId": 221 },
-                { "index": 39, "tokenId": 215 },
-                { "index": 40, "tokenId": 222 },
-                { "index": 41, "tokenId": 189 },
-                { "index": 42, "tokenId": 223 },
-                { "index": 43, "tokenId": 224 }
+                { "index": 0, "tokenId": 123 },
+                { "index": 1, "tokenId": 130 },
+                { "index": 2, "tokenId": 138 },
+                { "index": 3, "tokenId": 139 },
+                { "index": 4, "tokenId": 143 },
+                { "index": 5, "tokenId": 129 },
+                { "index": 6, "tokenId": 144 },
+                { "index": 7, "tokenId": 151 },
+                { "index": 8, "tokenId": 155 },
+                { "index": 9, "tokenId": 157 },
+                { "index": 10, "tokenId": 159 },
+                { "index": 11, "tokenId": 150 },
+                { "index": 12, "tokenId": 137 },
+                { "index": 13, "tokenId": 165 },
+                { "index": 14, "tokenId": 142 },
+                { "index": 15, "tokenId": 168 },
+                { "index": 16, "tokenId": 163 },
+                { "index": 17, "tokenId": 141 },
+                { "index": 18, "tokenId": 171 },
+                { "index": 19, "tokenId": 173 },
+                { "index": 20, "tokenId": 176 },
+                { "index": 21, "tokenId": 160 },
+                { "index": 22, "tokenId": 182 },
+                { "index": 23, "tokenId": 179 },
+                { "index": 24, "tokenId": 145 },
+                { "index": 25, "tokenId": 191 },
+                { "index": 26, "tokenId": 192 },
+                { "index": 27, "tokenId": 194 },
+                { "index": 28, "tokenId": 193 },
+                { "index": 29, "tokenId": 197 },
+                { "index": 30, "tokenId": 200 },
+                { "index": 31, "tokenId": 203 },
+                { "index": 32, "tokenId": 204 },
+                { "index": 33, "tokenId": 208 },
+                { "index": 34, "tokenId": 183 },
+                { "index": 35, "tokenId": 181 },
+                { "index": 36, "tokenId": 220 },
+                { "index": 37, "tokenId": 178 },
+                { "index": 38, "tokenId": 222 },
+                { "index": 39, "tokenId": 216 },
+                { "index": 40, "tokenId": 223 },
+                { "index": 41, "tokenId": 190 },
+                { "index": 42, "tokenId": 224 },
+                { "index": 43, "tokenId": 225 }
             ]
         },
         {
@@ -62,35 +62,36 @@
             "coinGeckoId": "weth",
             "id": 1,
             "tokens": [
-                { "index": 0, "tokenId": 145 },
-                { "index": 1, "tokenId": 160 },
-                { "index": 2, "tokenId": 151 },
-                { "index": 3, "tokenId": 139 },
-                { "index": 4, "tokenId": 130 },
-                { "index": 5, "tokenId": 155 },
-                { "index": 6, "tokenId": 157 },
-                { "index": 7, "tokenId": 124 },
-                { "index": 8, "tokenId": 161 },
-                { "index": 9, "tokenId": 165 },
-                { "index": 10, "tokenId": 166 },
-                { "index": 11, "tokenId": 171 },
-                { "index": 12, "tokenId": 174 },
-                { "index": 13, "tokenId": 176 },
-                { "index": 14, "tokenId": 179 },
-                { "index": 15, "tokenId": 184 },
-                { "index": 16, "tokenId": 186 },
-                { "index": 17, "tokenId": 188 },
-                { "index": 18, "tokenId": 194 },
-                { "index": 19, "tokenId": 205 },
-                { "index": 20, "tokenId": 206 },
-                { "index": 21, "tokenId": 208 },
-                { "index": 22, "tokenId": 209 },
-                { "index": 23, "tokenId": 210 },
-                { "index": 24, "tokenId": 211 },
-                { "index": 25, "tokenId": 212 },
-                { "index": 26, "tokenId": 214 },
-                { "index": 27, "tokenId": 217 },
-                { "index": 28, "tokenId": 218 }
+                { "index": 0, "tokenId": 146 },
+                { "index": 1, "tokenId": 161 },
+                { "index": 2, "tokenId": 152 },
+                { "index": 3, "tokenId": 140 },
+                { "index": 4, "tokenId": 131 },
+                { "index": 5, "tokenId": 156 },
+                { "index": 6, "tokenId": 158 },
+                { "index": 7, "tokenId": 125 },
+                { "index": 8, "tokenId": 162 },
+                { "index": 9, "tokenId": 166 },
+                { "index": 10, "tokenId": 167 },
+                { "index": 11, "tokenId": 172 },
+                { "index": 12, "tokenId": 175 },
+                { "index": 13, "tokenId": 177 },
+                { "index": 14, "tokenId": 180 },
+                { "index": 15, "tokenId": 185 },
+                { "index": 16, "tokenId": 187 },
+                { "index": 17, "tokenId": 189 },
+                { "index": 18, "tokenId": 195 },
+                { "index": 19, "tokenId": 206 },
+                { "index": 20, "tokenId": 207 },
+                { "index": 21, "tokenId": 209 },
+                { "index": 22, "tokenId": 210 },
+                { "index": 23, "tokenId": 211 },
+                { "index": 24, "tokenId": 212 },
+                { "index": 25, "tokenId": 213 },
+                { "index": 26, "tokenId": 215 },
+                { "index": 27, "tokenId": 218 },
+                { "index": 28, "tokenId": 219 },
+                { "index": 29, "tokenId": 226 }
             ]
         },
         {
@@ -101,10 +102,10 @@
             "coinGeckoId": "bitcoin",
             "id": 2,
             "tokens": [
-                { "index": 1, "tokenId": 131 },
-                { "index": 3, "tokenId": 183 },
-                { "index": 4, "tokenId": 185 },
-                { "index": 7, "tokenId": 198 }
+                { "index": 1, "tokenId": 132 },
+                { "index": 3, "tokenId": 184 },
+                { "index": 4, "tokenId": 186 },
+                { "index": 7, "tokenId": 199 }
             ]
         },
         {
@@ -115,10 +116,10 @@
             "coinGeckoId": "g-token",
             "id": 3,
             "tokens": [
-                { "index": 0, "tokenId": 126 },
-                { "index": 1, "tokenId": 133 },
-                { "index": 2, "tokenId": 197 },
-                { "index": 3, "tokenId": 168 }
+                { "index": 0, "tokenId": 127 },
+                { "index": 1, "tokenId": 134 },
+                { "index": 2, "tokenId": 198 },
+                { "index": 3, "tokenId": 169 }
             ]
         },
         {
@@ -129,8 +130,8 @@
             "coinGeckoId": "binancecoin",
             "id": 4,
             "tokens": [
-                { "index": 0, "tokenId": 134 },
-                { "index": 1, "tokenId": 213 }
+                { "index": 0, "tokenId": 135 },
+                { "index": 1, "tokenId": 214 }
             ]
         },
         {
@@ -141,12 +142,12 @@
             "coinGeckoId": "symbiosis-finance",
             "id": 5,
             "tokens": [
-                { "index": 0, "tokenId": 123 },
-                { "index": 1, "tokenId": 152 },
-                { "index": 2, "tokenId": 132 },
-                { "index": 3, "tokenId": 147 },
-                { "index": 4, "tokenId": 163 },
-                { "index": 5, "tokenId": 173 },
+                { "index": 0, "tokenId": 124 },
+                { "index": 1, "tokenId": 153 },
+                { "index": 2, "tokenId": 133 },
+                { "index": 3, "tokenId": 148 },
+                { "index": 4, "tokenId": 164 },
+                { "index": 5, "tokenId": 174 },
                 { "index": 6, "tokenId": 25 }
             ]
         },
@@ -158,10 +159,10 @@
             "coinGeckoId": "apecoin",
             "id": 6,
             "tokens": [
-                { "index": 0, "tokenId": 127 },
-                { "index": 1, "tokenId": 153 },
-                { "index": 2, "tokenId": 220 },
-                { "index": 3, "tokenId": 216 }
+                { "index": 0, "tokenId": 128 },
+                { "index": 1, "tokenId": 154 },
+                { "index": 2, "tokenId": 221 },
+                { "index": 3, "tokenId": 217 }
             ]
         },
         {
@@ -172,8 +173,8 @@
             "coinGeckoId": "evaa-protocol",
             "id": 7,
             "tokens": [
-                { "index": 0, "tokenId": 135 },
-                { "index": 1, "tokenId": 200 }
+                { "index": 0, "tokenId": 136 },
+                { "index": 1, "tokenId": 201 }
             ]
         },
         {
@@ -184,8 +185,8 @@
             "coinGeckoId": "dropee",
             "id": 8,
             "tokens": [
-                { "index": 0, "tokenId": 169 },
-                { "index": 1, "tokenId": 201 }
+                { "index": 0, "tokenId": 170 },
+                { "index": 1, "tokenId": 202 }
             ]
         }
     ],
@@ -1637,14 +1638,14 @@
             "id": 110
         },
         {
-            "decimals": 8,
-            "symbol": "BTC",
-            "name": "Bitcoin",
-            "chainId": 3652501241,
-            "address": "0x1DfC1e32d75b3f4Cb2F2B1BCEcAD984E99eeba05",
+            "decimals": 18,
+            "symbol": "WETH",
+            "name": "Wrapped ETH",
+            "chainId": 4663,
+            "address": "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png"
+                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png",
+                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png"
             },
             "deprecated": false,
             "id": 111
@@ -1654,7 +1655,7 @@
             "symbol": "BTC",
             "name": "Bitcoin",
             "chainId": 3652501241,
-            "address": "0x334524A0ADB21425afCF77aC40580D68e30E51d8",
+            "address": "0x1DfC1e32d75b3f4Cb2F2B1BCEcAD984E99eeba05",
             "icons": {
                 "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png",
                 "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png"
@@ -1667,7 +1668,7 @@
             "symbol": "BTC",
             "name": "Bitcoin",
             "chainId": 3652501241,
-            "address": "0x648B87Fcf5d3fA4948e85ba515a41334933220ba",
+            "address": "0x334524A0ADB21425afCF77aC40580D68e30E51d8",
             "icons": {
                 "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png",
                 "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png"
@@ -1680,13 +1681,26 @@
             "symbol": "BTC",
             "name": "Bitcoin",
             "chainId": 3652501241,
-            "address": "0x85a8741794a22A9b3D2AdB2c6CeC605b6232B2E8",
+            "address": "0x648B87Fcf5d3fA4948e85ba515a41334933220ba",
             "icons": {
                 "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png",
                 "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png"
             },
             "deprecated": false,
             "id": 114
+        },
+        {
+            "decimals": 8,
+            "symbol": "BTC",
+            "name": "Bitcoin",
+            "chainId": 3652501241,
+            "address": "0x85a8741794a22A9b3D2AdB2c6CeC605b6232B2E8",
+            "icons": {
+                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png",
+                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/1.png"
+            },
+            "deprecated": false,
+            "id": 115
         },
         {
             "decimals": 18,
@@ -1700,7 +1714,7 @@
             },
             "chainFromId": 9,
             "deprecated": false,
-            "id": 115,
+            "id": 116,
             "originalId": 108
         },
         {
@@ -1715,8 +1729,8 @@
             },
             "chainFromId": 3652501241,
             "deprecated": false,
-            "id": 116,
-            "originalId": 114
+            "id": 117,
+            "originalId": 115
         },
         {
             "decimals": 18,
@@ -1730,7 +1744,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 117,
+            "id": 118,
             "originalId": 1
         },
         {
@@ -1745,8 +1759,8 @@
             },
             "chainFromId": 3652501241,
             "deprecated": false,
-            "id": 118,
-            "originalId": 111
+            "id": 119,
+            "originalId": 112
         },
         {
             "decimals": 6,
@@ -1760,7 +1774,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 119,
+            "id": 120,
             "originalId": 0
         },
         {
@@ -1775,7 +1789,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 120,
+            "id": 121,
             "originalId": 2
         },
         {
@@ -1790,7 +1804,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 121,
+            "id": 122,
             "originalId": 3
         },
         {
@@ -1805,7 +1819,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 122,
+            "id": 123,
             "originalId": 0
         },
         {
@@ -1820,7 +1834,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 123,
+            "id": 124,
             "originalId": 1
         },
         {
@@ -1835,7 +1849,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 124,
+            "id": 125,
             "originalId": 2
         },
         {
@@ -1850,7 +1864,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 125,
+            "id": 126,
             "originalId": 4
         },
         {
@@ -1865,7 +1879,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 126,
+            "id": 127,
             "originalId": 6
         },
         {
@@ -1880,7 +1894,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 127,
+            "id": 128,
             "originalId": 7
         },
         {
@@ -1895,7 +1909,7 @@
             },
             "chainFromId": 56,
             "deprecated": false,
-            "id": 128,
+            "id": 129,
             "originalId": 9
         },
         {
@@ -1910,7 +1924,7 @@
             },
             "chainFromId": 56,
             "deprecated": true,
-            "id": 129,
+            "id": 130,
             "originalId": 10
         },
         {
@@ -1925,7 +1939,7 @@
             },
             "chainFromId": 56,
             "deprecated": false,
-            "id": 130,
+            "id": 131,
             "originalId": 11
         },
         {
@@ -1940,7 +1954,7 @@
             },
             "chainFromId": 56,
             "deprecated": false,
-            "id": 131,
+            "id": 132,
             "originalId": 12
         },
         {
@@ -1955,7 +1969,7 @@
             },
             "chainFromId": 56,
             "deprecated": false,
-            "id": 132,
+            "id": 133,
             "originalId": 13
         },
         {
@@ -1970,7 +1984,7 @@
             },
             "chainFromId": 56,
             "deprecated": false,
-            "id": 133,
+            "id": 134,
             "originalId": 14
         },
         {
@@ -1985,7 +1999,7 @@
             },
             "chainFromId": 56,
             "deprecated": false,
-            "id": 134,
+            "id": 135,
             "originalId": 16
         },
         {
@@ -2000,7 +2014,7 @@
             },
             "chainFromId": 56,
             "deprecated": false,
-            "id": 135,
+            "id": 136,
             "originalId": 17
         },
         {
@@ -2015,7 +2029,7 @@
             },
             "chainFromId": 43114,
             "deprecated": false,
-            "id": 136,
+            "id": 137,
             "originalId": 18
         },
         {
@@ -2030,7 +2044,7 @@
             },
             "chainFromId": 43114,
             "deprecated": true,
-            "id": 137,
+            "id": 138,
             "originalId": 19
         },
         {
@@ -2045,7 +2059,7 @@
             },
             "chainFromId": 137,
             "deprecated": false,
-            "id": 138,
+            "id": 139,
             "originalId": 20
         },
         {
@@ -2060,7 +2074,7 @@
             },
             "chainFromId": 137,
             "deprecated": false,
-            "id": 139,
+            "id": 140,
             "originalId": 21
         },
         {
@@ -2075,7 +2089,7 @@
             },
             "chainFromId": 40,
             "deprecated": false,
-            "id": 140,
+            "id": 141,
             "originalId": 22
         },
         {
@@ -2090,7 +2104,7 @@
             },
             "chainFromId": 2222,
             "deprecated": true,
-            "id": 141,
+            "id": 142,
             "originalId": 23
         },
         {
@@ -2105,7 +2119,7 @@
             },
             "chainFromId": 288,
             "deprecated": false,
-            "id": 142,
+            "id": 143,
             "originalId": 24
         },
         {
@@ -2120,7 +2134,7 @@
             },
             "chainFromId": 324,
             "deprecated": false,
-            "id": 143,
+            "id": 144,
             "originalId": 26
         },
         {
@@ -2135,7 +2149,7 @@
             },
             "chainFromId": 324,
             "deprecated": true,
-            "id": 144,
+            "id": 145,
             "originalId": 27
         },
         {
@@ -2150,7 +2164,7 @@
             },
             "chainFromId": 324,
             "deprecated": false,
-            "id": 145,
+            "id": 146,
             "originalId": 28
         },
         {
@@ -2165,7 +2179,7 @@
             },
             "chainFromId": 324,
             "deprecated": true,
-            "id": 146,
+            "id": 147,
             "originalId": 29
         },
         {
@@ -2180,7 +2194,7 @@
             },
             "chainFromId": 324,
             "deprecated": false,
-            "id": 147,
+            "id": 148,
             "originalId": 30
         },
         {
@@ -2195,7 +2209,7 @@
             },
             "chainFromId": 324,
             "deprecated": true,
-            "id": 148,
+            "id": 149,
             "originalId": 31
         },
         {
@@ -2210,7 +2224,7 @@
             },
             "chainFromId": 42161,
             "deprecated": false,
-            "id": 149,
+            "id": 150,
             "originalId": 32
         },
         {
@@ -2225,7 +2239,7 @@
             },
             "chainFromId": 42161,
             "deprecated": true,
-            "id": 150,
+            "id": 151,
             "originalId": 33
         },
         {
@@ -2240,7 +2254,7 @@
             },
             "chainFromId": 42161,
             "deprecated": false,
-            "id": 151,
+            "id": 152,
             "originalId": 34
         },
         {
@@ -2255,7 +2269,7 @@
             },
             "chainFromId": 42161,
             "deprecated": false,
-            "id": 152,
+            "id": 153,
             "originalId": 35
         },
         {
@@ -2270,7 +2284,7 @@
             },
             "chainFromId": 42161,
             "deprecated": false,
-            "id": 153,
+            "id": 154,
             "originalId": 36
         },
         {
@@ -2285,7 +2299,7 @@
             },
             "chainFromId": 10,
             "deprecated": false,
-            "id": 154,
+            "id": 155,
             "originalId": 37
         },
         {
@@ -2300,7 +2314,7 @@
             },
             "chainFromId": 10,
             "deprecated": false,
-            "id": 155,
+            "id": 156,
             "originalId": 38
         },
         {
@@ -2315,7 +2329,7 @@
             },
             "chainFromId": 42170,
             "deprecated": false,
-            "id": 156,
+            "id": 157,
             "originalId": 39
         },
         {
@@ -2330,7 +2344,7 @@
             },
             "chainFromId": 42170,
             "deprecated": false,
-            "id": 157,
+            "id": 158,
             "originalId": 40
         },
         {
@@ -2345,7 +2359,7 @@
             },
             "chainFromId": 1101,
             "deprecated": true,
-            "id": 158,
+            "id": 159,
             "originalId": 41
         },
         {
@@ -2360,7 +2374,7 @@
             },
             "chainFromId": 1101,
             "deprecated": true,
-            "id": 159,
+            "id": 160,
             "originalId": 42
         },
         {
@@ -2375,7 +2389,7 @@
             },
             "chainFromId": 1101,
             "deprecated": true,
-            "id": 160,
+            "id": 161,
             "originalId": 43
         },
         {
@@ -2390,7 +2404,7 @@
             },
             "chainFromId": 59144,
             "deprecated": false,
-            "id": 161,
+            "id": 162,
             "originalId": 44
         },
         {
@@ -2405,7 +2419,7 @@
             },
             "chainFromId": 59144,
             "deprecated": false,
-            "id": 162,
+            "id": 163,
             "originalId": 45
         },
         {
@@ -2420,7 +2434,7 @@
             },
             "chainFromId": 59144,
             "deprecated": false,
-            "id": 163,
+            "id": 164,
             "originalId": 46
         },
         {
@@ -2435,7 +2449,7 @@
             },
             "chainFromId": 5000,
             "deprecated": false,
-            "id": 164,
+            "id": 165,
             "originalId": 47
         },
         {
@@ -2450,7 +2464,7 @@
             },
             "chainFromId": 5000,
             "deprecated": false,
-            "id": 165,
+            "id": 166,
             "originalId": 48
         },
         {
@@ -2465,7 +2479,7 @@
             },
             "chainFromId": 8453,
             "deprecated": false,
-            "id": 166,
+            "id": 167,
             "originalId": 49
         },
         {
@@ -2480,7 +2494,7 @@
             },
             "chainFromId": 8453,
             "deprecated": false,
-            "id": 167,
+            "id": 168,
             "originalId": 50
         },
         {
@@ -2495,7 +2509,7 @@
             },
             "chainFromId": 8453,
             "deprecated": false,
-            "id": 168,
+            "id": 169,
             "originalId": 51
         },
         {
@@ -2510,7 +2524,7 @@
             },
             "chainFromId": 8453,
             "deprecated": false,
-            "id": 169,
+            "id": 170,
             "originalId": 52
         },
         {
@@ -2525,7 +2539,7 @@
             },
             "chainFromId": 728126428,
             "deprecated": false,
-            "id": 170,
+            "id": 171,
             "originalId": 53
         },
         {
@@ -2540,7 +2554,7 @@
             },
             "chainFromId": 534352,
             "deprecated": false,
-            "id": 171,
+            "id": 172,
             "originalId": 54
         },
         {
@@ -2555,7 +2569,7 @@
             },
             "chainFromId": 534352,
             "deprecated": false,
-            "id": 172,
+            "id": 173,
             "originalId": 55
         },
         {
@@ -2570,7 +2584,7 @@
             },
             "chainFromId": 534352,
             "deprecated": false,
-            "id": 173,
+            "id": 174,
             "originalId": 56
         },
         {
@@ -2585,7 +2599,7 @@
             },
             "chainFromId": 169,
             "deprecated": false,
-            "id": 174,
+            "id": 175,
             "originalId": 57
         },
         {
@@ -2600,7 +2614,7 @@
             },
             "chainFromId": 169,
             "deprecated": false,
-            "id": 175,
+            "id": 176,
             "originalId": 58
         },
         {
@@ -2615,7 +2629,7 @@
             },
             "chainFromId": 1088,
             "deprecated": false,
-            "id": 176,
+            "id": 177,
             "originalId": 59
         },
         {
@@ -2630,7 +2644,7 @@
             },
             "chainFromId": 5165,
             "deprecated": true,
-            "id": 177,
+            "id": 178,
             "originalId": 60
         },
         {
@@ -2645,7 +2659,7 @@
             },
             "chainFromId": 5165,
             "deprecated": true,
-            "id": 178,
+            "id": 179,
             "originalId": 61
         },
         {
@@ -2660,7 +2674,7 @@
             },
             "chainFromId": 34443,
             "deprecated": false,
-            "id": 179,
+            "id": 180,
             "originalId": 62
         },
         {
@@ -2675,7 +2689,7 @@
             },
             "chainFromId": 30,
             "deprecated": false,
-            "id": 180,
+            "id": 181,
             "originalId": 63
         },
         {
@@ -2690,7 +2704,7 @@
             },
             "chainFromId": 30,
             "deprecated": true,
-            "id": 181,
+            "id": 182,
             "originalId": 64
         },
         {
@@ -2705,7 +2719,7 @@
             },
             "chainFromId": 30,
             "deprecated": true,
-            "id": 182,
+            "id": 183,
             "originalId": 65
         },
         {
@@ -2720,7 +2734,7 @@
             },
             "chainFromId": 30,
             "deprecated": false,
-            "id": 183,
+            "id": 184,
             "originalId": 66
         },
         {
@@ -2735,7 +2749,7 @@
             },
             "chainFromId": 81457,
             "deprecated": false,
-            "id": 184,
+            "id": 185,
             "originalId": 68
         },
         {
@@ -2750,7 +2764,7 @@
             },
             "chainFromId": 4200,
             "deprecated": false,
-            "id": 185,
+            "id": 186,
             "originalId": 69
         },
         {
@@ -2765,7 +2779,7 @@
             },
             "chainFromId": 810180,
             "deprecated": true,
-            "id": 186,
+            "id": 187,
             "originalId": 70
         },
         {
@@ -2780,7 +2794,7 @@
             },
             "chainFromId": 1116,
             "deprecated": true,
-            "id": 187,
+            "id": 188,
             "originalId": 71
         },
         {
@@ -2795,7 +2809,7 @@
             },
             "chainFromId": 167000,
             "deprecated": false,
-            "id": 188,
+            "id": 189,
             "originalId": 72
         },
         {
@@ -2810,7 +2824,7 @@
             },
             "chainFromId": 1329,
             "deprecated": false,
-            "id": 189,
+            "id": 190,
             "originalId": 73
         },
         {
@@ -2825,7 +2839,7 @@
             },
             "chainFromId": 1329,
             "deprecated": true,
-            "id": 190,
+            "id": 191,
             "originalId": 74
         },
         {
@@ -2840,7 +2854,7 @@
             },
             "chainFromId": 1329,
             "deprecated": true,
-            "id": 191,
+            "id": 192,
             "originalId": 75
         },
         {
@@ -2855,7 +2869,7 @@
             },
             "chainFromId": 7000,
             "deprecated": false,
-            "id": 192,
+            "id": 193,
             "originalId": 76
         },
         {
@@ -2870,7 +2884,7 @@
             },
             "chainFromId": 25,
             "deprecated": false,
-            "id": 193,
+            "id": 194,
             "originalId": 77
         },
         {
@@ -2885,7 +2899,7 @@
             },
             "chainFromId": 252,
             "deprecated": false,
-            "id": 194,
+            "id": 195,
             "originalId": 78
         },
         {
@@ -2900,7 +2914,7 @@
             },
             "chainFromId": 252,
             "deprecated": false,
-            "id": 195,
+            "id": 196,
             "originalId": 79
         },
         {
@@ -2915,7 +2929,7 @@
             },
             "chainFromId": 1625,
             "deprecated": false,
-            "id": 196,
+            "id": 197,
             "originalId": 80
         },
         {
@@ -2930,7 +2944,7 @@
             },
             "chainFromId": 1625,
             "deprecated": false,
-            "id": 197,
+            "id": 198,
             "originalId": 81
         },
         {
@@ -2945,7 +2959,7 @@
             },
             "chainFromId": 223,
             "deprecated": false,
-            "id": 198,
+            "id": 199,
             "originalId": 82
         },
         {
@@ -2961,7 +2975,7 @@
             "chainFromId": 85918,
             "deprecated": false,
             "attributes": { "ton": "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs" },
-            "id": 199,
+            "id": 200,
             "originalId": 83
         },
         {
@@ -2977,7 +2991,7 @@
             "chainFromId": 85918,
             "deprecated": false,
             "attributes": { "ton": "EQBKMfjX_a_dsOLm-juxyVZytFP7_KKnzGv6J01kGc72gVBp" },
-            "id": 200,
+            "id": 201,
             "originalId": 84
         },
         {
@@ -2993,7 +3007,7 @@
             "chainFromId": 85918,
             "deprecated": false,
             "attributes": { "ton": "EQDPGjm4PU81Dez2rmQFQU2hw_i8hut5GTU91HOtzZbPEWf8" },
-            "id": 201,
+            "id": 202,
             "originalId": 85
         },
         {
@@ -3008,7 +3022,7 @@
             },
             "chainFromId": 388,
             "deprecated": false,
-            "id": 202,
+            "id": 203,
             "originalId": 86
         },
         {
@@ -3023,7 +3037,7 @@
             },
             "chainFromId": 2818,
             "deprecated": false,
-            "id": 203,
+            "id": 204,
             "originalId": 87
         },
         {
@@ -3038,7 +3052,7 @@
             },
             "chainFromId": 2345,
             "deprecated": false,
-            "id": 204,
+            "id": 205,
             "originalId": 88
         },
         {
@@ -3053,7 +3067,7 @@
             },
             "chainFromId": 146,
             "deprecated": false,
-            "id": 205,
+            "id": 206,
             "originalId": 89
         },
         {
@@ -3068,7 +3082,7 @@
             },
             "chainFromId": 2741,
             "deprecated": false,
-            "id": 206,
+            "id": 207,
             "originalId": 90
         },
         {
@@ -3083,7 +3097,7 @@
             },
             "chainFromId": 100,
             "deprecated": false,
-            "id": 207,
+            "id": 208,
             "originalId": 91
         },
         {
@@ -3098,7 +3112,7 @@
             },
             "chainFromId": 100,
             "deprecated": false,
-            "id": 208,
+            "id": 209,
             "originalId": 92
         },
         {
@@ -3113,7 +3127,7 @@
             },
             "chainFromId": 80094,
             "deprecated": false,
-            "id": 209,
+            "id": 210,
             "originalId": 93
         },
         {
@@ -3128,7 +3142,7 @@
             },
             "chainFromId": 130,
             "deprecated": false,
-            "id": 210,
+            "id": 211,
             "originalId": 94
         },
         {
@@ -3143,7 +3157,7 @@
             },
             "chainFromId": 1868,
             "deprecated": false,
-            "id": 211,
+            "id": 212,
             "originalId": 95
         },
         {
@@ -3158,7 +3172,7 @@
             },
             "chainFromId": 204,
             "deprecated": false,
-            "id": 212,
+            "id": 213,
             "originalId": 96
         },
         {
@@ -3173,7 +3187,7 @@
             },
             "chainFromId": 204,
             "deprecated": false,
-            "id": 213,
+            "id": 214,
             "originalId": 97
         },
         {
@@ -3188,7 +3202,7 @@
             },
             "chainFromId": 999,
             "deprecated": false,
-            "id": 214,
+            "id": 215,
             "originalId": 98
         },
         {
@@ -3203,7 +3217,7 @@
             },
             "chainFromId": 999,
             "deprecated": false,
-            "id": 215,
+            "id": 216,
             "originalId": 99
         },
         {
@@ -3218,7 +3232,7 @@
             },
             "chainFromId": 999,
             "deprecated": false,
-            "id": 216,
+            "id": 217,
             "originalId": 100
         },
         {
@@ -3233,7 +3247,7 @@
             },
             "chainFromId": 747474,
             "deprecated": true,
-            "id": 217,
+            "id": 218,
             "originalId": 101
         },
         {
@@ -3248,7 +3262,7 @@
             },
             "chainFromId": 747474,
             "deprecated": false,
-            "id": 218,
+            "id": 219,
             "originalId": 102
         },
         {
@@ -3263,7 +3277,7 @@
             },
             "chainFromId": 747474,
             "deprecated": false,
-            "id": 219,
+            "id": 220,
             "originalId": 103
         },
         {
@@ -3278,7 +3292,7 @@
             },
             "chainFromId": 33139,
             "deprecated": false,
-            "id": 220,
+            "id": 221,
             "originalId": 104
         },
         {
@@ -3293,7 +3307,7 @@
             },
             "chainFromId": 9745,
             "deprecated": false,
-            "id": 221,
+            "id": 222,
             "originalId": 105
         },
         {
@@ -3308,7 +3322,7 @@
             },
             "chainFromId": 143,
             "deprecated": false,
-            "id": 222,
+            "id": 223,
             "originalId": 106
         },
         {
@@ -3323,7 +3337,7 @@
             },
             "chainFromId": 4217,
             "deprecated": false,
-            "id": 223,
+            "id": 224,
             "originalId": 109
         },
         {
@@ -3338,8 +3352,23 @@
             },
             "chainFromId": 4663,
             "deprecated": false,
-            "id": 224,
+            "id": 225,
             "originalId": 110
+        },
+        {
+            "decimals": 18,
+            "symbol": "sWETH",
+            "name": "Synthetic WETH From Robinhood",
+            "chainId": 13863860,
+            "address": "0xa39662Fc62B20E07F367BA033c8A760e38bf6f31",
+            "icons": {
+                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png",
+                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png"
+            },
+            "chainFromId": 4663,
+            "deprecated": false,
+            "id": 226,
+            "originalId": 111
         },
         {
             "decimals": 18,
@@ -3353,8 +3382,8 @@
             },
             "chainFromId": 56,
             "deprecated": false,
-            "id": 225,
-            "originalId": 117
+            "id": 227,
+            "originalId": 118
         },
         {
             "decimals": 6,
@@ -3368,8 +3397,8 @@
             },
             "chainFromId": 40,
             "deprecated": false,
-            "id": 226,
-            "originalId": 119
+            "id": 228,
+            "originalId": 120
         },
         {
             "decimals": 18,
@@ -3383,7 +3412,7 @@
             },
             "chainFromId": 9,
             "deprecated": false,
-            "id": 227,
+            "id": 229,
             "originalId": 108
         },
         {
@@ -3398,7 +3427,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 228,
+            "id": 230,
             "originalId": 0
         },
         {
@@ -3413,7 +3442,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 229,
+            "id": 231,
             "originalId": 2
         },
         {
@@ -3428,7 +3457,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 230,
+            "id": 232,
             "originalId": 3
         },
         {
@@ -3443,7 +3472,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 231,
+            "id": 233,
             "originalId": 4
         },
         {
@@ -3458,8 +3487,8 @@
             },
             "chainFromId": 3652501241,
             "deprecated": false,
-            "id": 232,
-            "originalId": 112
+            "id": 234,
+            "originalId": 113
         },
         {
             "decimals": 18,
@@ -3473,7 +3502,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 233,
+            "id": 235,
             "originalId": 5
         },
         {
@@ -3488,8 +3517,8 @@
             },
             "chainFromId": 3652501241,
             "deprecated": false,
-            "id": 234,
-            "originalId": 113
+            "id": 236,
+            "originalId": 114
         },
         {
             "decimals": 6,
@@ -3503,7 +3532,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 235,
+            "id": 237,
             "originalId": 3
         }
     ]
