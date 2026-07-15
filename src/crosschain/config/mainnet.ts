@@ -2637,17 +2637,17 @@ export const config: Config = {
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/33793.png',
                     },
                 },
-                {
-                    name: 'Wrapped ETH',
-                    symbol: 'WETH',
-                    address: '0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73',
-                    chainId: ChainId.ROBINHOOD_MAINNET,
-                    decimals: 18,
-                    icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
-                    },
-                },
+                // {
+                //     name: 'Wrapped ETH',
+                //     symbol: 'WETH',
+                //     address: '0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73',
+                //     chainId: ChainId.ROBINHOOD_MAINNET,
+                //     decimals: 18,
+                //     icons: {
+                //         large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
+                //         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
+                //     },
+                // },
             ],
             router: '0x0000000000000000000000000000000000000000',
             dexFee: 0,
