@@ -376,11 +376,25 @@ export const CHANGELLY_NATIVE_CHAINS = [
 
 const CHANGELLY_NATIVE_CHAIN_IDS = new Set<ChainId>(CHANGELLY_NATIVE_CHAINS.map(({ chainId }) => chainId))
 
+// Native L1 chains reachable as THORChain swap destinations.
+export const THORCHAIN_L1_DEST_CHAIN_IDS: ChainId[] = [
+    ChainId.BTC_MAINNET,
+    ChainId.LTC_MAINNET,
+    ChainId.BCH_MAINNET,
+    ChainId.XRP_MAINNET,
+    ChainId.DOGE_MAINNET,
+]
+
 // --- Chain detection ---
 
 export function isChangellyNativeChainId(chainId: ChainId | undefined): boolean {
     if (chainId === undefined) return false
     return CHANGELLY_NATIVE_CHAIN_IDS.has(chainId)
+}
+
+export function isThorChainL1DestChainId(chainId: ChainId | undefined): boolean {
+    if (chainId === undefined) return false
+    return THORCHAIN_L1_DEST_CHAIN_IDS.includes(chainId)
 }
 
 // Lives here rather than in ../constants to avoid a module-init cycle (depends on isChangellyNativeChainId).
@@ -393,7 +407,8 @@ export function isEvmChainId(chainId: ChainId | undefined): boolean {
         !isSolanaChainId(chainId) &&
         !isQuaiChainId(chainId) &&
         !isPerpChainId(chainId) &&
-        !isChangellyNativeChainId(chainId)
+        !isChangellyNativeChainId(chainId) &&
+        !isThorChainL1DestChainId(chainId)
     )
 }
 

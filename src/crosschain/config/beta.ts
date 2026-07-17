@@ -1,6 +1,6 @@
 import { ChainId } from '../../constants'
 import { Token } from '../../entities'
-import { CHANGELLY_NATIVE_CHAINS } from '../constants'
+import { CHANGELLY_NATIVE_CHAINS, THORCHAIN_L1_DEST_CHAIN_IDS } from '../constants'
 import type { Config } from '../types'
 
 export const config: Config = {
@@ -151,7 +151,12 @@ export const config: Config = {
             fabric: '0x0000000000000000000000000000000000000000',
             multicallRouter: '0x0000000000000000000000000000000000000000',
         },
-        ...CHANGELLY_NATIVE_CHAINS.map(({ chainId: id }) => ({
+        ...[
+            ...new Set<ChainId>([
+                ...CHANGELLY_NATIVE_CHAINS.map(({ chainId }) => chainId),
+                ...THORCHAIN_L1_DEST_CHAIN_IDS.filter((id) => id !== ChainId.BTC_MAINNET),
+            ]),
+        ].map((id) => ({
             id,
             rpc: '',
             filterBlockOffset: 0,
