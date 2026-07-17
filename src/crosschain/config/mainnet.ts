@@ -480,11 +480,10 @@ export const config: Config = {
                 withdrawDelay: 900, // 15 mins
             },
             intentConfig: {
-                depositorySrc: '0x695EeaeCE7ce4502850B1F6B4f14b97DBA02E840',
-                depositoryDst: '0x4Ac560A3A8FaDd1662CF9439bb1114AbAa3BE547',
-                directUnlocker: '0xBF6FBa492d87B874ef095e4a3E6BfBFbD2177cc9',
-                deadlineUnlocker: '0x4418f8f4826a5d999c7dfE6D16B984e39D2Ed32a',
-                bridge: '0x85700Ed7C30625eD28613d75e85C58EF0056263F',
+                depositorySrc: '0xDCD0Cb19bbe117648cF138F816d08248AF241694',
+                depositoryDst: '0x54cCE448468c137C05C895aAC9ca769B82e1fE72',
+                deadlineUnlocker: '0x52a769954A75816F0953D7cEbae1E1e365EB1f33',
+                bridge: '0xb8f275fBf7A959F4BCE59999A2EF122A099e81A8',
             },
         },
         {
@@ -888,11 +887,10 @@ export const config: Config = {
                 withdrawDelay: 900, // 15 mins
             },
             intentConfig: {
-                depositorySrc: '0x695EeaeCE7ce4502850B1F6B4f14b97DBA02E840',
-                depositoryDst: '0x4Ac560A3A8FaDd1662CF9439bb1114AbAa3BE547',
-                directUnlocker: '0xBF6FBa492d87B874ef095e4a3E6BfBFbD2177cc9',
-                deadlineUnlocker: '0x4418f8f4826a5d999c7dfE6D16B984e39D2Ed32a',
-                bridge: '0x85700Ed7C30625eD28613d75e85C58EF0056263F',
+                depositorySrc: '0xDCD0Cb19bbe117648cF138F816d08248AF241694',
+                depositoryDst: '0x54cCE448468c137C05C895aAC9ca769B82e1fE72',
+                deadlineUnlocker: '0x52a769954A75816F0953D7cEbae1E1e365EB1f33',
+                bridge: '0x5523985926Aa12BA58DC5Ad00DDca99678D7227E',
             },
         },
         {
@@ -1196,11 +1194,10 @@ export const config: Config = {
             fabric: '0x44487a445a7595446309464A82244B4bD4e325D5',
             multicallRouter: '0x01A3c8E513B758EBB011F7AFaf6C37616c9C24d9',
             intentConfig: {
-                depositorySrc: '0x695EeaeCE7ce4502850B1F6B4f14b97DBA02E840',
-                depositoryDst: '0x4Ac560A3A8FaDd1662CF9439bb1114AbAa3BE547',
-                directUnlocker: '0xBF6FBa492d87B874ef095e4a3E6BfBFbD2177cc9',
-                deadlineUnlocker: '0x4418f8f4826a5d999c7dfE6D16B984e39D2Ed32a',
-                bridge: '0x85700Ed7C30625eD28613d75e85C58EF0056263F',
+                depositorySrc: '0xDCD0Cb19bbe117648cF138F816d08248AF241694',
+                depositoryDst: '0x54cCE448468c137C05C895aAC9ca769B82e1fE72',
+                deadlineUnlocker: '0x52a769954A75816F0953D7cEbae1E1e365EB1f33',
+                bridge: '0x8097f0B9f06C27AF9579F75762F971D745bb222F',
             },
         },
         {
