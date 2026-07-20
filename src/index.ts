@@ -29,6 +29,7 @@ export * from './crosschain/tradeType'
 export * from './crosschain/tronTypes'
 export type { SwapLabel } from './crosschain/labels'
 export * from './crosschain/constants'
+export * from './crosschain/addressValidation'
 export * from './crosschain/tradeUtils'
 // Pure @ethersproject crypto utils consumers rely on (getAddress: EIP-55 checksum;
 // formatBytes32String: app clientId encoding).
