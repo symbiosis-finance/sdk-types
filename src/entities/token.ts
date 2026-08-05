@@ -1022,4 +1022,15 @@ export const WETH = {
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
         },
     }),
+    [ChainId.STABLE_MAINNET]: new Token({
+        chainId: ChainId.STABLE_MAINNET,
+        address: '0x779Ded0c9e1022225f8E0630b35a9b54bE713736',
+        decimals: 6,
+        symbol: 'USDT0',
+        name: 'Tether USD',
+        icons: {
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/38517.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/38517.png',
+        },
+    }),
 }
