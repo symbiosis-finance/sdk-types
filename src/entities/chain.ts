@@ -1001,6 +1001,16 @@ export const chains: Chain[] = [
             large: 'https://cdn.robinhood.com/assets/generated_assets/hoodchain_docsite/rh_favicon_152.png',
         },
     }),
+    new Chain({
+        id: ChainId.STABLE_MAINNET,
+        name: 'Stable',
+        disabled: false,
+        explorer: 'https://stablescan.xyz',
+        icons: {
+            small: 'https://coin-images.coingecko.com/asset_platforms/images/32271/small/stable.png?1765196531',
+            large: 'https://coin-images.coingecko.com/asset_platforms/images/32271/large/stable.png?1765196531',
+        },
+    }),
 ]
 
 export const getChainById = (chainId: ChainId | undefined): Chain | undefined => {
