@@ -51,7 +51,8 @@
                 { "index": 40, "tokenId": 224 },
                 { "index": 41, "tokenId": 191 },
                 { "index": 42, "tokenId": 225 },
-                { "index": 43, "tokenId": 226 }
+                { "index": 43, "tokenId": 226 },
+                { "index": 44, "tokenId": 228 }
             ]
         },
         {
@@ -3384,6 +3385,21 @@
             "originalId": 111
         },
         {
+            "decimals": 6,
+            "symbol": "sUSDT",
+            "name": "Synthetic USDT0 From Stable",
+            "chainId": 13863860,
+            "address": "0x35100B172df3D77cA2749EC11B7e43273857052F",
+            "icons": {
+                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/38517.png",
+                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/38517.png"
+            },
+            "chainFromId": 988,
+            "deprecated": false,
+            "id": 228,
+            "originalId": 112
+        },
+        {
             "decimals": 18,
             "symbol": "sSIS",
             "name": "Synthetic SIS token from Binance",
@@ -3395,7 +3411,7 @@
             },
             "chainFromId": 56,
             "deprecated": false,
-            "id": 228,
+            "id": 229,
             "originalId": 119
         },
         {
@@ -3410,7 +3426,7 @@
             },
             "chainFromId": 40,
             "deprecated": false,
-            "id": 229,
+            "id": 230,
             "originalId": 121
         },
         {
@@ -3425,7 +3441,7 @@
             },
             "chainFromId": 9,
             "deprecated": false,
-            "id": 230,
+            "id": 231,
             "originalId": 108
         },
         {
@@ -3440,7 +3456,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 231,
+            "id": 232,
             "originalId": 0
         },
         {
@@ -3455,7 +3471,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 232,
+            "id": 233,
             "originalId": 2
         },
         {
@@ -3470,7 +3486,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 233,
+            "id": 234,
             "originalId": 3
         },
         {
@@ -3485,7 +3501,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 234,
+            "id": 235,
             "originalId": 4
         },
         {
@@ -3500,7 +3516,7 @@
             },
             "chainFromId": 3652501241,
             "deprecated": false,
-            "id": 235,
+            "id": 236,
             "originalId": 114
         },
         {
@@ -3515,7 +3531,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 236,
+            "id": 237,
             "originalId": 5
         },
         {
@@ -3530,7 +3546,7 @@
             },
             "chainFromId": 3652501241,
             "deprecated": false,
-            "id": 237,
+            "id": 238,
             "originalId": 115
         },
         {
@@ -3545,7 +3561,7 @@
             },
             "chainFromId": 1,
             "deprecated": false,
-            "id": 238,
+            "id": 239,
             "originalId": 3
         }
     ]

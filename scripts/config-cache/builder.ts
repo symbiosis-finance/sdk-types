@@ -7,7 +7,7 @@ import type { TokenConstructor } from '../../src/entities'
 import { Token } from '../../src/entities'
 import ERC20 from './abis/ERC20.json' with { type: 'json' }
 import { isBtcChainId, isPerpChainId, isSolanaChainId, isTonChainId, isTronChainId } from '../../src/constants'
-import { isChangellyNativeChainId } from '../../src/crosschain/constants'
+import { isChangellyNativeChainId, isThorChainL1DestChainId } from '../../src/crosschain/constants'
 import type { Bridge, Fabric, MetaRouter, OmniPool, Portal, Synthesis } from './contracts'
 import {
     Bridge__factory,
@@ -189,8 +189,16 @@ export class Builder {
                 isTonChainId(chain.id) ||
                 isSolanaChainId(chain.id) ||
                 isPerpChainId(chain.id) ||
-                isChangellyNativeChainId(chain.id)
+                isChangellyNativeChainId(chain.id) ||
+                isThorChainL1DestChainId(chain.id)
             ) {
+                return
+            }
+
+            // New-metaRouter-only chains (Robinhood, Stable, ...): the contract is its own
+            // gateway, portal may be wired to it or to the executor — nothing to verify here
+            if (metaRouterAddressFromConfig === chain.metaRouterGateway.toLowerCase()) {
+                console.log(chain.id, 'Skip metaRouter checks')
                 return
             }
 
@@ -227,12 +235,6 @@ export class Builder {
             }
 
             const metaRouterGatewayAddressFromConfig = chain.metaRouterGateway.toLowerCase()
-
-            // FIXME
-            if (chain.id === ChainId.ROBINHOOD_MAINNET || chain.id === ChainId.STABLE_MAINNET) {
-                console.log(chain.id, 'Skip metaRouterGateway check')
-                return
-            }
 
             const metaRouter = this.metaRouter(chain.id)
             const metaRouterGatewayAddressFromContract = (await metaRouter.callStatic.metaRouterGateway()).toLowerCase()
