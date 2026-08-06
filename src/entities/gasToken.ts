@@ -137,5 +137,13 @@ export const GAS_TOKEN: Record<ChainId, Token> = {
     [ChainId.HYPERLIQUID_PERP_MAINNET]: GAS(ChainId.HYPERLIQUID_PERP_MAINNET, 'USDC', 3408, 6),
     [ChainId.LIGHTER_MAINNET]: GAS(ChainId.LIGHTER_MAINNET, 'USDC', 3408, 6),
     [ChainId.ROBINHOOD_MAINNET]: GAS(ChainId.ROBINHOOD_MAINNET, 'ETH', 1027),
-    [ChainId.STABLE_MAINNET]: GAS(ChainId.STABLE_MAINNET, 'USDT0', 38517),
+    // Native layer uses 18 decimals,
+    // but this Token models the ERC-20 side, where USDT0 has 6.
+    [ChainId.STABLE_MAINNET]: TOKEN_AS_GAS(
+        ChainId.STABLE_MAINNET,
+        '0x779Ded0c9e1022225f8E0630b35a9b54bE713736',
+        'USDT0',
+        38517,
+        6
+    ),
 }
