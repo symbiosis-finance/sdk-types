@@ -552,8 +552,8 @@ export const TRON_USDT = new Token({
     chainId: ChainId.TRON_MAINNET,
     decimals: 6,
     icons: {
-        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
     },
 })
 

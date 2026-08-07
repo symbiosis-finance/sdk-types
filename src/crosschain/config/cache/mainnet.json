@@ -238,8 +238,8 @@
             "chainId": 1,
             "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "deprecated": false,
             "id": 3
@@ -498,8 +498,8 @@
             "chainId": 2222,
             "address": "0x919C1c267BC06a7039e03fcc2eF738525769109c",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "deprecated": true,
             "id": 23
@@ -888,8 +888,8 @@
             "chainId": 728126428,
             "address": "0xa614f803b6fd780986a42c78ec9c7f77e6ded13c",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "deprecated": false,
             "id": 53
@@ -979,8 +979,8 @@
             "chainId": 5165,
             "address": "0xDeF886C55a79830C47108eeb9c37e78a49684e41",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "deprecated": true,
             "id": 60
@@ -1018,8 +1018,8 @@
             "chainId": 30,
             "address": "0x779Ded0c9e1022225f8E0630b35a9b54bE713736",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "deprecated": false,
             "id": 63
@@ -1031,8 +1031,8 @@
             "chainId": 30,
             "address": "0xef213441A85dF4d7ACbDaE0Cf78004e1E486bB96",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "deprecated": true,
             "id": 64
@@ -1174,8 +1174,8 @@
             "chainId": 1329,
             "address": "0xB75D0B03c06A926e488e2659DF1A861F860bD3d1",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "deprecated": true,
             "id": 75
@@ -1278,8 +1278,8 @@
             "chainId": 85918,
             "address": "0x9328Eb759596C38a25f59028B146Fecdc3621Dfe",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "deprecated": false,
             "attributes": { "ton": "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs" },
@@ -1567,8 +1567,8 @@
             "chainId": 9745,
             "address": "0xB8CE59FC3717ada4C02eaDF9682A9e934F625ebb",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "deprecated": false,
             "id": 105
@@ -1813,8 +1813,8 @@
             "chainId": 40,
             "address": "0x7bD3ffe9f0C9CF08FD60e102FEa455A6EA580276",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "chainFromId": 1,
             "deprecated": false,
@@ -2113,8 +2113,8 @@
             "chainId": 13863860,
             "address": "0xF08F72715f85b768C8d77A0D7f09F74238F7933A",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "chainFromId": 2222,
             "deprecated": true,
@@ -2548,8 +2548,8 @@
             "chainId": 13863860,
             "address": "0x4e7498c4db259065b73d21c81A5b41cadbEc7d4D",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "chainFromId": 728126428,
             "deprecated": false,
@@ -2653,8 +2653,8 @@
             "chainId": 13863860,
             "address": "0x20E4aE4922ef5c464C23D5CD08B507BC13890397",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "chainFromId": 5165,
             "deprecated": true,
@@ -2698,8 +2698,8 @@
             "chainId": 13863860,
             "address": "0x7a4CC805464b69C077daBadD48841E91134B988D",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "chainFromId": 30,
             "deprecated": false,
@@ -2713,8 +2713,8 @@
             "chainId": 13863860,
             "address": "0xB30caE10bC040D2Ab365351D35a7Dcbf0e922b54",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "chainFromId": 30,
             "deprecated": true,
@@ -2863,8 +2863,8 @@
             "chainId": 13863860,
             "address": "0x7649EeeA77e9464019392D5Ab40d4862435B3bD2",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "chainFromId": 1329,
             "deprecated": true,
@@ -2983,8 +2983,8 @@
             "chainId": 13863860,
             "address": "0x8D8Ce7Bf0C7f7a368Bb92087Fc9D474d2DffC072",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "chainFromId": 85918,
             "deprecated": false,
@@ -3316,8 +3316,8 @@
             "chainId": 13863860,
             "address": "0xEB24dCb196ac5B93E1600e2dE66d07Eec13Ed243",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "chainFromId": 9745,
             "deprecated": false,
@@ -3481,8 +3481,8 @@
             "chainId": 5165,
             "address": "0xDeF886C55a79830C47108eeb9c37e78a49684e41",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "chainFromId": 1,
             "deprecated": false,
@@ -3556,8 +3556,8 @@
             "chainId": 9,
             "address": "0x0049F7cbCa3556C2DfaE62Aafa7015F99de1b8f5",
             "icons": {
-                "large": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png",
-                "small": "https://s2.coinmarketcap.com/static/img/coins/128x128/825.png"
+                "large": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg",
+                "small": "https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg"
             },
             "chainFromId": 1,
             "deprecated": false,

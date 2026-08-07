@@ -217,8 +217,8 @@ export const config: Config = {
                     chainId: ChainId.ETH_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                 },
                 {
@@ -545,8 +545,8 @@ export const config: Config = {
                     chainId: ChainId.KAVA_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                 },
             ],
@@ -1075,8 +1075,8 @@ export const config: Config = {
                     chainId: ChainId.TRON_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                 },
             ],
@@ -1224,8 +1224,8 @@ export const config: Config = {
                     chainId: ChainId.BAHAMUT_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                 },
                 {
@@ -1292,8 +1292,8 @@ export const config: Config = {
                     chainId: ChainId.RSK_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                 },
                 {
@@ -1304,8 +1304,8 @@ export const config: Config = {
                     chainId: ChainId.RSK_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                 },
                 {
@@ -1529,8 +1529,8 @@ export const config: Config = {
                     chainId: ChainId.SEI_EVM_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                 },
             ],
@@ -1718,8 +1718,8 @@ export const config: Config = {
                     chainId: ChainId.TON_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                     attributes: {
                         ton: 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs',
@@ -2211,8 +2211,8 @@ export const config: Config = {
                     chainId: ChainId.PLASMA_MAINNET,
                     decimals: 6,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                 },
             ],

@@ -251,8 +251,8 @@ export const config: Config = {
                     decimals: 6,
                     origin: 'native',
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                 },
                 {
@@ -633,8 +633,8 @@ export const config: Config = {
                     decimals: 6,
                     origin: 'native',
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                 },
             ],
@@ -1218,8 +1218,8 @@ export const config: Config = {
                     decimals: 6,
                     origin: 'native',
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                 },
             ],
@@ -1375,8 +1375,8 @@ export const config: Config = {
                     decimals: 6,
                     origin: 'symbiosis',
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                 },
                 {
@@ -1447,8 +1447,8 @@ export const config: Config = {
                     decimals: 6,
                     origin: 'layerzero-oft',
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                 },
                 {
@@ -1460,8 +1460,8 @@ export const config: Config = {
                     decimals: 18,
                     origin: 'rsk-token-bridge',
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                 },
                 {
@@ -1713,8 +1713,8 @@ export const config: Config = {
                     decimals: 6,
                     origin: 'wormhole',
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                 },
             ],
@@ -1909,8 +1909,8 @@ export const config: Config = {
                     decimals: 6,
                     origin: 'native',
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                     attributes: {
                         ton: 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs',
@@ -2473,8 +2473,8 @@ export const config: Config = {
                     decimals: 6,
                     origin: 'layerzero-oft',
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/825.png',
+                        large: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
+                        small: 'https://s3.openocean.finance/token_logos/logos/1642600369413_5107823985163122.jpg',
                     },
                 },
             ],
