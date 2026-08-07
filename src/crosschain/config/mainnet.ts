@@ -203,7 +203,7 @@ export const config: Config = {
         {
             id: ChainId.ETH_MAINNET,
             rpc: 'https://ethereum-rpc.publicnode.com',
-            spareRpcs: ['https://rpc.ankr.com/eth', 'https://eth.llamarpc.com', 'https://eth-pokt.nodies.app'],
+            spareRpcs: ['https://eth.drpc.org', 'https://eth-pokt.nodies.app', 'https://eth.merkle.io'],
             filterBlockOffset: 1000,
             partnerFeeCollector: '0xb4291b5f2ed122d306afef72a2b0127613ab1eef',
             stables: [
@@ -344,8 +344,12 @@ export const config: Config = {
         },
         {
             id: ChainId.BSC_MAINNET,
-            rpc: 'https://bsc-rpc.publicnode.com',
-            spareRpcs: ['https://rpc.ankr.com/bsc', 'https://binance.llamarpc.com'],
+            rpc: 'https://bsc-dataseed.bnbchain.org',
+            spareRpcs: [
+                'https://bsc-dataseed1.defibit.io',
+                'https://bsc.meowrpc.com',
+                'https://bsc-mainnet.public.blastapi.io',
+            ],
             filterBlockOffset: 1000,
             partnerFeeCollector: '0xc6a2C8D42086B13A577e1c300663451Ae405b767',
             stables: [
@@ -494,7 +498,7 @@ export const config: Config = {
         {
             id: ChainId.AVAX_MAINNET,
             rpc: 'https://avalanche-c-chain-rpc.publicnode.com',
-            spareRpcs: ['https://rpc.ankr.com/avalanche', 'https://api.avax.network/ext/bc/C/rpc'],
+            spareRpcs: ['https://api.avax.network/ext/bc/C/rpc', 'https://avalanche.drpc.org'],
             filterBlockOffset: 1000,
             stables: [
                 {
@@ -551,7 +555,7 @@ export const config: Config = {
         {
             id: ChainId.MATIC_MAINNET,
             rpc: 'https://polygon-bor-rpc.publicnode.com',
-            spareRpcs: ['https://rpc.ankr.com/polygon', 'https://polygon.llamarpc.com', 'https://polygon.meowrpc.com'],
+            spareRpcs: ['https://polygon.drpc.org'],
             filterBlockOffset: 1000,
             stables: [
                 {
@@ -592,7 +596,7 @@ export const config: Config = {
         {
             id: ChainId.TELOS_MAINNET,
             rpc: 'https://rpc.telos.net',
-            spareRpcs: ['https://rpc.ankr.com/telos'],
+            spareRpcs: ['https://rpc1.us.telos.net/evm'],
             filterBlockOffset: 3000,
             stables: [
                 {
@@ -651,7 +655,7 @@ export const config: Config = {
         {
             id: ChainId.BOBA_MAINNET,
             rpc: 'https://mainnet.boba.network',
-            spareRpcs: ['https://1rpc.io/boba/eth', 'https://boba-ethereum.gateway.tenderly.co'],
+            spareRpcs: ['https://boba-ethereum.gateway.tenderly.co'],
             filterBlockOffset: 3000,
             stables: [
                 {
@@ -710,7 +714,7 @@ export const config: Config = {
         {
             id: ChainId.ZKSYNC_MAINNET,
             rpc: 'https://mainnet.era.zksync.io',
-            spareRpcs: ['https://rpc.ankr.com/zksync_era', 'https://zksync.meowrpc.com', 'https://zksync.drpc.org'],
+            spareRpcs: ['https://zksync.drpc.org', 'https://rpc.ankr.com/zksync_era'],
             filterBlockOffset: 1000,
             stables: [
                 {
@@ -802,7 +806,7 @@ export const config: Config = {
         {
             id: ChainId.ARBITRUM_MAINNET,
             rpc: 'https://arb1.arbitrum.io/rpc',
-            spareRpcs: ['https://rpc.ankr.com/arbitrum', 'https://arbitrum.llamarpc.com', 'https://1rpc.io/arb'],
+            spareRpcs: ['https://arbitrum.drpc.org'],
             filterBlockOffset: 1000,
             stables: [
                 {
@@ -901,7 +905,7 @@ export const config: Config = {
         {
             id: ChainId.OPTIMISM_MAINNET,
             rpc: 'https://optimism-rpc.publicnode.com',
-            spareRpcs: ['https://mainnet.optimism.io', 'https://rpc.ankr.com/optimism'],
+            spareRpcs: ['https://mainnet.optimism.io', 'https://optimism.drpc.org'],
             filterBlockOffset: 1000,
             stables: [
                 {
@@ -942,11 +946,7 @@ export const config: Config = {
         {
             id: ChainId.ARBITRUM_NOVA,
             rpc: 'https://arbitrum-nova-rpc.publicnode.com',
-            spareRpcs: [
-                'https://nova.arbitrum.io/rpc',
-                'https://rpc.ankr.com/arbitrumnova',
-                'https://arbitrum-nova.drpc.org',
-            ],
+            spareRpcs: ['https://nova.arbitrum.io/rpc', 'https://arbitrum-nova.drpc.org'],
             filterBlockOffset: 1000,
             stables: [
                 {
@@ -987,7 +987,7 @@ export const config: Config = {
         {
             id: ChainId.POLYGON_ZK,
             rpc: 'https://zkevm-rpc.com',
-            spareRpcs: ['https://polygon-zkevm.drpc.org', 'https://polygon-zkevm-mainnet.public.blastapi.io'],
+            spareRpcs: ['https://polygon-zkevm.drpc.org'],
             filterBlockOffset: 1000,
             stables: [
                 {
@@ -1042,8 +1042,8 @@ export const config: Config = {
         },
         {
             id: ChainId.LINEA_MAINNET,
-            rpc: 'https://rpc.linea.build',
-            spareRpcs: ['https://1rpc.io/linea', 'https://linea.drpc.org', 'https://linea.decubate.com'],
+            rpc: 'https://linea-rpc.publicnode.com',
+            spareRpcs: ['https://rpc.linea.build', 'https://linea.drpc.org'],
             filterBlockOffset: 1000,
             stables: [
                 {
@@ -1096,7 +1096,7 @@ export const config: Config = {
         {
             id: ChainId.MANTLE_MAINNET,
             rpc: 'https://mantle-rpc.publicnode.com',
-            spareRpcs: ['https://rpc.mantle.xyz', 'https://rpc.ankr.com/mantle'],
+            spareRpcs: ['https://rpc.mantle.xyz', 'https://mantle.drpc.org'],
             filterBlockOffset: 1000,
             stables: [
                 {
@@ -1137,7 +1137,7 @@ export const config: Config = {
         {
             id: ChainId.BASE_MAINNET,
             rpc: 'https://mainnet.base.org',
-            spareRpcs: ['https://base-rpc.publicnode.com', 'https://rpc.ankr.com/base'],
+            spareRpcs: ['https://base.drpc.org'],
             filterBlockOffset: 1000,
             stables: [
                 {
@@ -1235,8 +1235,8 @@ export const config: Config = {
         },
         {
             id: ChainId.SCROLL_MAINNET,
-            rpc: 'https://rpc.scroll.io',
-            spareRpcs: ['https://scroll-rpc.publicnode.com', 'https://rpc.ankr.com/scroll'],
+            rpc: 'https://scroll-rpc.publicnode.com',
+            spareRpcs: ['https://rpc.scroll.io', 'https://scroll.drpc.org'],
             filterBlockOffset: 1000,
             stables: [
                 {
@@ -1289,7 +1289,7 @@ export const config: Config = {
         {
             id: ChainId.MANTA_MAINNET,
             rpc: 'https://pacific-rpc.manta.network/http',
-            spareRpcs: ['https://manta-atlantic-rpc.publicnode.com'],
+            spareRpcs: ['https://manta-pacific.drpc.org'],
             filterBlockOffset: 1000,
             stables: [
                 {
@@ -1329,11 +1329,11 @@ export const config: Config = {
         },
         {
             id: ChainId.METIS_MAINNET,
-            rpc: 'https://andromeda.metis.io/?owner=1088',
+            rpc: 'https://metis-rpc.publicnode.com',
             spareRpcs: [
+                'https://andromeda.metis.io/?owner=1088',
                 'https://metis.drpc.org',
                 'https://metis-pokt.nodies.app',
-                'https://metis-mainnet.public.blastapi.io',
             ],
             filterBlockOffset: 1000,
             stables: [
@@ -1363,7 +1363,7 @@ export const config: Config = {
         {
             id: ChainId.BAHAMUT_MAINNET,
             rpc: 'https://rpc1.bahamut.io',
-            spareRpcs: ['https://rpc2.bahamut.io', 'https://rpc.ankr.com/bahamut'],
+            spareRpcs: ['https://rpc2.bahamut.io'],
             filterBlockOffset: 1000,
             stables: [
                 {
@@ -1406,7 +1406,7 @@ export const config: Config = {
         {
             id: ChainId.MODE_MAINNET,
             rpc: 'https://mainnet.mode.network',
-            spareRpcs: ['https://1rpc.io/mode', 'https://mode.drpc.org'],
+            spareRpcs: ['https://mode.drpc.org'],
             filterBlockOffset: 1000,
             stables: [
                 {
@@ -1531,7 +1531,7 @@ export const config: Config = {
         {
             id: ChainId.BLAST_MAINNET,
             rpc: 'https://blast-rpc.publicnode.com',
-            spareRpcs: ['https://rpc.blast.io', 'https://rpc.ankr.com/blast'],
+            spareRpcs: ['https://rpc.blast.io'],
             filterBlockOffset: 1000,
             stables: [
                 {
@@ -1618,7 +1618,7 @@ export const config: Config = {
         {
             id: ChainId.CORE_MAINNET,
             rpc: 'https://rpc.coredao.org',
-            spareRpcs: ['https://rpc.ankr.com/core', 'https://1rpc.io/core'],
+            spareRpcs: ['https://core.drpc.org'],
             filterBlockOffset: 1000,
             stables: [
                 {
@@ -1758,8 +1758,8 @@ export const config: Config = {
         },
         {
             id: ChainId.CRONOS_MAINNET,
-            rpc: 'https://evm.cronos.org',
-            spareRpcs: ['https://rpc.nebkas.ro', 'https://cronos-evm-rpc.publicnode.com'],
+            rpc: 'https://cronos-evm-rpc.publicnode.com',
+            spareRpcs: ['https://evm.cronos.org'],
             filterBlockOffset: 1000,
             stables: [
                 {
