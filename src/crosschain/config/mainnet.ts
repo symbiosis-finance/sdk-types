@@ -950,6 +950,7 @@ export const config: Config = {
             filterBlockOffset: 1000,
             stables: [
                 {
+                    deprecated: true,
                     name: 'USD Coin',
                     symbol: 'USDC',
                     address: '0x750ba8b76187092B0D1E87E28daaf484d1b5273b',
@@ -962,6 +963,7 @@ export const config: Config = {
                     },
                 },
                 {
+                    deprecated: true,
                     name: 'Wrapped Ether',
                     symbol: 'WETH',
                     address: '0x722e8bdd2ce80a4422e880164f2079488e115365',
