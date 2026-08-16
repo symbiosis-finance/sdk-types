@@ -2228,8 +2228,8 @@ export const config: Config = {
         },
         {
             id: ChainId.UNICHAIN_MAINNET,
-            rpc: 'https://unichain-rpc.publicnode.com',
-            spareRpcs: [],
+            rpc: 'https://mainnet.unichain.org',
+            spareRpcs: ['https://unichain-rpc.publicnode.com'],
             filterBlockOffset: 900,
             stables: [
                 {
