@@ -75,10 +75,10 @@ export const config: Config = {
         },
     ],
     revertableAddress: {
-        [ChainId.TRON_MAINNET]: '0xd99ac0681b904991169a4f398B9043781ADbe0C3',
-        default: '0xd99ac0681b904991169a4f398B9043781ADbe0C3',
+        [ChainId.TRON_MAINNET]: '0x67f9b3E561383493B3f874fEAE0c53c2cD23851D',
+        default: '0x67f9b3E561383493B3f874fEAE0c53c2cD23851D',
     },
-    fallbackReceiver: '0xd99ac0681b904991169a4f398B9043781ADbe0C3',
+    fallbackReceiver: '0x67f9b3E561383493B3f874fEAE0c53c2cD23851D',
     btcConfigs: [
         {
             btc: new Token({
