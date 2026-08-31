@@ -904,8 +904,8 @@ export const config: Config = {
         },
         {
             id: ChainId.OPTIMISM_MAINNET,
-            rpc: 'https://optimism-rpc.publicnode.com',
-            spareRpcs: ['https://mainnet.optimism.io', 'https://optimism.drpc.org'],
+            rpc: 'https://mainnet.optimism.io',
+            spareRpcs: ['https://optimism.drpc.org', 'https://optimism-rpc.publicnode.com'],
             filterBlockOffset: 900,
             stables: [
                 {
@@ -1044,8 +1044,8 @@ export const config: Config = {
         },
         {
             id: ChainId.LINEA_MAINNET,
-            rpc: 'https://linea-rpc.publicnode.com',
-            spareRpcs: ['https://rpc.linea.build', 'https://linea.drpc.org'],
+            rpc: 'https://rpc.linea.build',
+            spareRpcs: ['https://linea.drpc.org', 'https://linea-rpc.publicnode.com'],
             filterBlockOffset: 900,
             stables: [
                 {
