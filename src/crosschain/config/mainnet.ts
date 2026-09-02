@@ -1241,8 +1241,8 @@ export const config: Config = {
         },
         {
             id: ChainId.SCROLL_MAINNET,
-            rpc: 'https://rpc.scroll.io',
-            spareRpcs: ['https://scroll.drpc.org', 'https://scroll-rpc.publicnode.com'],
+            rpc: 'https://scroll-rpc.publicnode.com',
+            spareRpcs: ['https://scroll.drpc.org', 'https://rpc.scroll.io'],
             filterBlockOffset: 900,
             stables: [
                 {
