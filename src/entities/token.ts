@@ -461,17 +461,6 @@ export const WETH = {
             small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/22353.png',
         },
     }),
-    [ChainId.KAVA_MAINNET]: new Token({
-        chainId: ChainId.KAVA_MAINNET,
-        address: '0xc86c7C0eFbd6A49B35E8714C5f59D99De09A225b',
-        decimals: 18,
-        symbol: 'WKAVA',
-        name: 'Wrapped KAVA',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4846.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4846.png',
-        },
-    }),
     [ChainId.SCROLL_SEPOLIA]: new Token({
         chainId: ChainId.SCROLL_SEPOLIA,
         address: '0x5300000000000000000000000000000000000004',
@@ -505,17 +494,6 @@ export const WETH = {
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
         },
     }),
-    [ChainId.ARBITRUM_NOVA]: new Token({
-        chainId: ChainId.ARBITRUM_NOVA,
-        address: '0x722e8bdd2ce80a4422e880164f2079488e115365',
-        decimals: 18,
-        symbol: 'WETH',
-        name: 'Wrapped ETH',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
-        },
-    }),
     [ChainId.OPTIMISM_MAINNET]: new Token({
         chainId: ChainId.OPTIMISM_MAINNET,
         address: '0x4200000000000000000000000000000000000006',
@@ -525,17 +503,6 @@ export const WETH = {
         icons: {
             small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
-        },
-    }),
-    [ChainId.ZETACHAIN_ATHENS_2]: new Token({
-        chainId: ChainId.ZETACHAIN_ATHENS_2,
-        address: '0x5F0b1a82749cb4E2278EC87F8BF6B618dC71a8bf',
-        decimals: 18,
-        symbol: 'WZETA',
-        name: 'Wrapped ZETA',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/21259.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/21259.png',
         },
     }),
     [ChainId.POLYGON_ZK]: new Token({
@@ -659,17 +626,6 @@ export const WETH = {
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3897.png',
         },
     }),
-    [ChainId.BAHAMUT_MAINNET]: new Token({
-        chainId: ChainId.BAHAMUT_MAINNET,
-        address: '0x4084aB20f8ffcA76C19AAF854Fb5fe9DE6217fBB',
-        decimals: 18,
-        symbol: 'WFTN',
-        name: 'Wrapped FTN',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/22615.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/22615.png',
-        },
-    }),
     [ChainId.MODE_MAINNET]: new Token({
         chainId: ChainId.MODE_MAINNET,
         address: '0x4200000000000000000000000000000000000006',
@@ -690,17 +646,6 @@ export const WETH = {
         icons: {
             small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3626.png',
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3626.png',
-        },
-    }),
-    [ChainId.BLAST_MAINNET]: new Token({
-        chainId: ChainId.BLAST_MAINNET,
-        address: '0x4300000000000000000000000000000000000004',
-        decimals: 18,
-        symbol: 'WETH',
-        name: 'Wrapped ETH',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
         },
     }),
     [ChainId.MERLIN_MAINNET]: new Token({
@@ -736,17 +681,6 @@ export const WETH = {
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
         },
     }),
-    [ChainId.CORE_MAINNET]: new Token({
-        chainId: ChainId.CORE_MAINNET,
-        address: '0x191E94fa59739e188dcE837F7f6978d84727AD01',
-        decimals: 18,
-        symbol: 'WCORE',
-        name: 'Wrapped CORE',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/23254.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/23254.png',
-        },
-    }),
     [ChainId.TAIKO_MAINNET]: new Token({
         chainId: ChainId.TAIKO_MAINNET,
         address: '0xA51894664A773981C6C112C43ce576f315d5b1B6',
@@ -767,17 +701,6 @@ export const WETH = {
         icons: {
             small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/23149.png',
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/23149.png',
-        },
-    }),
-    [ChainId.ZETACHAIN_MAINNET]: new Token({
-        chainId: ChainId.ZETACHAIN_MAINNET,
-        address: '0x5F0b1a82749cb4E2278EC87F8BF6B618dC71a8bf',
-        decimals: 18,
-        symbol: 'WZETA',
-        name: 'Wrapped ZETA',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/29464.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/29464.png',
         },
     }),
     [ChainId.CRONOS_MAINNET]: new Token({
@@ -811,17 +734,6 @@ export const WETH = {
         icons: {
             small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32120.png',
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32120.png',
-        },
-    }),
-    [ChainId.BSQUARED_MAINNET]: new Token({
-        chainId: ChainId.BSQUARED_MAINNET,
-        address: '0x4200000000000000000000000000000000000006',
-        decimals: 18,
-        symbol: 'WBTC',
-        name: 'Wrapped BTC',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3717.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3717.png',
         },
     }),
     [ChainId.CRONOS_ZK_MAINNET]: new Token({

@@ -20,7 +20,7 @@ import {
 import type { ConfigName } from '../../src/crosschain/types'
 import type { ChainConfig, Config, OmniPoolConfig } from '../../src/crosschain/types'
 import { ChainId } from '../../src/constants'
-import { getMulticall } from './multicall'
+import { getMulticall, tryAggregateChunked } from './multicall'
 import { config as beta } from '../../src/crosschain/config/beta'
 import { config as dev } from '../../src/crosschain/config/dev'
 import { config as mainnet } from '../../src/crosschain/config/mainnet'
@@ -264,9 +264,9 @@ export class Builder {
                 target: omniPool.address,
                 callData: omniPool.interface.encodeFunctionData('indexToAsset', [index]),
             }))
-            const assets = await multicall.callStatic.tryAggregate(false, indexes)
+            const assets = await tryAggregateChunked(multicall, indexes)
             const poolTokens: OmniPoolToken[] = assets
-                .map(([success, returnData], index) => {
+                .map(({ success, returnData }, index) => {
                     if (!success) {
                         throw new Error(`Cannot get asset by index ${index}`)
                     }
@@ -334,8 +334,8 @@ export class Builder {
                 callData: fabric.interface.encodeFunctionData('getSyntRepresentation', [token.address, token.chainId]),
             }))
 
-            const synthResults = await multicall.callStatic.tryAggregate(false, synthCalls)
-            const synthTokenAddresses = synthResults.map(([success, returnData]) => {
+            const synthResults = await tryAggregateChunked(multicall, synthCalls)
+            const synthTokenAddresses = synthResults.map(({ success, returnData }) => {
                 if (!success) {
                     throw new Error(`Cannot get representations from fabric on chain ${chainWithFabric.id}`)
                 }

@@ -32,10 +32,6 @@ const APPROVABLE_METAROUTERS: Partial<Record<ChainId, ApprovableMetaRouter>> = {
         gateway: '0x17efC1d70eA32eb04c6979c6500d12eEE9e3Dcbd',
         executor: '0x04A1F3030A2fc5ECe3227567e98b20ef2241820c',
     },
-    [ChainId.KAVA_MAINNET]: {
-        gateway: '0x086488E659253FF26D0C743325C059FB57Ca7934',
-        executor: '0xd471fE552e35904a5F74EA0fA1ef266eA8f3A4E3',
-    },
     [ChainId.BOBA_MAINNET]: {
         gateway: '0x17efC1d70eA32eb04c6979c6500d12eEE9e3Dcbd',
         executor: '0x04A1F3030A2fc5ECe3227567e98b20ef2241820c',
@@ -55,10 +51,6 @@ const APPROVABLE_METAROUTERS: Partial<Record<ChainId, ApprovableMetaRouter>> = {
     [ChainId.OPTIMISM_MAINNET]: {
         gateway: '0xA9A96Ee51dD54B9f51d46b1fbD2A19c1295Ec75b',
         executor: '0x356d322BF762d4022D8c241428770565f236c2EA',
-    },
-    [ChainId.ARBITRUM_NOVA]: {
-        gateway: '0x086488E659253FF26D0C743325C059FB57Ca7934',
-        executor: '0xd471fE552e35904a5F74EA0fA1ef266eA8f3A4E3',
     },
     [ChainId.LINEA_MAINNET]: {
         gateway: '0xEbD15fCa7aB58470C40653ecB60f10fa08322F67',
@@ -88,10 +80,6 @@ const APPROVABLE_METAROUTERS: Partial<Record<ChainId, ApprovableMetaRouter>> = {
         gateway: '0x6148FD6C649866596C3d8a971fC313E5eCE84882',
         executor: '0x1363be92D1FA1915b501a8dd25D62d40a13DF99E',
     },
-    [ChainId.BAHAMUT_MAINNET]: {
-        gateway: '0xAa444c22297b0dBd97bBf316dC0b7C64b33aa64C',
-        executor: '0xE9F5143AA6ad4190DB08573E5659D29c70BC39c5',
-    },
     [ChainId.MODE_MAINNET]: {
         gateway: '0x6148FD6C649866596C3d8a971fC313E5eCE84882',
         executor: '0x1363be92D1FA1915b501a8dd25D62d40a13DF99E',
@@ -99,10 +87,6 @@ const APPROVABLE_METAROUTERS: Partial<Record<ChainId, ApprovableMetaRouter>> = {
     [ChainId.RSK_MAINNET]: {
         gateway: '0x7f6fb9f3ce785F3d85772c038Fda58eC9432D421',
         executor: '0xcf7aDFc571C4Ca41726F33F3582A845b7c64c632',
-    },
-    [ChainId.BLAST_MAINNET]: {
-        gateway: '0x6148FD6C649866596C3d8a971fC313E5eCE84882',
-        executor: '0x1363be92D1FA1915b501a8dd25D62d40a13DF99E',
     },
     [ChainId.MERLIN_MAINNET]: {
         gateway: '0xDA1C70C902746996A8C989bB07AA6C408Ef880D8',
@@ -112,10 +96,6 @@ const APPROVABLE_METAROUTERS: Partial<Record<ChainId, ApprovableMetaRouter>> = {
         gateway: '0xe7B6a9a1E85215a2b7109A1d724C57e8C835b9D6',
         executor: '0x82F17Cc9CaB98197A2CDFE343f22D7295FbF7633',
     },
-    [ChainId.CORE_MAINNET]: {
-        gateway: '0x6148FD6C649866596C3d8a971fC313E5eCE84882',
-        executor: '0x1363be92D1FA1915b501a8dd25D62d40a13DF99E',
-    },
     [ChainId.TAIKO_MAINNET]: {
         gateway: '0x6148FD6C649866596C3d8a971fC313E5eCE84882',
         executor: '0x1363be92D1FA1915b501a8dd25D62d40a13DF99E',
@@ -123,10 +103,6 @@ const APPROVABLE_METAROUTERS: Partial<Record<ChainId, ApprovableMetaRouter>> = {
     [ChainId.SEI_EVM_MAINNET]: {
         gateway: '0xA738e84fdE890Bc60b99AF7ccE43990E534304de',
         executor: '0x5074b7cA7162F793318B65D8BeCC5975DF327C80',
-    },
-    [ChainId.ZETACHAIN_MAINNET]: {
-        gateway: '0x8097f0B9f06C27AF9579F75762F971D745bb222F',
-        executor: '0x4949e74094D6F9C06D68e5Ffe388f6542C4b1A34',
     },
     [ChainId.CRONOS_MAINNET]: {
         gateway: '0x6148FD6C649866596C3d8a971fC313E5eCE84882',
@@ -139,10 +115,6 @@ const APPROVABLE_METAROUTERS: Partial<Record<ChainId, ApprovableMetaRouter>> = {
     [ChainId.GRAVITY_MAINNET]: {
         gateway: '0xF8504d2ca2F0bbAD9d36927e3d32E278AbAdaDa0',
         executor: '0xfbE324361c9b8e617610d3991813D7D566721988',
-    },
-    [ChainId.BSQUARED_MAINNET]: {
-        gateway: '0xf85FC807D05d3Ab2309364226970aAc57b4e1ea4',
-        executor: '0xcd7C056b39DdFB568E451923ABEDb9B6a7Aeb885',
     },
     [ChainId.CRONOS_ZK_MAINNET]: {
         gateway: '0x9C64162e1614E10f833aFc2a0BdF173324f36Dd5',

@@ -69,13 +69,8 @@ export class Pair {
         const address0 = tokens[0].address as NonEmptyAddress
         const address1 = tokens[1].address as NonEmptyAddress
 
-        let types: string[] = ['address', 'address']
-        let params: (string | boolean)[] = [address0, address1]
-
-        if (chainId === ChainId.KAVA_MAINNET) {
-            types = [...types, 'bool']
-            params = [...params, false]
-        }
+        const types: string[] = ['address', 'address']
+        const params: (string | boolean)[] = [address0, address1]
 
         if (PAIR_ADDRESS_CACHE.get(address0).get(address1) === undefined) {
             let getCreate2Address = getEvmCreate2Address as (

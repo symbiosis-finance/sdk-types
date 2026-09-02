@@ -24,3 +24,24 @@ export async function getMulticall(provider: Provider): Promise<Multicall> {
 
     return Multicall__factory.connect(address, provider)
 }
+
+export type MulticallCall = { target: string; callData: string }
+export type MulticallResult = { success: boolean; returnData: string }
+
+const DEFAULT_CHUNK_SIZE = 50
+
+// Some RPCs (e.g. Rootstock) reject large request bodies with HTTP 413,
+// so split the aggregate call into smaller batches.
+export async function tryAggregateChunked(
+    multicall: Multicall,
+    calls: MulticallCall[],
+    chunkSize = DEFAULT_CHUNK_SIZE
+): Promise<MulticallResult[]> {
+    const results: MulticallResult[] = []
+    for (let i = 0; i < calls.length; i += chunkSize) {
+        const chunk = calls.slice(i, i + chunkSize)
+        const chunkResults = await multicall.callStatic.tryAggregate(false, chunk)
+        results.push(...chunkResults)
+    }
+    return results
+}

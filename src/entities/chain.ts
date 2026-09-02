@@ -327,16 +327,6 @@ export const chains: Chain[] = [
         },
     }),
     new Chain({
-        id: ChainId.KAVA_MAINNET,
-        name: 'KAVA EVM',
-        disabled: false,
-        explorer: 'https://explorer.kava.io',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4846.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4846.png',
-        },
-    }),
-    new Chain({
         id: ChainId.SCROLL_SEPOLIA,
         name: 'Scroll Sepolia',
         disabled: false,
@@ -367,16 +357,6 @@ export const chains: Chain[] = [
         },
     }),
     new Chain({
-        id: ChainId.ARBITRUM_NOVA,
-        name: 'Arbitrum Nova',
-        disabled: false,
-        explorer: 'https://nova.arbiscan.io',
-        icons: {
-            small: 'https://l2beat.com/icons/nova.png',
-            large: 'https://l2beat.com/icons/nova.png',
-        },
-    }),
-    new Chain({
         id: ChainId.OPTIMISM_MAINNET,
         name: 'Optimism',
         disabled: false,
@@ -384,16 +364,6 @@ export const chains: Chain[] = [
         icons: {
             small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11840.png',
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11840.png',
-        },
-    }),
-    new Chain({
-        id: ChainId.ZETACHAIN_ATHENS_2,
-        name: 'ZetaChain',
-        disabled: false,
-        explorer: 'https://explorer.zetachain.com',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/21259.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/21259.png',
         },
     }),
     new Chain({
@@ -519,16 +489,6 @@ export const chains: Chain[] = [
         },
     }),
     new Chain({
-        id: ChainId.BAHAMUT_MAINNET,
-        name: 'Bahamut',
-        disabled: false,
-        explorer: 'https://www.ftnscan.com',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/22615.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/22615.png',
-        },
-    }),
-    new Chain({
         id: ChainId.MODE_MAINNET,
         name: 'Mode',
         disabled: false,
@@ -546,16 +506,6 @@ export const chains: Chain[] = [
         icons: {
             small: 'https://rootstock.blockscout.com/assets/favicon/favicon.ico',
             large: 'https://rootstock.blockscout.com/assets/favicon/favicon.ico',
-        },
-    }),
-    new Chain({
-        id: ChainId.BLAST_MAINNET,
-        name: 'Blast',
-        disabled: false,
-        explorer: 'https://blastscan.io',
-        icons: {
-            small: 'https://assets.coingecko.com/coins/images/35494/standard/blast2.jpeg?1708919600',
-            large: 'https://assets.coingecko.com/coins/images/35494/standard/blast2.jpeg?1708919600',
         },
     }),
     new Chain({
@@ -589,16 +539,6 @@ export const chains: Chain[] = [
         },
     }),
     new Chain({
-        id: ChainId.CORE_MAINNET,
-        name: 'CORE',
-        disabled: false,
-        explorer: 'https://scan.coredao.org',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/23254.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/23254.png',
-        },
-    }),
-    new Chain({
         id: ChainId.TAIKO_MAINNET,
         name: 'Taiko',
         disabled: false,
@@ -616,16 +556,6 @@ export const chains: Chain[] = [
         icons: {
             small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/23149.png',
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/23149.png',
-        },
-    }),
-    new Chain({
-        id: ChainId.ZETACHAIN_MAINNET,
-        name: 'ZetaChain',
-        disabled: false,
-        explorer: 'https://zetachain.blockscout.com',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/21259.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/21259.png',
         },
     }),
     new Chain({
@@ -656,16 +586,6 @@ export const chains: Chain[] = [
         icons: {
             small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32120.png',
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32120.png',
-        },
-    }),
-    new Chain({
-        id: ChainId.BSQUARED_MAINNET,
-        name: 'B² Network',
-        disabled: false,
-        explorer: 'https://explorer.bsquared.network',
-        icons: {
-            small: 'https://coin-images.coingecko.com/asset_platforms/images/239/small/bsquared-network.jpeg?1713432732',
-            large: 'https://coin-images.coingecko.com/asset_platforms/images/239/small/bsquared-network.jpeg?1713432732',
         },
     }),
     new Chain({
