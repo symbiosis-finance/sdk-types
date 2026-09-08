@@ -736,6 +736,17 @@ export const WETH = {
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32120.png',
         },
     }),
+    [ChainId.BSQUARED_MAINNET]: new Token({
+        chainId: ChainId.BSQUARED_MAINNET,
+        address: '0x4200000000000000000000000000000000000006',
+        decimals: 18,
+        symbol: 'WBTC',
+        name: 'Wrapped BTC',
+        icons: {
+            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3717.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3717.png',
+        },
+    }),
     [ChainId.CRONOS_ZK_MAINNET]: new Token({
         chainId: ChainId.CRONOS_ZK_MAINNET,
         address: '0xC1bF55EE54E16229d9b369a5502Bfe5fC9F20b6d',
