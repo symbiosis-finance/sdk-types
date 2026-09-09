@@ -2,7 +2,15 @@ import { ChainId } from '../constants'
 import type { Address } from '../crosschain/types'
 import { Token } from './token'
 
-const GAS = (chainId: ChainId, symbol: string, iconId: number, decimals = 18, name = symbol) =>
+const SIS_ICON_URL = 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592'
+
+// An icon is either a ready url or a CoinMarketCap coin id to build one from
+const getIconUrl = (icon: number | string) =>
+    typeof icon === 'string' && icon.startsWith('https')
+        ? icon
+        : `https://s2.coinmarketcap.com/static/img/coins/128x128/${icon}.png`
+
+const GAS = (chainId: ChainId, symbol: string, icon: number | string, decimals = 18, name = symbol) =>
     new Token({
         name,
         symbol,
@@ -10,12 +18,12 @@ const GAS = (chainId: ChainId, symbol: string, iconId: number, decimals = 18, na
         chainId,
         decimals,
         icons: {
-            small: `https://s2.coinmarketcap.com/static/img/coins/128x128/${iconId}.png`,
-            large: `https://s2.coinmarketcap.com/static/img/coins/128x128/${iconId}.png`,
+            small: getIconUrl(icon),
+            large: getIconUrl(icon),
         },
     })
 
-const TOKEN_AS_GAS = (chainId: ChainId, address: Address, symbol: string, iconId: number, decimals = 18) =>
+const TOKEN_AS_GAS = (chainId: ChainId, address: Address, symbol: string, icon: number | string, decimals = 18) =>
     new Token({
         name: symbol,
         symbol,
@@ -23,8 +31,8 @@ const TOKEN_AS_GAS = (chainId: ChainId, address: Address, symbol: string, iconId
         chainId,
         decimals,
         icons: {
-            small: `https://s2.coinmarketcap.com/static/img/coins/128x128/${iconId}.png`,
-            large: `https://s2.coinmarketcap.com/static/img/coins/128x128/${iconId}.png`,
+            small: getIconUrl(icon),
+            large: getIconUrl(icon),
         },
     })
 
@@ -45,7 +53,7 @@ export const GAS_TOKEN: Record<ChainId, Token> = {
     [ChainId.BOBA_MAINNET]: GAS(ChainId.BOBA_MAINNET, 'ETH', 1027),
     [ChainId.BOBA_RINKEBY]: GAS(ChainId.BOBA_RINKEBY, 'ETH', 1027),
     [ChainId.SYMBIOSIS_TESTNET]: GAS(ChainId.SYMBIOSIS_TESTNET, 'TVT', 15084),
-    [ChainId.SYMBIOSIS_MAINNET]: GAS(ChainId.SYMBIOSIS_MAINNET, 'SIS', 15084),
+    [ChainId.SYMBIOSIS_MAINNET]: GAS(ChainId.SYMBIOSIS_MAINNET, 'SIS', SIS_ICON_URL),
     [ChainId.BOBA_AVALANCHE]: GAS(ChainId.BOBA_AVALANCHE, 'BOBA', 14556),
     [ChainId.MILKOMEDA_MAINNET]: GAS(ChainId.MILKOMEDA_MAINNET, 'MilkADA', 2010),
     [ChainId.MILKOMEDA_DEVNET]: GAS(ChainId.MILKOMEDA_DEVNET, 'MilktADA', 2010),
