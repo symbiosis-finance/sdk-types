@@ -357,8 +357,8 @@ export const WETH = {
         symbol: 'WTVT',
         name: 'Wrapped TVT',
         icons: {
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
+            large: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
+            small: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
         },
     }),
     [ChainId.SYMBIOSIS_MAINNET]: new Token({
@@ -368,8 +368,8 @@ export const WETH = {
         symbol: 'WSIS',
         name: 'Wrapped SIS',
         icons: {
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
+            large: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
+            small: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
         },
     }),
     [ChainId.BOBA_RINKEBY]: new Token({

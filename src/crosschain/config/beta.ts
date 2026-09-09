@@ -195,8 +195,8 @@ export const config: Config = {
                     chainId: ChainId.ETH_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
+                        large: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
+                        small: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
                     },
                 },
                 {
@@ -335,8 +335,8 @@ export const config: Config = {
                     chainId: ChainId.BSC_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
+                        large: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
+                        small: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
                     },
                 },
                 {
@@ -574,8 +574,8 @@ export const config: Config = {
                     symbol: 'WSIS',
                     name: 'Wrapped SIS',
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
+                        large: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
+                        small: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
                     },
                 },
             ],
@@ -648,8 +648,8 @@ export const config: Config = {
                     chainId: ChainId.ZKSYNC_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
+                        large: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
+                        small: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
                     },
                 },
                 {
@@ -722,8 +722,8 @@ export const config: Config = {
                     chainId: ChainId.ARBITRUM_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
+                        large: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
+                        small: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
                     },
                 },
                 {
@@ -888,8 +888,8 @@ export const config: Config = {
                     chainId: ChainId.LINEA_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
+                        large: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
+                        small: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
                     },
                 },
             ],
@@ -1054,8 +1054,8 @@ export const config: Config = {
                     chainId: ChainId.SCROLL_MAINNET,
                     decimals: 18,
                     icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
+                        large: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
+                        small: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
                     },
                 },
             ],

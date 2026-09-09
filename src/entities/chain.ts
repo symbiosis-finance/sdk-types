@@ -242,8 +242,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://symbiosis-nitro-testnet.explorer.caldera.xyz',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
+            small: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
+            large: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
         },
     }),
     new Chain({
@@ -252,8 +252,8 @@ export const chains: Chain[] = [
         disabled: false,
         explorer: 'https://symbiosis.calderaexplorer.xyz',
         icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/15084.png',
+            small: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
+            large: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
         },
     }),
     new Chain({
