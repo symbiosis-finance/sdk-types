@@ -1158,7 +1158,7 @@ export const config: Config = {
             metaRouterGateway: '0x49e1816a2cf475515e7c80c9f0f0e16ae499198b',
             bridge: '0xc5a6517050c44ba78295f57f4754bb68f8705321',
             synthesis: '0x0000000000000000000000000000000000000000',
-            portal: '0xd83b5752b42856a08087748de6095af0be52d299',
+            portal: '0x8dCFf64DE604f7543465981363E9f73B4af16504',
             fabric: '0x0000000000000000000000000000000000000000',
             multicallRouter: '0x354ed0e8616678f2829feb2e2e9a0e0869fa82fb',
         },
@@ -2432,6 +2432,18 @@ export const config: Config = {
                     icons: {
                         large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
+                    },
+                },
+                {
+                    name: 'Symbiosis',
+                    symbol: 'SIS',
+                    address: '0x32807d54eE1570cBA97e256c59426dD80dcD9fcF',
+                    chainId: ChainId.ROBINHOOD_MAINNET,
+                    decimals: 18,
+                    origin: 'arbitrum-bridge',
+                    icons: {
+                        large: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
+                        small: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
                     },
                 },
             ],
