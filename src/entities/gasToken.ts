@@ -147,4 +147,11 @@ export const GAS_TOKEN: Record<ChainId, Token> = {
         38517,
         6
     ),
+    [ChainId.ARC_MAINNET]: TOKEN_AS_GAS(
+        ChainId.ARC_MAINNET,
+        '0x3600000000000000000000000000000000000000',
+        'USDC',
+        3408,
+        6
+    ),
 }

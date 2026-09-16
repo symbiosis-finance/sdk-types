@@ -956,4 +956,15 @@ export const WETH = {
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/38517.png',
         },
     }),
+    [ChainId.ARC_MAINNET]: new Token({
+        chainId: ChainId.ARC_MAINNET,
+        address: '0x3600000000000000000000000000000000000000',
+        decimals: 6,
+        symbol: 'USDC',
+        name: 'USD Coin',
+        icons: {
+            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
+        },
+    }),
 }
