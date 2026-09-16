@@ -945,7 +945,7 @@ export const chains: Chain[] = [
         id: ChainId.ARC_MAINNET,
         name: 'Arc',
         disabled: false,
-        explorer: 'https://arc-scan.org',
+        explorer: 'https://explorer.arc.io',
         icons: {
             small: 'https://coin-images.coingecko.com/asset_platforms/images/102132310/small/arc.jpg?1787556380',
             large: 'https://coin-images.coingecko.com/asset_platforms/images/102132310/small/arc.jpg?1787556380',
