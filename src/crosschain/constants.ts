@@ -419,6 +419,12 @@ export const CHANGELLY_BLOCKCHAIN_TO_CHAIN_ID: Record<string, ChainId> = {
     sei: ChainId.SEI_EVM_MAINNET,
     plasma: ChainId.PLASMA_MAINNET,
     mon: ChainId.MONAD_MAINNET,
+    robinhood: ChainId.ROBINHOOD_MAINNET,
+    rootstock: ChainId.RSK_MAINNET,
+    hyperevm: ChainId.HYPEREVM_MAINNET,
+    stable: ChainId.STABLE_MAINNET,
+    'Metis Andromeda': ChainId.METIS_MAINNET,
+    MERL: ChainId.MERLIN_MAINNET,
     // Non-EVM trade chains
     tron: ChainId.TRON_MAINNET,
     solana: ChainId.SOLANA_MAINNET,
