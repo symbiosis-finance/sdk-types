@@ -6,4 +6,8 @@ export interface TronTransactionData {
     function_selector: string
     owner_address: string
     raw_parameter: string
+    // Goes into raw_data.data, where THORChain reads it.
+    memo?: string
+    // Unix seconds; past it the vault may have churned.
+    validUntil?: number
 }
