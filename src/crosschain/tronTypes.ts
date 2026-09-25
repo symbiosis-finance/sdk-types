@@ -6,7 +6,8 @@ export interface TronTransactionData {
     function_selector: string
     owner_address: string
     raw_parameter: string
-    // Goes into raw_data.data, where THORChain reads it.
+    // raw_data.data bytes as hex without 0x; THORChain and Chainflip read the
+    // swap instruction from there.
     memo?: string
     // Unix seconds; past it the vault may have churned.
     validUntil?: number
