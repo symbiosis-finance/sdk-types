@@ -1683,7 +1683,11 @@ export const config: Config = {
         },
         {
             id: ChainId.TON_MAINNET,
-            rpc: 'https://mainnet-v4.tonhubapi.com',
+            rpc: 'https://ton.access.orbs.network/route/1/mainnet/ton-api-v4',
+            spareRpcs: [
+                'https://ton.access.orbs.network/55023c0ff5Bd3F8B62C092Ab4D238bEE463E5502/1/mainnet/ton-api-v4',
+                'https://mainnet-v4.tonhubapi.com',
+            ],
             filterBlockOffset: 0,
             stables: [
                 {
