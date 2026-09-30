@@ -112,6 +112,7 @@ export type ChainConfig = {
     bridge: Address
     synthesis: Address
     portal: Address
+    pauser?: Address
     fabric: Address
     tonPortal?: string
     partnerFeeCollector?: string
