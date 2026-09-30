@@ -22,6 +22,7 @@ export enum TradeProvider {
     INTENT_SOLVER = 'intent-solver',
     PERPBOT_BRIDGE = 'perpbot-bridge',
     FLY = 'fly',
+    SUN_SWAP = 'sun-swap',
 }
 
 export type OneInchProtocols = string[]
