@@ -1654,7 +1654,7 @@ export const config: Config = {
             filterBlockOffset: 900,
             stables: [
                 {
-                    deprecated: true,
+                    // deprecated: true,
                     name: 'Gravity',
                     symbol: 'wG',
                     address: '0xBB859E225ac8Fb6BE1C7e38D87b767e95Fef0EbD',
