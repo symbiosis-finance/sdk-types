@@ -120,10 +120,6 @@ const APPROVABLE_METAROUTERS: Partial<Record<ChainId, ApprovableMetaRouter>> = {
         gateway: '0x9C64162e1614E10f833aFc2a0BdF173324f36Dd5',
         executor: '0x86d00565879e7Bb35bCe3664D90F9856c9456fF7',
     },
-    [ChainId.MORPH_MAINNET]: {
-        gateway: '0x5B1baB64961cF72822817Ef32950fF7FCaB28b62',
-        executor: '0x4870a76443945006ADDe4518254B0d6fC3f72721',
-    },
     [ChainId.GOAT_MAINNET]: {
         gateway: '0x5B1baB64961cF72822817Ef32950fF7FCaB28b62',
         executor: '0x4870a76443945006ADDe4518254B0d6fC3f72721',

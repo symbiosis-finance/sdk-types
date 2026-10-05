@@ -1550,34 +1550,6 @@ export const config: Config = {
             multicallRouter: '0xAcb35C2D11FEA8849cd9f5Ff6fBC56bB5296641B',
         },
         {
-            id: ChainId.MORPH_MAINNET,
-            rpc: 'https://rpc.morphl2.io',
-            spareRpcs: ['https://rpc-quicknode.morphl2.io'],
-            filterBlockOffset: 1000,
-            stables: [
-                {
-                    name: 'USD Coin',
-                    symbol: 'USDC',
-                    address: '0xe34c91815d7fc18A9e2148bcD4241d0a5848b693',
-                    chainId: ChainId.MORPH_MAINNET,
-                    decimals: 6,
-                    icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
-                    },
-                },
-            ],
-            router: '0x81606E6f8aAD6C75c2f383Ea595c2b9f8ce8aE3a', // bulba swap
-            dexFee: 35,
-            metaRouter: '0xcE8f24A58D85eD5c5A6824f7be1F8d4711A0eb4C',
-            metaRouterGateway: '0xAdB2d3b711Bb8d8Ea92ff70292c466140432c278',
-            bridge: '0x5523985926Aa12BA58DC5Ad00DDca99678D7227E',
-            synthesis: '0x0000000000000000000000000000000000000000',
-            portal: '0x292fC50e4eB66C3f6514b9E402dBc25961824D62',
-            fabric: '0x0000000000000000000000000000000000000000',
-            multicallRouter: '0xb8f275fBf7A959F4BCE59999A2EF122A099e81A8',
-        },
-        {
             id: ChainId.SOLANA_MAINNET,
             rpc: 'https://api.mainnet-beta.solana.com',
             spareRpcs: [],
