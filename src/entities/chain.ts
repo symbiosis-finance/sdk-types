@@ -579,16 +579,6 @@ export const chains: Chain[] = [
         },
     }),
     new Chain({
-        id: ChainId.GRAVITY_MAINNET,
-        name: 'Gravity',
-        disabled: false,
-        explorer: 'https://explorer.gravity.xyz',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32120.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32120.png',
-        },
-    }),
-    new Chain({
         id: ChainId.BSQUARED_MAINNET,
         name: 'B² Network',
         disabled: false,

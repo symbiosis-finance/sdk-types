@@ -112,10 +112,6 @@ const APPROVABLE_METAROUTERS: Partial<Record<ChainId, ApprovableMetaRouter>> = {
         gateway: '0xf39D9A9ABb98593ceaC395D7A37c572Da48fCfD5',
         executor: '0x219454f4Bd263e36F05A07d3C1A7ABa82F4454CD',
     },
-    [ChainId.GRAVITY_MAINNET]: {
-        gateway: '0xF8504d2ca2F0bbAD9d36927e3d32E278AbAdaDa0',
-        executor: '0xfbE324361c9b8e617610d3991813D7D566721988',
-    },
     [ChainId.BSQUARED_MAINNET]: {
         gateway: '0xf85FC807D05d3Ab2309364226970aAc57b4e1ea4',
         executor: '0xcd7C056b39DdFB568E451923ABEDb9B6a7Aeb885',
