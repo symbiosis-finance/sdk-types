@@ -392,6 +392,8 @@ export function isChangellySupportedChainId(chainId: ChainId | undefined): boole
 }
 
 // Maps a Changelly `blockchain` string (from getCurrenciesFull) to our ChainId.
+// Changelly's 'cronos' and 'sei' are the Cosmos chains (Cronos POS, Sei Cosmos), not
+// our Cronos EVM and Sei EVM, so they are deliberately left out.
 export const CHANGELLY_BLOCKCHAIN_TO_CHAIN_ID: Record<string, ChainId> = {
     // EVM
     ethereum: ChainId.ETH_MAINNET,
@@ -406,9 +408,7 @@ export const CHANGELLY_BLOCKCHAIN_TO_CHAIN_ID: Record<string, ChainId> = {
     bera: ChainId.BERACHAIN_MAINNET,
     sonic: ChainId.SONIC_MAINNET,
     manta: ChainId.MANTA_MAINNET,
-    cronos: ChainId.CRONOS_MAINNET,
     TAIKO: ChainId.TAIKO_MAINNET,
-    sei: ChainId.SEI_EVM_MAINNET,
     plasma: ChainId.PLASMA_MAINNET,
     mon: ChainId.MONAD_MAINNET,
     robinhood: ChainId.ROBINHOOD_MAINNET,
