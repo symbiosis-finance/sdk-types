@@ -2425,5 +2425,39 @@ export const config: Config = {
             fabric: '0x0000000000000000000000000000000000000000',
             multicallRouter: '0x292fC50e4eB66C3f6514b9E402dBc25961824D62',
         },
+        {
+            id: ChainId.X_LAYER_MAINNET,
+            rpc: 'https://xlayerrpc.okx.com',
+            spareRpcs: ['https://rpc.xlayer.tech'],
+            filterBlockOffset: 160,
+            stables: [
+                {
+                    name: 'USD Coin',
+                    symbol: 'USDC',
+                    address: '0xb6ceceab302e2e4948951ee7843fc24e92933061',
+                    chainId: ChainId.X_LAYER_MAINNET,
+                    decimals: 6,
+                    origin: 'circle',
+                    icons: {
+                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3408.png',
+                    },
+                },
+            ],
+            router: '0x0000000000000000000000000000000000000000',
+            dexFee: 0,
+            // New-metaRouter-only chain: the metaRouter contract is the gateway (approve & call
+            // both target it). The gateway delegates inner swaps to a dedicated executor, so the
+            // legacy scheme must use metaRouterExecutor instead of metaRouter for the inner swap.
+            metaRouter: '0xcE8f24A58D85eD5c5A6824f7be1F8d4711A0eb4C',
+            metaRouterGateway: '0xcE8f24A58D85eD5c5A6824f7be1F8d4711A0eb4C',
+            metaRouterExecutor: '0xAdB2d3b711Bb8d8Ea92ff70292c466140432c278',
+            bridge: '0x5523985926Aa12BA58DC5Ad00DDca99678D7227E',
+            synthesis: '0x0000000000000000000000000000000000000000',
+            portal: '0x292fC50e4eB66C3f6514b9E402dBc25961824D62',
+            pauser: '0x3e4aDcf98E77F6d8022639F7135BE4A3850033ED',
+            fabric: '0x0000000000000000000000000000000000000000',
+            multicallRouter: '0xb8f275fBf7A959F4BCE59999A2EF122A099e81A8',
+        },
     ],
 }

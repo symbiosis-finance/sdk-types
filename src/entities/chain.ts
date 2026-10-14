@@ -911,6 +911,16 @@ export const chains: Chain[] = [
             large: 'https://coin-images.coingecko.com/asset_platforms/images/102132310/small/arc.jpg?1787556380',
         },
     }),
+    new Chain({
+        id: ChainId.X_LAYER_MAINNET,
+        name: 'XLayer',
+        disabled: false,
+        explorer: 'https://www.oklink.com/x-layer/evm',
+        icons: {
+            small: 'https://coin-images.coingecko.com/asset_platforms/images/238/small/x_logo.jpeg?1713243242',
+            large: 'https://coin-images.coingecko.com/asset_platforms/images/238/small/x_logo.jpeg?1713243242',
+        },
+    }),
 ]
 
 export const getChainById = (chainId: ChainId | undefined): Chain | undefined => {

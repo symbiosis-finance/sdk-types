@@ -923,4 +923,15 @@ export const WETH = {
             large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png',
         },
     }),
+    [ChainId.X_LAYER_MAINNET]: new Token({
+        chainId: ChainId.X_LAYER_MAINNET,
+        address: '0xe538905cf8410324e03a5a23c1c177a474d59b2b',
+        decimals: 18,
+        symbol: 'WOKB',
+        name: 'Wrapped OKB',
+        icons: {
+            small: 'https://s2.coinmarketcap.com/static/img/coins/64x64/30907.png',
+            large: 'https://s2.coinmarketcap.com/static/img/coins/64x64/30907.png',
+        },
+    }),
 }

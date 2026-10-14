@@ -174,6 +174,10 @@ export const ONCHAIN_SWAP_ROUTERS: Partial<Record<ChainId, OnchainSwapRouter>> =
         gateway: '0x6AEb9b27590387b8Fd0560C52f6B968C59C10Fab',
         executor: '0x145878e7527a442549eD2c8434B0477C676824fa',
     },
+    [ChainId.X_LAYER_MAINNET]: {
+        gateway: '0x45CFd6FB7999328F189aaD2739Fba4Be6C45E5bf',
+        executor: '0xdfFF1eb1792277133c8471cCe94acB78D7f604ea',
+    },
 }
 
 export function getOnchainSwapRouter(chainId: ChainId): OnchainSwapRouter | undefined {

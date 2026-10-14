@@ -150,4 +150,5 @@ export const GAS_TOKEN: Record<ChainId, Token> = {
         3408,
         6
     ),
+    [ChainId.X_LAYER_MAINNET]: GAS(ChainId.X_LAYER_MAINNET, 'OKB', 3897),
 }
