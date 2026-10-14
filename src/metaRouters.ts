@@ -92,10 +92,6 @@ const APPROVABLE_METAROUTERS: Partial<Record<ChainId, ApprovableMetaRouter>> = {
         gateway: '0xDA1C70C902746996A8C989bB07AA6C408Ef880D8',
         executor: '0xfdD61c0CF946a775E6cD572Ffb7b686a70f44039',
     },
-    [ChainId.ZKLINK_MAINNET]: {
-        gateway: '0xe7B6a9a1E85215a2b7109A1d724C57e8C835b9D6',
-        executor: '0x82F17Cc9CaB98197A2CDFE343f22D7295FbF7633',
-    },
     [ChainId.TAIKO_MAINNET]: {
         gateway: '0x6148FD6C649866596C3d8a971fC313E5eCE84882',
         executor: '0x1363be92D1FA1915b501a8dd25D62d40a13DF99E',

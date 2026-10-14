@@ -505,17 +505,6 @@ export const WETH = {
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
         },
     }),
-    [ChainId.POLYGON_ZK]: new Token({
-        chainId: ChainId.POLYGON_ZK,
-        address: '0x4f9a0e7fd2bf6067db6994cf12e4495df938e6e9',
-        decimals: 18,
-        symbol: 'WETH',
-        name: 'Wrapped ETH',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
-        },
-    }),
     [ChainId.TRON_TESTNET]: new Token({
         chainId: ChainId.TRON_TESTNET,
         address: '0xf060b2655346cf3f825c3300177dff8a2acd89aa',
@@ -657,17 +646,6 @@ export const WETH = {
         icons: {
             small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3717.png',
             large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3717.png',
-        },
-    }),
-    [ChainId.ZKLINK_MAINNET]: new Token({
-        chainId: ChainId.ZKLINK_MAINNET,
-        address: '0x8280a4e7D5B3B658ec4580d3Bc30f5e50454F169',
-        decimals: 18,
-        symbol: 'WETH',
-        name: 'Wrapped ETH',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
         },
     }),
     [ChainId.SEPOLIA_TESTNET]: new Token({

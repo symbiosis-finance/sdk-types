@@ -367,16 +367,6 @@ export const chains: Chain[] = [
         },
     }),
     new Chain({
-        id: ChainId.POLYGON_ZK,
-        name: 'Polygon zkEVM',
-        disabled: false,
-        explorer: 'https://zkevm.polygonscan.com',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3890.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3890.png',
-        },
-    }),
-    new Chain({
         id: ChainId.TRON_MAINNET,
         name: 'Tron',
         disabled: false,
@@ -516,16 +506,6 @@ export const chains: Chain[] = [
         icons: {
             small: 'https://assets.coingecko.com/asset_platforms/images/188/small/merlin-chain.jpeg?1708522313',
             large: 'https://assets.coingecko.com/asset_platforms/images/188/small/merlin-chain.jpeg?1708522313',
-        },
-    }),
-    new Chain({
-        id: ChainId.ZKLINK_MAINNET,
-        name: 'ZkLink',
-        disabled: false,
-        explorer: 'https://explorer.zklink.io',
-        icons: {
-            small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/13039.png',
-            large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/13039.png',
         },
     }),
     new Chain({
