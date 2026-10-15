@@ -23,6 +23,7 @@ export enum TradeProvider {
     PERPBOT_BRIDGE = 'perpbot-bridge',
     FLY = 'fly',
     SUN_SWAP = 'sun-swap',
+    OKX = 'okx',
 }
 
 export type OneInchProtocols = string[]
