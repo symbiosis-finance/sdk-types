@@ -201,8 +201,8 @@ export type ApiConfig = {
 
 export type ChangellyConfig = {
     apiUrl: string
-    privateKey: string
-    privateSwapPrivateKey?: string
+    publicSwapPk: string
+    privateSwapPk?: string
     privateSwapRefundAddress?: string
 }
 
