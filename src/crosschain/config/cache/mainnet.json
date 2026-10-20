@@ -286,7 +286,7 @@
                 "large": "https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200",
                 "small": "https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200"
             },
-            "deprecated": false,
+            "deprecated": true,
             "id": 8
         },
         {
@@ -377,7 +377,7 @@
                 "large": "https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200",
                 "small": "https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200"
             },
-            "deprecated": false,
+            "deprecated": true,
             "id": 15
         },
         {
@@ -949,7 +949,7 @@
                 "large": "https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200",
                 "small": "https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200"
             },
-            "deprecated": false,
+            "deprecated": true,
             "id": 59
         },
         {
@@ -1381,7 +1381,7 @@
                 "large": "https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200",
                 "small": "https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200"
             },
-            "deprecated": false,
+            "deprecated": true,
             "id": 92
         },
         {

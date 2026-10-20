@@ -304,6 +304,7 @@ export const config: Config = {
                     },
                 },
                 {
+                    deprecated: true,
                     name: 'Symbiosis BTC',
                     symbol: 'syBTC',
                     address: '0x01a8b61E7b03891a736B5DF865E0EF9C511850ad',
@@ -428,6 +429,7 @@ export const config: Config = {
                     },
                 },
                 {
+                    deprecated: true,
                     name: 'Symbiosis BTC',
                     symbol: 'syBTC',
                     address: '0xA67c48F86Fc6d0176Dca38883CA8153C76a532c7',
@@ -1334,6 +1336,7 @@ export const config: Config = {
                     },
                 },
                 {
+                    deprecated: true,
                     name: 'Symbiosis BTC',
                     symbol: 'syBTC',
                     address: '0xB52E582263c1d0189b3cc1402c1B7205b7F2E9Ba',
@@ -2208,6 +2211,7 @@ export const config: Config = {
             partnerFeeCollector: '0xca506793A420E901BbCa8066be5661E3C52c84c2',
             stables: [
                 {
+                    deprecated: true,
                     name: 'Symbiosis BTC',
                     symbol: 'syBTC',
                     address: '0x384157027B1CDEAc4e26e3709667BB28735379Bb',
