@@ -1,6 +1,6 @@
 export interface TronTransactionData {
     chain_id: number
-    call_value: number | string
+    call_value: string
     contract_address: string
     fee_limit: number
     function_selector: string
