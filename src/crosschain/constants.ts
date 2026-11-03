@@ -315,11 +315,10 @@ const CHANGELLY_TRADE_CHAIN_IDS = new Set<ChainId>([
     ChainId.BERACHAIN_MAINNET,
     ChainId.SONIC_MAINNET,
     ChainId.MANTA_MAINNET,
-    ChainId.CRONOS_MAINNET,
     ChainId.TAIKO_MAINNET,
-    ChainId.SEI_EVM_MAINNET,
     ChainId.PLASMA_MAINNET,
     ChainId.MONAD_MAINNET,
+    ChainId.ROBINHOOD_MAINNET,
     // Non EVM
     ChainId.TON_MAINNET,
     ChainId.TRON_MAINNET,
