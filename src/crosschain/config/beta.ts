@@ -332,17 +332,6 @@ export const config: Config = {
                     },
                 },
                 {
-                    name: 'Symbiosis BTC',
-                    symbol: 'syBTC',
-                    address: '0xA67c48F86Fc6d0176Dca38883CA8153C76a532c7',
-                    chainId: ChainId.BSC_MAINNET,
-                    decimals: 8,
-                    icons: {
-                        large: 'https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200',
-                        small: 'https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200',
-                    },
-                },
-                {
                     name: 'Wrapped BNB',
                     symbol: 'WBNB',
                     address: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
@@ -631,18 +620,6 @@ export const config: Config = {
                     icons: {
                         large: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
                         small: 'https://assets.coingecko.com/coins/images/20805/standard/sis_token.png?1788879592',
-                    },
-                },
-                {
-                    deprecated: true,
-                    name: 'Symbiosis BTC',
-                    symbol: 'syBTC',
-                    address: '0xED0c95EBe5a3E687cB2224687024FeC6518E683e',
-                    chainId: ChainId.ZKSYNC_MAINNET,
-                    decimals: 8,
-                    icons: {
-                        large: 'https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200',
-                        small: 'https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200',
                     },
                 },
             ],
@@ -1148,17 +1125,6 @@ export const config: Config = {
                     icons: {
                         large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32702.png',
                         small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32702.png',
-                    },
-                },
-                {
-                    name: 'Symbiosis BTC',
-                    symbol: 'syBTC',
-                    address: '0xB52E582263c1d0189b3cc1402c1B7205b7F2E9Ba',
-                    chainId: ChainId.RSK_MAINNET,
-                    decimals: 8,
-                    icons: {
-                        large: 'https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200',
-                        small: 'https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200',
                     },
                 },
             ],
@@ -1904,19 +1870,7 @@ export const config: Config = {
             rpc: 'https://rpc.mainnet.citrea.xyz',
             spareRpcs: [],
             filterBlockOffset: 500,
-            stables: [
-                {
-                    name: 'Symbiosis BTC',
-                    symbol: 'syBTC',
-                    address: '0x384157027B1CDEAc4e26e3709667BB28735379Bb',
-                    chainId: ChainId.CITREA_MAINNET,
-                    decimals: 8,
-                    icons: {
-                        large: 'https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200',
-                        small: 'https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200',
-                    },
-                },
-            ],
+            stables: [],
             router: '0x0000000000000000000000000000000000000000',
             dexFee: 0,
             metaRouter: '0xcE8f24A58D85eD5c5A6824f7be1F8d4711A0eb4C',

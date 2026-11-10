@@ -142,19 +142,7 @@ export class Builder {
                 for (let j = 0; j < chain.stables.length; j++) {
                     const token = chain.stables[j]
 
-                    // syBTC on BNB chain
-                    if (token.address === '0xA67c48F86Fc6d0176Dca38883CA8153C76a532c7') {
-                        continue
-                    }
-                    // syBTC on RSK chain
-                    if (token.address === '0xB52E582263c1d0189b3cc1402c1B7205b7F2E9Ba') {
-                        continue
-                    }
-                    // syBTC on ETH chain
-                    if (token.address === '0x01a8b61E7b03891a736B5DF865E0EF9C511850ad') {
-                        continue
-                    }
-                    // symBTC on ETH chain
+                    // symBTC on ETH chain: a synthetic, the portal doesn't whitelist it
                     if (token.address === '0x81C3060Ba8E87c06a493A5549e202Ee3741a794C') {
                         continue
                     }
