@@ -40,7 +40,7 @@ export const config: Config = {
                     small: 'https://faucet.mutinynet.com/favicon.svg',
                 },
             }),
-            symBtc: {
+            symBtcHelper: {
                 address: '0xEa3f6885Ef517EcaBB2888b0ef9c6873c97f24d4',
                 chainId: ChainId.SEPOLIA_TESTNET,
             },

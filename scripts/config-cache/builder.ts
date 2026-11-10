@@ -364,8 +364,8 @@ export class Builder {
         }
 
         // --- BTC portals with their own Fabric (not the chain's one) ---
-        for (const { btc, symBtc } of this.config.btcConfigs) {
-            if (!symBtc.fabric) {
+        for (const { btc, symBtcHelper } of this.config.btcConfigs) {
+            if (!symBtcHelper.fabric) {
                 continue
             }
             const original = realTokensWithId.find(
@@ -375,17 +375,17 @@ export class Builder {
                 throw new Error(`BTC token ${btc.address} is missing from the token list`)
             }
             const alreadyFound = tokens.some(
-                (token) => token.originalId === original.id && token.chainId === symBtc.chainId
+                (token) => token.originalId === original.id && token.chainId === symBtcHelper.chainId
             )
             if (alreadyFound) {
                 continue
             }
 
-            console.log(`Get BTC fabric ${symBtc.fabric} in chain ${symBtc.chainId}`)
-            const fabric = Fabric__factory.connect(symBtc.fabric, this.getProvider(symBtc.chainId))
+            console.log(`Get BTC fabric ${symBtcHelper.fabric} in chain ${symBtcHelper.chainId}`)
+            const fabric = Fabric__factory.connect(symBtcHelper.fabric, this.getProvider(symBtcHelper.chainId))
             const address = await fabric.getSyntRepresentation(btc.address, btc.chainId)
             if (address === AddressZero) {
-                throw new Error(`BTC fabric ${symBtc.fabric} has no representation of ${btc.address}`)
+                throw new Error(`BTC fabric ${symBtcHelper.fabric} has no representation of ${btc.address}`)
             }
 
             const erc20 = new Contract(address, ERC20, fabric.provider)
@@ -395,7 +395,7 @@ export class Builder {
                 symbol: await erc20.symbol(),
                 name: await erc20.name(),
                 address,
-                chainId: symBtc.chainId,
+                chainId: symBtcHelper.chainId,
                 chainFromId: original.chainId,
                 originalId: original.id,
             })
