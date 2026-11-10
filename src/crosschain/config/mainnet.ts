@@ -254,7 +254,6 @@ export const config: Config = {
                 },
                 {
                     // Synthetic BTC of the BTC portal with genesis ca6d9dbe…
-                    deprecated: true,
                     name: 'Symbiosis BTC',
                     symbol: 'symBTC',
                     address: '0x81C3060Ba8E87c06a493A5549e202Ee3741a794C',
