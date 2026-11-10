@@ -142,16 +142,8 @@ export class Builder {
                 for (let j = 0; j < chain.stables.length; j++) {
                     const token = chain.stables[j]
 
-                    // syBTC on BNB chain
-                    if (token.address === '0xA67c48F86Fc6d0176Dca38883CA8153C76a532c7') {
-                        continue
-                    }
-                    // syBTC on RSK chain
-                    if (token.address === '0xB52E582263c1d0189b3cc1402c1B7205b7F2E9Ba') {
-                        continue
-                    }
-                    // syBTC on ETH chain
-                    if (token.address === '0x01a8b61E7b03891a736B5DF865E0EF9C511850ad') {
+                    // symBTC on ETH chain: a synthetic, the portal doesn't whitelist it
+                    if (token.address === '0x81C3060Ba8E87c06a493A5549e202Ee3741a794C') {
                         continue
                     }
 
@@ -369,6 +361,44 @@ export class Builder {
 
                 tokens.push(token)
             }
+        }
+
+        // --- BTC portals with their own Fabric (not the chain's one) ---
+        for (const { btc, symBtc } of this.config.btcConfigs) {
+            if (!symBtc.fabric) {
+                continue
+            }
+            const original = realTokensWithId.find(
+                (token) => token.chainId === btc.chainId && token.address.toLowerCase() === btc.address.toLowerCase()
+            )
+            if (!original) {
+                throw new Error(`BTC token ${btc.address} is missing from the token list`)
+            }
+            const alreadyFound = tokens.some(
+                (token) => token.originalId === original.id && token.chainId === symBtc.chainId
+            )
+            if (alreadyFound) {
+                continue
+            }
+
+            console.log(`Get BTC fabric ${symBtc.fabric} in chain ${symBtc.chainId}`)
+            const fabric = Fabric__factory.connect(symBtc.fabric, this.getProvider(symBtc.chainId))
+            const address = await fabric.getSyntRepresentation(btc.address, btc.chainId)
+            if (address === AddressZero) {
+                throw new Error(`BTC fabric ${symBtc.fabric} has no representation of ${btc.address}`)
+            }
+
+            const erc20 = new Contract(address, ERC20, fabric.provider)
+            tokens.push({
+                ...original,
+                id: idCounter++,
+                symbol: await erc20.symbol(),
+                name: await erc20.name(),
+                address,
+                chainId: symBtc.chainId,
+                chainFromId: original.chainId,
+                originalId: original.id,
+            })
         }
 
         return tokens
