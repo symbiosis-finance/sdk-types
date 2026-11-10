@@ -163,6 +163,10 @@ export type BtcConfig = {
     symBtc: {
         address: EvmAddress
         chainId: ChainId
+        // The portal's own Synthesis and Fabric on symBtc.chainId, when they
+        // differ from the chain's general ones in ChainConfig.
+        synthesis?: EvmAddress
+        fabric?: EvmAddress
     }
     forwarderUrl: string
 }
