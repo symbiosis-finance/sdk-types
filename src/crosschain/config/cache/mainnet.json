@@ -286,7 +286,7 @@
                 "large": "https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200",
                 "small": "https://assets.coingecko.com/coins/images/50472/standard/NewOption_06.png?1727849200"
             },
-            "deprecated": true,
+            "deprecated": false,
             "id": 8
         },
         {
