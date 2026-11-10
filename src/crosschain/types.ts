@@ -160,10 +160,12 @@ export type SwapLimit = {
 
 export type BtcConfig = {
     btc: Token
-    symBtc: {
+    // The SymBtc helper contract, not the symBTC token: it packs the wrap tail
+    // and computes BTC external IDs. chainId is where the portal mints symBTC.
+    symBtcHelper: {
         address: EvmAddress
         chainId: ChainId
-        // The portal's own Synthesis and Fabric on symBtc.chainId, when they
+        // The portal's own Synthesis and Fabric on symBtcHelper.chainId, when they
         // differ from the chain's general ones in ChainConfig.
         synthesis?: EvmAddress
         fabric?: EvmAddress

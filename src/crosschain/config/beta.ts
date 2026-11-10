@@ -92,7 +92,7 @@ export const config: Config = {
                     small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
                 },
             }),
-            symBtc: {
+            symBtcHelper: {
                 address: '0x839da7208cb8a551e47172cbfae9d685c8f37121',
                 chainId: ChainId.ETH_MAINNET,
                 // SynthesisBTC of this portal; Ethereum's chain synthesis stays for QUAI
