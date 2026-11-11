@@ -1044,6 +1044,12 @@ export const config: Config = {
             pauser: '0xeb19c0506028ae1b258568bfc947903c7ee13010',
             fabric: '0x0000000000000000000000000000000000000000',
             multicallRouter: '0x354ed0e8616678f2829feb2e2e9a0e0869fa82fb',
+            intentConfig: {
+                depositorySrc: '0xF1AbfEd21a126062997168f81Cc30D9A07Bb1406',
+                depositoryDst: '0x3c43e4a2288604389678FB3184000E2D2a2eC46E',
+                deadlineUnlocker: '0xd94090D16b00ecAF01bD72F09c5664b1f0751E26',
+                bridge: '0x9c4C6918f9d4CfC4B7C9cF080ce3C4D50B948323',
+            },
         },
         {
             id: ChainId.SCROLL_MAINNET,
