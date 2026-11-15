@@ -87,6 +87,10 @@ export interface DepositoryConfig {
     timedUnlocker: EvmAddress
     timedSwapUnlocker: EvmAddress
     btcRefundUnlocker?: EvmAddress
+    // PayoutHelper (depository repo): ERC20 payout target. When set, ERC20 payouts on this chain go
+    // through payout(token, to, amount) instead of token.transfer, which reverts for FiatToken-based
+    // tokens (USDC, cbBTC). Leave unset until the helper is deployed on the chain.
+    payoutHelper?: EvmAddress
     priceEstimation: PriceEstimationConfig
     refundDelay?: number // Minimal delay before refund
     withdrawDelay: number // Minimal delay before withdraw
