@@ -282,7 +282,7 @@ export const config: Config = {
                     slippageMax: 0.02,
                     slippageNorm: 0.001,
                 },
-                depository: '0x84DEB7FC54a1F734aEF6DDC0C0F74182BDF941a8',
+                depository: '0xb26a92162d46869e5f275d958124bd8A22e1Abf2',
                 btcRefundUnlocker: '0x358c527665DD12e1F005b8a22EA0Bd6cBD481f3a',
                 branchedUnlocker: '0x22278Fe9A52a8CCB3A914F3f61bB6c70fe5fd9A1',
                 timedUnlocker: '0xEc148F80d699b0eAF65dd5438CdE4b380DeD8a3b',
