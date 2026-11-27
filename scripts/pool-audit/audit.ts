@@ -19,7 +19,7 @@ import { config as testnet } from '../../src/crosschain/config/testnet'
 import { ChainId } from '../../src/constants'
 import type { Config } from '../../src/crosschain/types'
 import type { TokenConstructor } from '../../src/entities'
-import { isTronChainId } from '../../src/constants'
+import { evmRpcUrl } from '../shared/rpc'
 
 const env = (process.env.ENV ?? 'mainnet') as 'mainnet' | 'beta' | 'testnet'
 const config: Config = { mainnet, beta, testnet }[env]
@@ -50,8 +50,7 @@ function chainName(id: number): string {
 function provider(chainId: ChainId): StaticJsonRpcProvider {
     const chain = config.chains.find((c) => c.id === chainId)
     if (!chain) throw new Error(`no chain ${chainId} in config`)
-    const rpc = isTronChainId(chain.id) ? `${chain.rpc}/jsonrpc` : chain.rpc
-    return new StaticJsonRpcProvider(rpc, chain.id)
+    return new StaticJsonRpcProvider(evmRpcUrl(chain), chain.id)
 }
 
 async function main() {

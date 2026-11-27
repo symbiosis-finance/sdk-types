@@ -1,7 +1,6 @@
 import JSBI from 'jsbi'
 import invariant from 'tiny-invariant'
 import type { Token } from '../token'
-import { tokenEquals } from '../token'
 import { TokenAmount } from './tokenAmount'
 
 import type { BigintIsh, Rounding } from '../../constants'
@@ -51,14 +50,14 @@ export class Price extends Fraction {
     }
 
     public multiply(other: Price): Price {
-        invariant(tokenEquals(this.quoteToken, other.baseToken), 'TOKEN')
+        invariant(this.quoteToken.equals(other.baseToken), 'TOKEN')
         const fraction = super.multiply(other)
         return new Price(this.baseToken, other.quoteToken, fraction.denominator, fraction.numerator)
     }
 
     // performs floor division on overflow
     public quote(tokenAmount: TokenAmount): TokenAmount {
-        invariant(tokenEquals(tokenAmount.token, this.baseToken), 'TOKEN')
+        invariant(tokenAmount.token.equals(this.baseToken), 'TOKEN')
         return new TokenAmount(this.quoteToken, super.multiply(tokenAmount.raw).quotient)
     }
 

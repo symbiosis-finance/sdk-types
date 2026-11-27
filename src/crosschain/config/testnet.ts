@@ -1,8 +1,8 @@
 import { ChainId } from '../../constants'
-import { Token } from '../../entities'
-import type { Config } from '../types'
+import { chainData } from '../chainData'
+import type { ConfigInput } from '../types'
 
-export const config: Config = {
+export const config: ConfigInput = {
     advisor: {
         url: 'https://api.testnet.symbiosis.finance/calculations',
     },
@@ -27,30 +27,12 @@ export const config: Config = {
         default: '0x1b5D6DDF6086Bb06616f58274F894099c31e9DB5',
     },
     fallbackReceiver: '0x1b5D6DDF6086Bb06616f58274F894099c31e9DB5',
-    btcConfigs: [
-        {
-            btc: new Token({
-                name: 'Bitcoin Mutiny',
-                symbol: 'muBTC',
-                address: '0x41540e95B10383408cfE201974c88E6C3ef9323A',
-                chainId: ChainId.BTC_MUTINY,
-                decimals: 8,
-                icons: {
-                    large: 'https://faucet.mutinynet.com/favicon.svg',
-                    small: 'https://faucet.mutinynet.com/favicon.svg',
-                },
-            }),
-            symBtcHelper: {
-                address: '0xEa3f6885Ef517EcaBB2888b0ef9c6873c97f24d4',
-                chainId: ChainId.SEPOLIA_TESTNET,
-            },
-            forwarderUrl: 'https://relayers.testnet.symbiosis.finance/mutinynet/forwarder/api/v1',
-        },
-    ],
+    btcConfigs: [],
     chains: [
         {
             // NOTE host chain is better to be first in the config
             id: ChainId.BSC_TESTNET,
+            chain: chainData(ChainId.BSC_TESTNET),
             rpc: 'https://bsc-testnet-rpc.publicnode.com',
             filterBlockOffset: 2000,
             stables: [
@@ -77,47 +59,12 @@ export const config: Config = {
             multicallRouter: '0x086D8d30822086941729DF294f0e52E42EdC17F9',
         },
         {
-            id: ChainId.BTC_MUTINY,
-            rpc: 'https://mutinynet.com/api',
-            filterBlockOffset: 0,
-            stables: [],
-            router: '0x0000000000000000000000000000000000000000',
-            dexFee: 0,
-            metaRouter: '0x0000000000000000000000000000000000000000',
-            metaRouterGateway: '0x0000000000000000000000000000000000000000',
-            bridge: '0x0000000000000000000000000000000000000000',
-            synthesis: '0x0000000000000000000000000000000000000000',
-            portal: '0x0000000000000000000000000000000000000000',
-            fabric: '0x0000000000000000000000000000000000000000',
-            multicallRouter: '0x0000000000000000000000000000000000000000',
-        },
-        {
             id: ChainId.SEPOLIA_TESTNET,
+            chain: chainData(ChainId.SEPOLIA_TESTNET),
+            unwrapper: '0x97A5B271421b443b3F53F3DF485B2716Db85fA4b',
             rpc: 'https://sepolia.gateway.tenderly.co',
             filterBlockOffset: 2000,
             stables: [
-                {
-                    name: 'mutSymBtc',
-                    address: '0x41540e95B10383408cfE201974c88E6C3ef9323A',
-                    symbol: 'mutSymBtc',
-                    decimals: 8,
-                    chainId: ChainId.SEPOLIA_TESTNET,
-                    icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
-                    },
-                },
-                {
-                    name: 't4SymBtc',
-                    address: '0x04cd23122a21f6c5F912FC7B9aBC508302899Dfb',
-                    symbol: 't4SymBtc',
-                    decimals: 8,
-                    chainId: ChainId.SEPOLIA_TESTNET,
-                    icons: {
-                        large: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
-                        small: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
-                    },
-                },
                 {
                     name: 'mSymBtc',
                     address: '0xeD86914A9478a066d82b2bE3E5B99A38BAaE23ce',
@@ -143,7 +90,7 @@ export const config: Config = {
             ],
             router: '0xC532a74256D3Db42D0Bf7a0400fEFDbad7694008',
             dexFee: 30,
-            metaRouter: '0x8b03ad402ab3f1477bdfa64647718e5c537c0029',
+            metaRouter: '0x8b03ad402Ab3f1477BdFA64647718E5c537c0029',
             metaRouterGateway: '0xc3b59B4a7961EF8FD24C9838731D1f598884F53d',
             bridge: '0x7dc13B605508F91Fcd3bf7803C2b96B43941B4E8',
             synthesis: '0x3e6235b91c6734821b4037E6459f861E465D4192',
@@ -153,6 +100,7 @@ export const config: Config = {
         },
         {
             id: ChainId.AVAX_TESTNET,
+            chain: chainData(ChainId.AVAX_TESTNET),
             rpc: 'https://api.avax-test.network/ext/bc/C/rpc',
             spareRpcs: [
                 'https://avalanche-fuji-c-chain-rpc.publicnode.com',

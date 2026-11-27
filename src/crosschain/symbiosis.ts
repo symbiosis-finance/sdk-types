@@ -1,55 +1,43 @@
 import type { ChainId } from '../constants'
 import type { Chain } from '../entities'
-import { chains, Token, wrappedToken } from '../entities'
-import { formatBytes32String } from '@ethersproject/strings'
+import { Token } from '../entities'
 import { NoTransitTokenError, SdkError } from '../errors'
+import { formatBytes32String } from '@ethersproject/strings'
 import { Cache } from './cache'
-import { ConfigCache } from './config/cache/cache'
+import { CHAIN_DATA } from './chainData'
+import { ConfigCache, type ConfigName, Deployment } from './deployment'
 import type { Id, OmniPoolInfo, TokenInfo } from './config/cache/types'
-import { config as beta } from './config/beta'
-import { config as dev } from './config/dev'
-import { config as mainnet } from './config/mainnet'
-import { config as testnet } from './config/testnet'
-import type { ChainConfig, Config, ConfigName, EvmAddress, OmniPoolConfig, OverrideConfig } from './types'
+import type { ChainConfig, Config, ConfigInput, EvmAddress, OmniPoolConfig, OverrideConfig } from './types'
 
-export type { ConfigName } from './types'
+export type TransitCombination = { transitTokenIn: Token; transitTokenOut: Token }
 
 /**
- * Lightweight Symbiosis client: holds config + cache + clientId and exposes pure lookups only.
- * Routing, swapping, contracts, providers and tracking live in the api, not here.
+ * @deprecated Use a Deployment instead: `Deployment.named(configName)`, or `new Deployment(config, cacheData)` for a
+ * config of one's own (README, "Deployments and chains (0.1.0)").
  */
 export class Symbiosis {
     public readonly configName: ConfigName
-    public readonly config: Config
     public readonly cache: Cache
     public readonly configCache: ConfigCache
     public readonly clientId: string
+    public readonly deployment: Deployment
 
     public constructor(configName: ConfigName, clientId: string, overrideConfig?: OverrideConfig) {
         this.configName = configName
+        let config: ConfigInput
         if (overrideConfig?.config) {
-            this.config = overrideConfig.config
+            config = overrideConfig.config
         } else {
-            if (configName === 'mainnet') {
-                this.config = structuredClone(mainnet)
-            } else if (configName === 'testnet') {
-                this.config = structuredClone(testnet)
-            } else if (configName === 'dev') {
-                this.config = structuredClone(dev)
-            } else if (configName === 'beta') {
-                this.config = structuredClone(beta)
-            } else {
-                throw new SdkError('Unknown config name')
-            }
+            config = structuredClone(Deployment.named(configName).config)
 
             // restore Token objects after structuredClone
-            this.config.btcConfigs = this.config.btcConfigs.map((btcConfig) => {
+            config.btcConfigs = config.btcConfigs.map((btcConfig) => {
                 return { ...btcConfig, btc: new Token(btcConfig.btc) }
             })
 
             if (overrideConfig?.chains) {
                 const { chains: overrideChains } = overrideConfig
-                this.config.chains = this.config.chains.map((chainConfig) => {
+                config.chains = config.chains.map((chainConfig) => {
                     const found = overrideChains.find((i) => i.id === chainConfig.id)
                     if (found) {
                         chainConfig.rpc = found.rpc
@@ -61,39 +49,42 @@ export class Symbiosis {
                     return chainConfig
                 })
             }
-            if (overrideConfig?.limits) this.config.limits = overrideConfig.limits
-            if (overrideConfig?.advisor) this.config.advisor = overrideConfig.advisor
-            if (overrideConfig?.solver) this.config.solver = overrideConfig.solver
-            if (overrideConfig?.perpbot) this.config.perpbot = overrideConfig.perpbot
-            if (overrideConfig?.btcConfigs) this.config.btcConfigs = overrideConfig.btcConfigs
+            if (overrideConfig?.limits) config.limits = overrideConfig.limits
+            if (overrideConfig?.advisor) config.advisor = overrideConfig.advisor
+            if (overrideConfig?.solver) config.solver = overrideConfig.solver
+            if (overrideConfig?.perpbot) config.perpbot = overrideConfig.perpbot
+            if (overrideConfig?.btcConfigs) config.btcConfigs = overrideConfig.btcConfigs
         }
 
         this.cache = overrideConfig?.cache || new Cache()
-        this.configCache = new ConfigCache(overrideConfig?.configCache || configName)
+        this.deployment = new Deployment(config, overrideConfig?.configCache ?? Deployment.named(configName).cacheData)
+        this.configCache = new ConfigCache(this.deployment)
         this.clientId = formatBytes32String(clientId)
     }
 
+    public get config(): Config {
+        return this.deployment.config
+    }
+
     public getBtcConfig(btc: Token) {
-        const config = this.config.btcConfigs.find((i) => i.btc.equals(btc))
+        const config = this.config.btcConfigs.find((btcConfig) => btcConfig.btc.equals(btc))
         if (!config) {
             throw new SdkError('BTC config not found')
         }
         return config
     }
 
+    /**
+     * Returns the deployment's chains in the order of CHAIN_DATA, followed by any chain that CHAIN_DATA does not list.
+     */
     public chains(): Chain[] {
-        const ids = this.config.chains.map((i) => i.id)
-        return chains.filter((chain) => ids.includes(chain.id))
+        const listed = CHAIN_DATA.flatMap((data) => this.deployment.findChain(data.id) ?? [])
+        const seen = new Set<Chain>(listed)
+        return [...listed, ...this.deployment.chains().filter((chain) => !seen.has(chain))]
     }
 
     public chainConfig(chainId: ChainId): ChainConfig {
-        const config = this.config.chains.find((item) => {
-            return item.id === chainId
-        })
-        if (!config) {
-            throw new SdkError(`Could not config by given chainId: ${chainId}`)
-        }
-        return config
+        return this.deployment.chain(chainId).config
     }
 
     public dexFee(chainId: ChainId): number {
@@ -109,13 +100,12 @@ export class Symbiosis {
     }
 
     public findToken(address: string, chainId: ChainId, chainFromId?: ChainId): Token | undefined {
-        return this.tokens().find((token) => {
-            const condition = token.address.toLowerCase() === address.toLowerCase() && token.chainId === chainId
-
-            if (chainFromId === undefined) return condition
-
-            return condition && token.chainFromId === chainFromId
-        })
+        return this.tokens().find(
+            (token) =>
+                token.chainId === chainId &&
+                token.address.toLowerCase() === address.toLowerCase() &&
+                (chainFromId === undefined || token.chainFromId === chainFromId)
+        )
     }
 
     public getRepresentation(token: Token, chainId: ChainId): Token | undefined {
@@ -142,45 +132,33 @@ export class Symbiosis {
         return this.configCache.getTokenInfoById(tokenId)
     }
 
+    /** The chain's tokens, neither deprecated nor synthetic, that trade in the pool, in the order of the data. */
     public transitTokens(chainId: ChainId, omniPoolConfig: OmniPoolConfig): Token[] {
         const pool = this.configCache.getOmniPoolByConfig(omniPoolConfig)
         if (!pool) {
             throw new SdkError(`Cannot find omniPool for chainId ${omniPoolConfig.chainId}`)
         }
-
-        const tokens = this.configCache.tokens().filter((token) => {
-            return token.chainId === chainId && !token.deprecated && !token.isSynthetic
-        })
-
-        return tokens.filter((token) => {
-            const tokenPool = this.getOmniPoolByToken(token)
-            return pool.id === tokenPool?.id
-        })
+        return this.inPool(chainId, pool)
     }
 
+    /**
+     * Returns the chain's first token on the pool's own chain, whatever pool that token trades in, as 0.0.69 did. On
+     * another chain, it returns the first of the chain's tokens that trade in the pool. `pool.transitToken(chainId)`
+     * has no such exception. Errors with NoTransitTokenError when there is no such token.
+     */
     public transitToken(chainId: ChainId, omniPoolConfig: OmniPoolConfig): Token {
         const pool = this.configCache.getOmniPoolByConfig(omniPoolConfig)
         if (!pool) {
-            throw new NoTransitTokenError(`Cannot find omniPool ${pool}`)
+            throw new NoTransitTokenError(
+                `Cannot find omniPool ${omniPoolConfig.address} on chain ${omniPoolConfig.chainId}`
+            )
         }
-        const tokens = this.configCache.tokens().filter((token) => {
-            return token.chainId === chainId && !token.deprecated && !token.isSynthetic
-        })
+        const tokens = this.ownTokens(chainId)
         if (tokens.length === 0) {
             throw new NoTransitTokenError(`Cannot find token for chain ${chainId}`)
         }
-
-        // if the token is from the manager chain (token's chainIs equals to pool chainId)
-        if (chainId === pool.chainId) {
-            return tokens[0]
-        }
-
-        // find the FIRST suitable token from the token list
-        // e.g., the first token has priority
-        const transitToken = tokens.find((token) => {
-            return this.getOmniPoolByToken(token)?.id === pool.id
-        })
-
+        if (chainId === pool.chainId) return tokens[0]
+        const transitToken = this.inPool(chainId, pool)[0]
         if (!transitToken) {
             throw new NoTransitTokenError(`Cannot find transitToken for chain ${chainId}. Pool: ${pool.id}`)
         }
@@ -199,41 +177,31 @@ export class Symbiosis {
         tokenOut: Token
         disableSrcChainRouting?: boolean
         disableDstChainRouting?: boolean
-    }) {
-        const transitTokensIn = this.transitTokens(tokenIn.chainId, poolConfig)
-        const transitTokensOut = this.transitTokens(tokenOut.chainId, poolConfig)
-
-        const combinations: { transitTokenIn: Token; transitTokenOut: Token }[] = []
-
-        transitTokensIn.forEach((transitTokenIn) => {
-            transitTokensOut.forEach((transitTokenOut) => {
-                if (transitTokenIn.equals(transitTokenOut)) {
-                    return
-                }
-                if (disableSrcChainRouting) {
-                    if (!transitTokenIn.equals(wrappedToken(tokenIn))) {
-                        return
-                    }
-                }
-                if (disableDstChainRouting) {
-                    if (!transitTokenOut.equals(wrappedToken(tokenOut))) {
-                        return
-                    }
-                }
-                combinations.push({ transitTokenIn, transitTokenOut })
-            })
-        })
-
-        return combinations
+    }): TransitCombination[] {
+        const ins = this.transitTokens(tokenIn.chainId, poolConfig)
+        const outs = this.transitTokens(tokenOut.chainId, poolConfig)
+        return ins.flatMap((transitTokenIn) =>
+            outs
+                .filter(
+                    (transitTokenOut) =>
+                        !transitTokenIn.equals(transitTokenOut) &&
+                        (!disableSrcChainRouting || transitTokenIn.equals(tokenIn.wrapped)) &&
+                        (!disableDstChainRouting || transitTokenOut.equals(tokenOut.wrapped))
+                )
+                .map((transitTokenOut) => ({ transitTokenIn, transitTokenOut }))
+        )
     }
 
     getRevertableAddress(chainId: ChainId): EvmAddress {
-        const address = this.config.revertableAddress[chainId]
+        return this.config.revertableAddress[chainId] ?? this.config.revertableAddress.default
+    }
 
-        if (address) {
-            return address
-        }
+    private inPool(chainId: ChainId, pool: OmniPoolInfo): Token[] {
+        return this.ownTokens(chainId).filter((token) => this.configCache.getOmniPoolByToken(token) === pool)
+    }
 
-        return this.config.revertableAddress.default
+    private ownTokens(chainId: ChainId): Token[] {
+        const tokens = this.deployment.findChain(chainId)?.tokens() ?? []
+        return tokens.filter((token) => token.canTransit)
     }
 }

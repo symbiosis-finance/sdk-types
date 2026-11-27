@@ -1,9 +1,10 @@
 import { ChainId } from '../../constants'
 import { Token } from '../../entities'
 import { CHANGELLY_NATIVE_CHAINS, THORCHAIN_L1_DEST_CHAIN_IDS } from '../constants'
-import type { Config } from '../types'
+import { chainData } from '../chainData'
+import type { ConfigInput } from '../types'
 
-export const config: Config = {
+export const config: ConfigInput = {
     advisor: {
         url: 'https://api.symbiosis.finance/calculations',
     },
@@ -104,7 +105,7 @@ export const config: Config = {
                 },
             }),
             symBtcHelper: {
-                address: '0x839da7208cb8a551e47172cbfae9d685c8f37121',
+                address: '0x839dA7208CB8a551e47172CbFAE9D685C8F37121',
                 chainId: ChainId.ETH_MAINNET,
                 // SynthesisBTC of this portal; Ethereum's chain synthesis stays for QUAI
                 synthesis: '0x416EBf83677C0BB2638028d11D9077CAb2F13aFc',
@@ -116,6 +117,7 @@ export const config: Config = {
     chains: [
         {
             id: ChainId.BTC_MAINNET,
+            chain: chainData(ChainId.BTC_MAINNET),
             rpc: 'https://mempool.space/api',
             filterBlockOffset: 0,
             stables: [],
@@ -136,6 +138,7 @@ export const config: Config = {
             ]),
         ].map((id) => ({
             id,
+            chain: chainData(id),
             rpc: '',
             filterBlockOffset: 0,
             stables: [],
@@ -151,10 +154,27 @@ export const config: Config = {
         })),
         {
             id: ChainId.ETH_MAINNET,
+            chain: chainData(ChainId.ETH_MAINNET),
+            multicallRouterV2: '0x09D479E04D2dd46AaD77618435e5c639EA769264',
+            onchainSwapRouter: {
+                gateway: '0xE7e68D336F90f98D22A479253eafA5f2424aCaD8',
+                executor: '0x7C84fC7b4EebdFE96339Fd89eF5eeA24cECf20b9',
+            },
+            onchainZeroFeeSwapRouter: {
+                gateway: '0x4E73aF5663c997A796FF2cc1AD8C5d406541b4F2',
+                executor: '0xE985e7d7b04eb55c9f20494f0c11165664407F7F',
+            },
+            legacyFeeCollector: '0xfF9B21c3bfA4BCE9b20b55fEd56d102ceD48b0F6',
+            legacyZeroFeeCollector: '0x92114294E42A96C9eF3163DA18Ee7eFdbA6cc661',
+            approvableMetaRouter: {
+                gateway: '0xB4769e9c5bE31199a25ecD1B0C6609183fa72521',
+                executor: '0xc227b3a439EE6ae3A22500757125f4dE91d8008E',
+            },
+            unwrapper: '0x5ad095DE83693ba063941f2f2C5A0dF02383B651',
             rpc: 'https://ethereum-rpc.publicnode.com',
             spareRpcs: ['https://eth.drpc.org', 'https://eth-pokt.nodies.app'],
             filterBlockOffset: 90,
-            partnerFeeCollector: '0xb4291b5f2ed122d306afef72a2b0127613ab1eef',
+            partnerFeeCollector: '0xb4291B5F2ed122d306afEf72a2B0127613aB1EEf',
             stables: [
                 {
                     name: 'USD Coin',
@@ -183,7 +203,7 @@ export const config: Config = {
                 {
                     name: 'Wrapped Ether',
                     symbol: 'WETH',
-                    address: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+                    address: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
                     chainId: ChainId.ETH_MAINNET,
                     decimals: 18,
                     origin: 'native',
@@ -295,6 +315,23 @@ export const config: Config = {
         },
         {
             id: ChainId.BSC_MAINNET,
+            chain: chainData(ChainId.BSC_MAINNET),
+            multicallRouterV2: '0xeB278638fFa33CC776230dE4FF88eD5142ed8c1A',
+            onchainSwapRouter: {
+                gateway: '0xf97fd9feEe8afFDbaeCE1dF54341537460D2E24d',
+                executor: '0xC08B4c7513e9d8A941D2461fBD52ea034c7deC42',
+            },
+            onchainZeroFeeSwapRouter: {
+                gateway: '0x57dBCB192fA64bf07Eab76941D1daE5177c8f4f3',
+                executor: '0x74e034487ad43B9386114C54Ed057a89de437395',
+            },
+            legacyFeeCollector: '0x0425841529882628880fBD228AC90606e0c2e09A',
+            legacyZeroFeeCollector: '0x628613064b1902a1A422825cf11B687C6f17961E',
+            approvableMetaRouter: {
+                gateway: '0x851B43189de721dD94AbA767AAd9E6F6d6a95CCA',
+                executor: '0x980447DdcEf79A7499Da4538Da8FC59BAcAD6997',
+            },
+            unwrapper: '0xda5b1347D43C5b8BF4e334C0bB6f01D1F1070994',
             rpc: 'https://bsc-rpc.publicnode.com',
             spareRpcs: [
                 'https://bsc-dataseed.bnbchain.org',
@@ -332,7 +369,7 @@ export const config: Config = {
                 {
                     name: 'Ethereum Token',
                     symbol: 'ETH',
-                    address: '0x2170ed0880ac9a755fd29b2688956bd959f933f8',
+                    address: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
                     chainId: ChainId.BSC_MAINNET,
                     decimals: 18,
                     origin: 'binance-bridge',
@@ -437,6 +474,18 @@ export const config: Config = {
         },
         {
             id: ChainId.AVAX_MAINNET,
+            chain: chainData(ChainId.AVAX_MAINNET),
+            multicallRouterV2: '0x0F28F4a0250710adF2d95c7E7E297B2edD31AeC8',
+            onchainSwapRouter: {
+                gateway: '0x844e4a0ade23b1BA5642A8d0010E42aE4434Df30',
+                executor: '0x43a5f731FDECfB37Ac25307ed275a41fF52820e7',
+            },
+            legacyFeeCollector: '0xA257F3FE4E4032291516DC355eDF90664e9eB932',
+            approvableMetaRouter: {
+                gateway: '0xfeC09BE39F82b13471D2e0E7d72e6ee589c631c6',
+                executor: '0x4494b8cBC69c794d82Bd2d820A6ff6f62D7D841A',
+            },
+            unwrapper: '0xBC04d4F87B1d5c83AC8a05748Bc4cc5F893B8621',
             rpc: 'https://api.avax.network/ext/bc/C/rpc',
             spareRpcs: ['https://avalanche.drpc.org', 'https://avalanche-c-chain-rpc.publicnode.com'],
             filterBlockOffset: 900,
@@ -495,13 +544,23 @@ export const config: Config = {
         },
         {
             id: ChainId.MATIC_MAINNET,
+            chain: chainData(ChainId.MATIC_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0xa1262496e84a9663b7AB64ed96C152A23d0B7214',
+                executor: '0x2dD8060ceE133bD53e5F1B3437Ff34DA706E7443',
+            },
+            legacyFeeCollector: '0x9d74807B8fA79d49bb95CF988Af3c25Fb1437B4f',
+            approvableMetaRouter: {
+                gateway: '0x2eE9559387b806E88fd46b9DA160D64A29CE7Da0',
+                executor: '0x7a73a0bA4919778C5442f026bd01795b4f2A4cB8',
+            },
             rpc: 'https://polygon.drpc.org',
             spareRpcs: ['https://rpc-mainnet.matic.quiknode.pro', 'https://polygon-bor-rpc.publicnode.com'],
             filterBlockOffset: 900,
             stables: [
                 {
                     name: 'USD Coin (PoS) (USDC.e)',
-                    address: '0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
+                    address: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
                     symbol: 'USDC.e',
                     decimals: 6,
                     chainId: ChainId.MATIC_MAINNET,
@@ -514,7 +573,7 @@ export const config: Config = {
                 {
                     name: 'Wrapped Ether',
                     symbol: 'WETH',
-                    address: '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619',
+                    address: '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
                     chainId: ChainId.MATIC_MAINNET,
                     decimals: 18,
                     origin: 'polygon-pos-bridge',
@@ -537,6 +596,16 @@ export const config: Config = {
         },
         {
             id: ChainId.TELOS_MAINNET,
+            chain: chainData(ChainId.TELOS_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x7f6fb9f3ce785F3d85772c038Fda58eC9432D421',
+                executor: '0x25aD14e36F3f10080107212504A5Da60294Ecc4B',
+            },
+            legacyFeeCollector: '0xf02bBC9de6e443eFDf3FC41851529C2c3B9E5e0C',
+            approvableMetaRouter: {
+                gateway: '0x17efC1d70eA32eb04c6979c6500d12eEE9e3Dcbd',
+                executor: '0x04A1F3030A2fc5ECe3227567e98b20ef2241820c',
+            },
             rpc: 'https://rpc.telos.net',
             spareRpcs: ['https://rpc1.us.telos.net/evm'],
             filterBlockOffset: 900,
@@ -567,6 +636,17 @@ export const config: Config = {
         },
         {
             id: ChainId.BOBA_MAINNET,
+            chain: chainData(ChainId.BOBA_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x7f6fb9f3ce785F3d85772c038Fda58eC9432D421',
+                executor: '0x25aD14e36F3f10080107212504A5Da60294Ecc4B',
+            },
+            legacyFeeCollector: '0xB79A4F5828eb55c10D7abF4bFe9a9f5d11aA84e0',
+            approvableMetaRouter: {
+                gateway: '0x17efC1d70eA32eb04c6979c6500d12eEE9e3Dcbd',
+                executor: '0x04A1F3030A2fc5ECe3227567e98b20ef2241820c',
+            },
+            unwrapper: '0xA257F3FE4E4032291516DC355eDF90664e9eB932',
             rpc: 'https://mainnet.boba.network',
             spareRpcs: ['https://boba-ethereum.gateway.tenderly.co'],
             filterBlockOffset: 900,
@@ -597,6 +677,12 @@ export const config: Config = {
         },
         {
             id: ChainId.SYMBIOSIS_MAINNET,
+            chain: chainData(ChainId.SYMBIOSIS_MAINNET),
+            approvableMetaRouter: {
+                gateway: '0x544a09004978fd184f32589FF8FB7cCda6b8F11F',
+                executor: '0x98782169093795D8F9a93E445b98A90D42C88Aa3',
+            },
+            unwrapper: '0x1ebE940c8c0E7D628192Ba6253699e8ce4B876b3',
             rpc: 'https://mainnet-replica.symbiosis.finance',
             spareRpcs: [],
             filterBlockOffset: 900,
@@ -628,6 +714,19 @@ export const config: Config = {
         },
         {
             id: ChainId.ZKSYNC_MAINNET,
+            chain: chainData(ChainId.ZKSYNC_MAINNET),
+            multicallRouterV2: '0x7D2172C9bf79263FFf6E456c423a5e3E69F9AA4b',
+            onchainSwapRouter: {
+                gateway: '0x9d8095d3A929400dc2312E37BD8211218108849D',
+                executor: '0xE55967aa83b8A98A97ebD65910df600FC9077231',
+            },
+            legacyFeeCollector: '0x56C343E7cE75e53e58Ed2f3743C6f137c13D2013',
+            legacyZeroFeeCollector: '0x35e3dc1f3383bD348EC651EdD73fE1d7a7dA5AAa',
+            approvableMetaRouter: {
+                gateway: '0x87d4007a8a7e4897AB00a5390dAaF0b8bE199C84',
+                executor: '0xD99AFDCed3c439814398E60e16EeDe2AD7091c1E',
+            },
+            unwrapper: '0x1Cd08E632DfC63998add8840c8B9c97A4cA6DAb4',
             rpc: 'https://mainnet.era.zksync.io',
             spareRpcs: ['https://zksync.drpc.org'],
             filterBlockOffset: 900,
@@ -660,7 +759,7 @@ export const config: Config = {
                 {
                     name: 'Wrapped Ether',
                     symbol: 'WETH',
-                    address: '0x5aea5775959fbc2557cc8789bc1bf90a239d9a91',
+                    address: '0x5AEa5775959fBC2557Cc8789bC1bf90A239D9a91',
                     chainId: ChainId.ZKSYNC_MAINNET,
                     decimals: 18,
                     origin: 'zksync-bridge',
@@ -708,6 +807,18 @@ export const config: Config = {
         },
         {
             id: ChainId.ARBITRUM_MAINNET,
+            chain: chainData(ChainId.ARBITRUM_MAINNET),
+            multicallRouterV2: '0x5ad095DE83693ba063941f2f2C5A0dF02383B651',
+            onchainSwapRouter: {
+                gateway: '0xda5b1347D43C5b8BF4e334C0bB6f01D1F1070994',
+                executor: '0xe9c797206beF455F4fFB2AEE4ff33bFBDC8B3de7',
+            },
+            legacyFeeCollector: '0x4FDA0599b78a49d289577a8DF2046459abC04d82',
+            approvableMetaRouter: {
+                gateway: '0x3743c756b64ECd0770f1d4f47696A73d2A46dcbe',
+                executor: '0xf37E321e1c275d249B7A9c825aE802A9f464Eb94',
+            },
+            unwrapper: '0x5Eb4ED9F745531221FAE41906e11d37642B15da6',
             rpc: 'https://arb1.arbitrum.io/rpc',
             spareRpcs: ['https://arbitrum.drpc.org'],
             filterBlockOffset: 900,
@@ -740,7 +851,7 @@ export const config: Config = {
                 {
                     name: 'Wrapped Ether',
                     symbol: 'WETH',
-                    address: '0x82af49447d8a07e3bd95bd0d56f35241523fbab1',
+                    address: '0x82aF49447D8a07e3bd95BD0d56f35241523fBab1',
                     chainId: ChainId.ARBITRUM_MAINNET,
                     decimals: 18,
                     origin: 'arbitrum-bridge',
@@ -808,6 +919,17 @@ export const config: Config = {
         },
         {
             id: ChainId.OPTIMISM_MAINNET,
+            chain: chainData(ChainId.OPTIMISM_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0xca506793A420E901BbCa8066be5661E3C52c84c2',
+                executor: '0xd92Ca299F1C2518E78E48C207b64591BA6E9b9a8',
+            },
+            legacyFeeCollector: '0x7775b274f0C3fA919B756b22A4d9674e55927ab8',
+            approvableMetaRouter: {
+                gateway: '0xA9A96Ee51dD54B9f51d46b1fbD2A19c1295Ec75b',
+                executor: '0x356d322BF762d4022D8c241428770565f236c2EA',
+            },
+            unwrapper: '0x88139ad1199e8c78a0804d4bEBF4FbAD89EF9D89',
             rpc: 'https://mainnet.optimism.io',
             spareRpcs: ['https://optimism.drpc.org', 'https://optimism-rpc.publicnode.com'],
             filterBlockOffset: 900,
@@ -850,6 +972,17 @@ export const config: Config = {
         },
         {
             id: ChainId.LINEA_MAINNET,
+            chain: chainData(ChainId.LINEA_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x70A16EB2B39A5573A8138b18582111bBA480fb8F',
+                executor: '0xb2074C16910115aFC623e16707E9C2A6eBD8632a',
+            },
+            legacyFeeCollector: '0x0f91052dc5B4baE53d0FeA5DAe561A117268f5d2',
+            approvableMetaRouter: {
+                gateway: '0xEbD15fCa7aB58470C40653ecB60f10fa08322F67',
+                executor: '0x1E49c61Be437D181b723Cdac52aAeeD2bb864E41',
+            },
+            unwrapper: '0xF5b0861e787706195c98E2F0d2D6EFBDAC1D1e08',
             rpc: 'https://rpc.linea.build',
             spareRpcs: ['https://linea.drpc.org', 'https://linea-rpc.publicnode.com'],
             filterBlockOffset: 900,
@@ -904,6 +1037,16 @@ export const config: Config = {
         },
         {
             id: ChainId.MANTLE_MAINNET,
+            chain: chainData(ChainId.MANTLE_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x086488E659253FF26D0C743325C059FB57Ca7934',
+                executor: '0xd471fE552e35904a5F74EA0fA1ef266eA8f3A4E3',
+            },
+            legacyFeeCollector: '0x7B4E28E7273aA8CB64C56fF191ebF43b64f409F9',
+            approvableMetaRouter: {
+                gateway: '0x8097f0B9f06C27AF9579F75762F971D745bb222F',
+                executor: '0x4949e74094D6F9C06D68e5Ffe388f6542C4b1A34',
+            },
             rpc: 'https://rpc.mantle.xyz',
             spareRpcs: ['https://mantle.drpc.org', 'https://mantle-rpc.publicnode.com'],
             filterBlockOffset: 900,
@@ -946,6 +1089,17 @@ export const config: Config = {
         },
         {
             id: ChainId.BASE_MAINNET,
+            chain: chainData(ChainId.BASE_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x291A42bDFFe3754eb3C8B69b4D232Fa1d4a46608',
+                executor: '0xC1080e58486168Da85F2c94d78fed902897d734f',
+            },
+            legacyFeeCollector: '0xF951789c6A356BfbC3033648AA10b5Dd3e9d88C0',
+            approvableMetaRouter: {
+                gateway: '0xa18348e793E77239EC68CAa51b74c5Cdc82c8a9d',
+                executor: '0xCbFD5DcaD860f49D0BD2fDaD78d9d943CAeBedef',
+            },
+            unwrapper: '0x8e1d36F9da8CFe842bCf8670A12ACd51c26d195D',
             rpc: 'https://mainnet.base.org',
             spareRpcs: ['https://base.drpc.org'],
             filterBlockOffset: 900,
@@ -989,7 +1143,7 @@ export const config: Config = {
                 {
                     name: 'DROPEE',
                     symbol: 'DROPEE',
-                    address: '0x122283fbe84a3c387b24684d452cd53ad5906c92',
+                    address: '0x122283fBE84a3C387B24684D452cD53aD5906C92',
                     chainId: ChainId.BASE_MAINNET,
                     decimals: 18,
                     origin: 'native',
@@ -1018,13 +1172,24 @@ export const config: Config = {
         },
         {
             id: ChainId.TRON_MAINNET,
+            chain: chainData(ChainId.TRON_MAINNET),
+            multicallRouterV2: '0xFA18454b16d59b34d01a8eA0572Ab31B34098AAb',
+            onchainSwapRouter: {
+                gateway: '0x8328C7Ca00c83B69503E56D80CEc4934B6342E4a',
+                executor: '0xA07e4f36A8d008302124f95D2E67C565D9c40BF9',
+            },
+            legacyFeeCollector: '0x5112AC3D77551b9F670eb34eF75984246164e38D',
+            approvableMetaRouter: {
+                gateway: '0x98e1df4E3200E1001610365e2eb133A953bbe3e0',
+                executor: '0xd076Ab0d4b74aEf1Aec7b1D4f106787e0D5f9163',
+            },
             rpc: 'https://api.trongrid.io',
             filterBlockOffset: 900,
             stables: [
                 {
                     name: 'Tether USDt',
                     symbol: 'USDT',
-                    address: '0xa614f803b6fd780986a42c78ec9c7f77e6ded13c',
+                    address: '0xa614f803B6FD780986A42c78Ec9c7f77e6DeD13C',
                     chainId: ChainId.TRON_MAINNET,
                     decimals: 6,
                     origin: 'native',
@@ -1034,16 +1199,16 @@ export const config: Config = {
                     },
                 },
             ],
-            router: '0x6E0617948FE030A7E4970F8389D4AD295F249B7E',
+            router: '0x6E0617948FE030a7E4970f8389d4Ad295f249B7e',
             dexFee: 30,
-            metaRouter: '0x0863786bbf4561f4a2a8be5a9ddf152afd8ae25c',
-            metaRouterGateway: '0x49e1816a2cf475515e7c80c9f0f0e16ae499198b',
+            metaRouter: '0x0863786bbf4561F4a2A8bE5A9DdF152AFd8aE25c',
+            metaRouterGateway: '0x49e1816a2Cf475515E7c80C9F0F0E16ae499198B',
             bridge: '0x9c4C6918f9d4CfC4B7C9cF080ce3C4D50B948323',
             synthesis: '0x0000000000000000000000000000000000000000',
-            portal: '0x21fb7f70b95d119f7594267a79e2897290a21caf',
-            pauser: '0xeb19c0506028ae1b258568bfc947903c7ee13010',
+            portal: '0x21FB7f70B95d119f7594267A79e2897290a21caF',
+            pauser: '0xeb19C0506028ae1B258568bFc947903C7EE13010',
             fabric: '0x0000000000000000000000000000000000000000',
-            multicallRouter: '0x354ed0e8616678f2829feb2e2e9a0e0869fa82fb',
+            multicallRouter: '0x354ed0e8616678F2829Feb2e2E9A0E0869Fa82fB',
             intentConfig: {
                 depositorySrc: '0xF1AbfEd21a126062997168f81Cc30D9A07Bb1406',
                 depositoryDst: '0x3c43e4a2288604389678FB3184000E2D2a2eC46E',
@@ -1053,6 +1218,17 @@ export const config: Config = {
         },
         {
             id: ChainId.SCROLL_MAINNET,
+            chain: chainData(ChainId.SCROLL_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0xF951789c6A356BfbC3033648AA10b5Dd3e9d88C0',
+                executor: '0x5D025432bCBe100354b5fb7b1A68D1641e677F6C',
+            },
+            legacyFeeCollector: '0xf02bBC9de6e443eFDf3FC41851529C2c3B9E5e0C',
+            approvableMetaRouter: {
+                gateway: '0x3338BE49A5f60e2593337919F9aD7098e9a7Dd7E',
+                executor: '0x50655203a736E49bdeeCD4b085A66eF54085D417',
+            },
+            unwrapper: '0x42Cd64f48496dDdfEfF8F3704df9175dbe20d325',
             rpc: 'https://scroll-rpc.publicnode.com',
             spareRpcs: ['https://scroll.drpc.org', 'https://rpc.scroll.io'],
             filterBlockOffset: 900,
@@ -1107,6 +1283,17 @@ export const config: Config = {
         },
         {
             id: ChainId.MANTA_MAINNET,
+            chain: chainData(ChainId.MANTA_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x086488E659253FF26D0C743325C059FB57Ca7934',
+                executor: '0xd471fE552e35904a5F74EA0fA1ef266eA8f3A4E3',
+            },
+            legacyFeeCollector: '0xf85FC807D05d3Ab2309364226970aAc57b4e1ea4',
+            approvableMetaRouter: {
+                gateway: '0x8097f0B9f06C27AF9579F75762F971D745bb222F',
+                executor: '0x4949e74094D6F9C06D68e5Ffe388f6542C4b1A34',
+            },
+            unwrapper: '0xf39D9A9ABb98593ceaC395D7A37c572Da48fCfD5',
             rpc: 'https://pacific-rpc.manta.network/http',
             spareRpcs: ['https://manta-pacific.drpc.org'],
             filterBlockOffset: 900,
@@ -1149,6 +1336,16 @@ export const config: Config = {
         },
         {
             id: ChainId.METIS_MAINNET,
+            chain: chainData(ChainId.METIS_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0xc17d768Bf4FdC6f20a4A0d8Be8767840D106D077',
+                executor: '0xF98b660AdF2ed7d9d9D9dAACC2fb0CAce4F21835',
+            },
+            legacyFeeCollector: '0x81aB74A9f9d7457fF47dfD102e78A340cF72EC39',
+            approvableMetaRouter: {
+                gateway: '0x6148FD6C649866596C3d8a971fC313E5eCE84882',
+                executor: '0x1363be92D1FA1915b501a8dd25D62d40a13DF99E',
+            },
             rpc: 'https://andromeda.metis.io/?owner=1088',
             spareRpcs: ['https://metis.drpc.org', 'https://metis-rpc.publicnode.com', 'https://metis-pokt.nodies.app'],
             filterBlockOffset: 900,
@@ -1179,6 +1376,17 @@ export const config: Config = {
         },
         {
             id: ChainId.MODE_MAINNET,
+            chain: chainData(ChainId.MODE_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0xc17d768Bf4FdC6f20a4A0d8Be8767840D106D077',
+                executor: '0xF98b660AdF2ed7d9d9D9dAACC2fb0CAce4F21835',
+            },
+            legacyFeeCollector: '0xd8db4fb1fEf63045A443202d506Bcf30ef404160',
+            approvableMetaRouter: {
+                gateway: '0x6148FD6C649866596C3d8a971fC313E5eCE84882',
+                executor: '0x1363be92D1FA1915b501a8dd25D62d40a13DF99E',
+            },
+            unwrapper: '0xE75C7E85FE6ADd07077467064aD15847E6ba9877',
             rpc: 'https://mainnet.mode.network',
             spareRpcs: ['https://mode.drpc.org'],
             filterBlockOffset: 900,
@@ -1209,6 +1417,23 @@ export const config: Config = {
         },
         {
             id: ChainId.RSK_MAINNET,
+            chain: chainData(ChainId.RSK_MAINNET),
+            multicallRouterV2: '0xca506793A420E901BbCa8066be5661E3C52c84c2',
+            onchainSwapRouter: {
+                gateway: '0xb657f823fd8c4B94901e78b75481D5b39D59ec61',
+                executor: '0x11E90C3276601F4DF148Cd73563cA56bfD57d335',
+            },
+            onchainZeroFeeSwapRouter: {
+                gateway: '0x8dc3151dCcd58FCB6a0beC0dF20C06FBa133F027',
+                executor: '0x82aAF7382B9E87160DA9e7bD5a9829E49BA98E96',
+            },
+            legacyFeeCollector: '0x2b7Aa8bDc40B6d3d19d0dE7480c4db8d5B6495e2',
+            legacyZeroFeeCollector: '0xA257F3FE4E4032291516DC355eDF90664e9eB932',
+            approvableMetaRouter: {
+                gateway: '0x7f6fb9f3ce785F3d85772c038Fda58eC9432D421',
+                executor: '0xcf7aDFc571C4Ca41726F33F3582A845b7c64c632',
+            },
+            unwrapper: '0x5B1baB64961cF72822817Ef32950fF7FCaB28b62',
             rpc: 'https://rpc.mainnet.rootstock.io/ssy5IlJXJwBpbhr6p5IOaNW2NJFb29-M',
             spareRpcs: ['https://public-node.rsk.co', 'https://rootstock.drpc.org', 'https://mycrypto.rsk.co'],
             filterBlockOffset: 90,
@@ -1217,7 +1442,7 @@ export const config: Config = {
                 {
                     name: 'USD₮0',
                     symbol: 'USD₮0',
-                    address: '0x779ded0c9e1022225f8e0630b35a9b54be713736',
+                    address: '0x779Ded0c9e1022225f8E0630b35a9b54bE713736',
                     chainId: ChainId.RSK_MAINNET,
                     decimals: 6,
                     origin: 'layerzero-oft',
@@ -1230,7 +1455,7 @@ export const config: Config = {
                     deprecated: true,
                     name: 'Tether USD',
                     symbol: 'rUSDT',
-                    address: '0xef213441a85df4d7acbdae0cf78004e1e486bb96',
+                    address: '0xef213441A85dF4d7ACbDaE0Cf78004e1E486bB96',
                     chainId: ChainId.RSK_MAINNET,
                     decimals: 18,
                     origin: 'rsk-token-bridge',
@@ -1243,7 +1468,7 @@ export const config: Config = {
                     deprecated: true,
                     name: 'Bridged USDC (Stargate)',
                     symbol: 'USDC.e',
-                    address: '0x74c9f2b00581f1b11aa7ff05aa9f608b7389de67',
+                    address: '0x74c9f2b00581F1B11AA7ff05aa9F608B7389De67',
                     chainId: ChainId.RSK_MAINNET,
                     decimals: 6,
                     origin: 'stargate-layerzero',
@@ -1255,7 +1480,7 @@ export const config: Config = {
                 {
                     name: 'Wrapped RBTC',
                     symbol: 'WRBTC',
-                    address: '0x542fda317318ebf1d3deaf76e0b632741a7e677d',
+                    address: '0x542fDA317318eBF1d3DEAf76E0b632741A7e677d',
                     chainId: ChainId.RSK_MAINNET,
                     decimals: 18,
                     origin: 'native',
@@ -1267,14 +1492,14 @@ export const config: Config = {
             ],
             router: '0x0000000000000000000000000000000000000000',
             dexFee: 0,
-            metaRouter: '0x7057ab3fb2bee9c18e0cde4240de4ff7f159e365',
-            metaRouterGateway: '0xfffdb2a69abcbbf55ecb2f6b348e0bd3d0f9f2e1',
-            bridge: '0xda8057acb94905eb6025120cb2c38415fd81bfeb',
-            synthesis: '0xf8504d2ca2f0bbad9d36927e3d32e278abadada0',
-            portal: '0x5aa5f7f84ed0e5db0a4a85c3947ea16b53352fd4',
+            metaRouter: '0x7057aB3fB2BeE9c18e0cDe4240DE4ff7f159E365',
+            metaRouterGateway: '0xfFFdb2A69AbCbbf55eCB2f6b348e0Bd3D0F9F2E1',
+            bridge: '0xda8057acB94905eb6025120cB2c38415Fd81BfEB',
+            synthesis: '0xF8504d2ca2F0bbAD9d36927e3d32E278AbAdaDa0',
+            portal: '0x5Aa5f7f84eD0E5db0a4a85C3947eA16B53352FD4',
             pauser: '0x3e4aDcf98E77F6d8022639F7135BE4A3850033ED',
-            fabric: '0x7775b274f0c3fa919b756b22a4d9674e55927ab8',
-            multicallRouter: '0x01a3c8e513b758ebb011f7afaf6c37616c9c24d9',
+            fabric: '0x7775b274f0C3fA919B756b22A4d9674e55927ab8',
+            multicallRouter: '0x01A3c8E513B758EBB011F7AFaf6C37616c9C24d9',
             depository: {
                 priceEstimation: {
                     enabled: false,
@@ -1294,6 +1519,17 @@ export const config: Config = {
         },
         {
             id: ChainId.MERLIN_MAINNET,
+            chain: chainData(ChainId.MERLIN_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x1ac4C50080871D7a24DD705dE9eFe5FF14bC0Ea2',
+                executor: '0x3fD0ab1c6cCFE500C0d72168c8cE05dBa3aa5d9a',
+            },
+            legacyFeeCollector: '0x1a039cE63AE35a67Bf0E9F6DbFaE969639D59eC8',
+            approvableMetaRouter: {
+                gateway: '0xDA1C70C902746996A8C989bB07AA6C408Ef880D8',
+                executor: '0xfdD61c0CF946a775E6cD572Ffb7b686a70f44039',
+            },
+            unwrapper: '0x8a7F930003BedD63A1ebD99C5917FD6aE7E3dedf',
             rpc: 'https://rpc.merlinchain.io',
             filterBlockOffset: 900,
             stables: [
@@ -1323,6 +1559,17 @@ export const config: Config = {
         },
         {
             id: ChainId.TAIKO_MAINNET,
+            chain: chainData(ChainId.TAIKO_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0xc17d768Bf4FdC6f20a4A0d8Be8767840D106D077',
+                executor: '0xF98b660AdF2ed7d9d9D9dAACC2fb0CAce4F21835',
+            },
+            legacyFeeCollector: '0x2b7Aa8bDc40B6d3d19d0dE7480c4db8d5B6495e2',
+            approvableMetaRouter: {
+                gateway: '0x6148FD6C649866596C3d8a971fC313E5eCE84882',
+                executor: '0x1363be92D1FA1915b501a8dd25D62d40a13DF99E',
+            },
+            unwrapper: '0x6AEb9b27590387b8Fd0560C52f6B968C59C10Fab',
             rpc: 'https://rpc.mainnet.taiko.xyz',
             spareRpcs: ['https://taiko-rpc.publicnode.com', 'https://rpc.ankr.com/taiko'],
             filterBlockOffset: 900,
@@ -1353,6 +1600,16 @@ export const config: Config = {
         },
         {
             id: ChainId.SEI_EVM_MAINNET,
+            chain: chainData(ChainId.SEI_EVM_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x6B1bbd301782FF636601fC594Cd7Bfe74871bfaA',
+                executor: '0x210941a9fe976Ac0985aDC619EA7fA89B29a025D',
+            },
+            legacyFeeCollector: '0x2b7Aa8bDc40B6d3d19d0dE7480c4db8d5B6495e2',
+            approvableMetaRouter: {
+                gateway: '0xA738e84fdE890Bc60b99AF7ccE43990E534304de',
+                executor: '0x5074b7cA7162F793318B65D8BeCC5975DF327C80',
+            },
             rpc: 'https://sei-evm-rpc.publicnode.com',
             spareRpcs: ['https://evm-rpc.sei-apis.com'],
             filterBlockOffset: 900,
@@ -1409,6 +1666,16 @@ export const config: Config = {
         },
         {
             id: ChainId.CRONOS_MAINNET,
+            chain: chainData(ChainId.CRONOS_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0xc17d768Bf4FdC6f20a4A0d8Be8767840D106D077',
+                executor: '0xF98b660AdF2ed7d9d9D9dAACC2fb0CAce4F21835',
+            },
+            legacyFeeCollector: '0x1a039cE63AE35a67Bf0E9F6DbFaE969639D59eC8',
+            approvableMetaRouter: {
+                gateway: '0x6148FD6C649866596C3d8a971fC313E5eCE84882',
+                executor: '0x1363be92D1FA1915b501a8dd25D62d40a13DF99E',
+            },
             rpc: 'https://evm.cronos.org',
             spareRpcs: ['https://cronos-evm-rpc.publicnode.com'],
             filterBlockOffset: 900,
@@ -1416,7 +1683,7 @@ export const config: Config = {
                 {
                     name: 'USD Coin',
                     symbol: 'USDC.e',
-                    address: '0xc21223249ca28397b4b6541dffaecc539bff0c59',
+                    address: '0xc21223249CA28397B4B6541dfFaEcC539BfF0c59',
                     chainId: ChainId.CRONOS_MAINNET,
                     decimals: 6,
                     origin: 'cronos-bridge',
@@ -1439,6 +1706,16 @@ export const config: Config = {
         },
         {
             id: ChainId.FRAXTAL_MAINNET,
+            chain: chainData(ChainId.FRAXTAL_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x6148FD6C649866596C3d8a971fC313E5eCE84882',
+                executor: '0x1363be92D1FA1915b501a8dd25D62d40a13DF99E',
+            },
+            legacyFeeCollector: '0x2b7Aa8bDc40B6d3d19d0dE7480c4db8d5B6495e2',
+            approvableMetaRouter: {
+                gateway: '0xf39D9A9ABb98593ceaC395D7A37c572Da48fCfD5',
+                executor: '0x219454f4Bd263e36F05A07d3C1A7ABa82F4454CD',
+            },
             rpc: 'https://rpc.frax.com',
             spareRpcs: [],
             filterBlockOffset: 900,
@@ -1458,7 +1735,7 @@ export const config: Config = {
                 {
                     name: 'Frax USD',
                     symbol: 'frxUSD',
-                    address: '0xfc00000000000000000000000000000000000001',
+                    address: '0xFc00000000000000000000000000000000000001',
                     chainId: ChainId.FRAXTAL_MAINNET,
                     decimals: 18,
                     origin: 'native',
@@ -1481,6 +1758,17 @@ export const config: Config = {
         },
         {
             id: ChainId.BSQUARED_MAINNET,
+            chain: chainData(ChainId.BSQUARED_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x6148FD6C649866596C3d8a971fC313E5eCE84882',
+                executor: '0x1363be92D1FA1915b501a8dd25D62d40a13DF99E',
+            },
+            legacyFeeCollector: '0x2b7Aa8bDc40B6d3d19d0dE7480c4db8d5B6495e2',
+            approvableMetaRouter: {
+                gateway: '0xf85FC807D05d3Ab2309364226970aAc57b4e1ea4',
+                executor: '0xcd7C056b39DdFB568E451923ABEDb9B6a7Aeb885',
+            },
+            unwrapper: '0x6AEb9b27590387b8Fd0560C52f6B968C59C10Fab',
             rpc: 'https://rpc.bsquared.network',
             spareRpcs: ['https://b2-mainnet.alt.technology'],
             filterBlockOffset: 900,
@@ -1511,6 +1799,7 @@ export const config: Config = {
         },
         {
             id: ChainId.TON_MAINNET,
+            chain: chainData(ChainId.TON_MAINNET),
             rpc: 'https://ton.access.orbs.network/route/1/mainnet/ton-api-v4',
             spareRpcs: [
                 'https://ton.access.orbs.network/55023c0ff5Bd3F8B62C092Ab4D238bEE463E5502/1/mainnet/ton-api-v4',
@@ -1577,6 +1866,16 @@ export const config: Config = {
         },
         {
             id: ChainId.CRONOS_ZK_MAINNET,
+            chain: chainData(ChainId.CRONOS_ZK_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0xe56A26732212Df0c9e96d7954Af9c84A9442e98F',
+                executor: '0xb2E547188BCF62D2f737353B9de0b81e3438321d',
+            },
+            legacyFeeCollector: '0xBf63C7944B1635c79a0f0eE7e07b1702837AD1F9',
+            approvableMetaRouter: {
+                gateway: '0x9C64162e1614E10f833aFc2a0BdF173324f36Dd5',
+                executor: '0x86d00565879e7Bb35bCe3664D90F9856c9456fF7',
+            },
             rpc: 'https://mainnet.zkevm.cronos.org',
             spareRpcs: [],
             filterBlockOffset: 900,
@@ -1584,7 +1883,7 @@ export const config: Config = {
                 {
                     name: 'USD Coin',
                     symbol: 'USDC',
-                    address: '0xaa5b845f8c9c047779bedf64829601d8b264076c',
+                    address: '0xaa5b845F8C9c047779bEDf64829601d8B264076c',
                     chainId: ChainId.CRONOS_ZK_MAINNET,
                     decimals: 6,
                     origin: 'cronos-zkevm-bridge',
@@ -1594,7 +1893,7 @@ export const config: Config = {
                     },
                 },
             ],
-            router: '0x39ad8c3067281e60045df041846ee01c1dd3a853', // H2 Finance
+            router: '0x39aD8C3067281e60045DF041846EE01c1Dd3a853', // H2 Finance
             dexFee: 30,
             metaRouter: '0x681BeeF15D68E4abae4d912ACF3Df5D589fe61B9',
             metaRouterGateway: '0x17D51F08C2044fAbFeFE2C58564Bd89BF2DE1C4d',
@@ -1607,6 +1906,7 @@ export const config: Config = {
         },
         {
             id: ChainId.SOLANA_MAINNET,
+            chain: chainData(ChainId.SOLANA_MAINNET),
             rpc: 'https://api.mainnet-beta.solana.com',
             spareRpcs: [],
             filterBlockOffset: 900,
@@ -1626,6 +1926,7 @@ export const config: Config = {
         // USDC token comes from GAS_TOKEN; balances will be read from the venue API.
         {
             id: ChainId.HYPERLIQUID_PERP_MAINNET,
+            chain: chainData(ChainId.HYPERLIQUID_PERP_MAINNET),
             rpc: '',
             spareRpcs: [],
             filterBlockOffset: 900,
@@ -1642,6 +1943,7 @@ export const config: Config = {
         },
         {
             id: ChainId.LIGHTER_MAINNET,
+            chain: chainData(ChainId.LIGHTER_MAINNET),
             rpc: '',
             spareRpcs: [],
             filterBlockOffset: 900,
@@ -1658,6 +1960,16 @@ export const config: Config = {
         },
         {
             id: ChainId.SONIC_MAINNET,
+            chain: chainData(ChainId.SONIC_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0xc17d768Bf4FdC6f20a4A0d8Be8767840D106D077',
+                executor: '0xF98b660AdF2ed7d9d9D9dAACC2fb0CAce4F21835',
+            },
+            legacyFeeCollector: '0x1cEaeda3D17936916D0F3E866Aa5Ef861F544840',
+            approvableMetaRouter: {
+                gateway: '0x6148FD6C649866596C3d8a971fC313E5eCE84882',
+                executor: '0x1363be92D1FA1915b501a8dd25D62d40a13DF99E',
+            },
             rpc: 'https://rpc.soniclabs.com',
             spareRpcs: [],
             filterBlockOffset: 900,
@@ -1688,6 +2000,17 @@ export const config: Config = {
         },
         {
             id: ChainId.ABSTRACT_MAINNET,
+            chain: chainData(ChainId.ABSTRACT_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x047951C40532Cb046863A8354a2a0099a3C977a6',
+                executor: '0xC841AEb1204ec9E404E8bf0608537B9E00d68d06',
+            },
+            legacyFeeCollector: '0x9C64162e1614E10f833aFc2a0BdF173324f36Dd5',
+            approvableMetaRouter: {
+                gateway: '0xe56A26732212Df0c9e96d7954Af9c84A9442e98F',
+                executor: '0xb2E547188BCF62D2f737353B9de0b81e3438321d',
+            },
+            unwrapper: '0xaEab9b650cd1e14b60a147B6F55f313E8d6644D5',
             rpc: 'https://api.mainnet.abs.xyz',
             spareRpcs: [],
             filterBlockOffset: 900,
@@ -1695,7 +2018,7 @@ export const config: Config = {
                 {
                     name: 'Wrapped Ethereum',
                     symbol: 'WETH',
-                    address: '0x3439153eb7af838ad19d56e1571fbd09333c2809',
+                    address: '0x3439153EB7AF838Ad19d56E1571FBD09333C2809',
                     chainId: ChainId.ABSTRACT_MAINNET,
                     decimals: 18,
                     origin: 'zk-stack-bridge',
@@ -1718,6 +2041,16 @@ export const config: Config = {
         },
         {
             id: ChainId.GNOSIS_MAINNET,
+            chain: chainData(ChainId.GNOSIS_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x7775b274f0C3fA919B756b22A4d9674e55927ab8',
+                executor: '0xB52E582263c1d0189b3cc1402c1B7205b7F2E9Ba',
+            },
+            legacyFeeCollector: '0xf1C374D065719Ce1Fdc63E2c5C13146813c0A83b',
+            approvableMetaRouter: {
+                gateway: '0xf85FC807D05d3Ab2309364226970aAc57b4e1ea4',
+                executor: '0xcd7C056b39DdFB568E451923ABEDb9B6a7Aeb885',
+            },
             rpc: 'https://rpc.gnosischain.com',
             spareRpcs: [],
             filterBlockOffset: 900,
@@ -1725,7 +2058,7 @@ export const config: Config = {
                 {
                     name: 'USD Coin',
                     symbol: 'USDC.e',
-                    address: '0x2a22f9c3b484c3629090feed35f17ff8f88f76f0',
+                    address: '0x2a22f9c3b484c3629090FeED35F17Ff8F88f76F0',
                     chainId: ChainId.GNOSIS_MAINNET,
                     decimals: 6,
                     origin: 'gnosis-omnibridge',
@@ -1760,6 +2093,16 @@ export const config: Config = {
         },
         {
             id: ChainId.BERACHAIN_MAINNET,
+            chain: chainData(ChainId.BERACHAIN_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0xF8504d2ca2F0bbAD9d36927e3d32E278AbAdaDa0',
+                executor: '0xfbE324361c9b8e617610d3991813D7D566721988',
+            },
+            legacyFeeCollector: '0x2b7Aa8bDc40B6d3d19d0dE7480c4db8d5B6495e2',
+            approvableMetaRouter: {
+                gateway: '0x5B1baB64961cF72822817Ef32950fF7FCaB28b62',
+                executor: '0x4870a76443945006ADDe4518254B0d6fC3f72721',
+            },
             rpc: 'https://rpc.berachain.com',
             spareRpcs: ['https://berachain-rpc.publicnode.com'],
             filterBlockOffset: 900,
@@ -1790,6 +2133,17 @@ export const config: Config = {
         },
         {
             id: ChainId.UNICHAIN_MAINNET,
+            chain: chainData(ChainId.UNICHAIN_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x6148FD6C649866596C3d8a971fC313E5eCE84882',
+                executor: '0x1363be92D1FA1915b501a8dd25D62d40a13DF99E',
+            },
+            legacyFeeCollector: '0x2b7Aa8bDc40B6d3d19d0dE7480c4db8d5B6495e2',
+            approvableMetaRouter: {
+                gateway: '0xf39D9A9ABb98593ceaC395D7A37c572Da48fCfD5',
+                executor: '0x219454f4Bd263e36F05A07d3C1A7ABa82F4454CD',
+            },
+            unwrapper: '0x6AEb9b27590387b8Fd0560C52f6B968C59C10Fab',
             rpc: 'https://mainnet.unichain.org',
             spareRpcs: ['https://unichain-rpc.publicnode.com'],
             filterBlockOffset: 900,
@@ -1807,7 +2161,7 @@ export const config: Config = {
                     },
                 },
             ],
-            router: '0x284f11109359a7e1306c3e447ef14d38400063ff',
+            router: '0x284F11109359a7e1306C3e447ef14D38400063FF',
             dexFee: 30,
             metaRouter: '0xcE8f24A58D85eD5c5A6824f7be1F8d4711A0eb4C',
             metaRouterGateway: '0xAdB2d3b711Bb8d8Ea92ff70292c466140432c278',
@@ -1820,6 +2174,17 @@ export const config: Config = {
         },
         {
             id: ChainId.SONEIUM_MAINNET,
+            chain: chainData(ChainId.SONEIUM_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x6148FD6C649866596C3d8a971fC313E5eCE84882',
+                executor: '0x1363be92D1FA1915b501a8dd25D62d40a13DF99E',
+            },
+            legacyFeeCollector: '0x2b7Aa8bDc40B6d3d19d0dE7480c4db8d5B6495e2',
+            approvableMetaRouter: {
+                gateway: '0xf39D9A9ABb98593ceaC395D7A37c572Da48fCfD5',
+                executor: '0x219454f4Bd263e36F05A07d3C1A7ABa82F4454CD',
+            },
+            unwrapper: '0x6AEb9b27590387b8Fd0560C52f6B968C59C10Fab',
             rpc: 'https://rpc.soneium.org',
             spareRpcs: [],
             filterBlockOffset: 900,
@@ -1850,6 +2215,17 @@ export const config: Config = {
         },
         {
             id: ChainId.OPBNB_MAINNET,
+            chain: chainData(ChainId.OPBNB_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x1ac4C50080871D7a24DD705dE9eFe5FF14bC0Ea2',
+                executor: '0x3fD0ab1c6cCFE500C0d72168c8cE05dBa3aa5d9a',
+            },
+            legacyFeeCollector: '0x1cEaeda3D17936916D0F3E866Aa5Ef861F544840',
+            approvableMetaRouter: {
+                gateway: '0x6B1bbd301782FF636601fC594Cd7Bfe74871bfaA',
+                executor: '0x210941a9fe976Ac0985aDC619EA7fA89B29a025D',
+            },
+            unwrapper: '0x45CFd6FB7999328F189aaD2739Fba4Be6C45E5bf',
             rpc: 'https://opbnb-mainnet-rpc.bnbchain.org',
             spareRpcs: ['https://opbnb-rpc.publicnode.com/'],
             filterBlockOffset: 900,
@@ -1892,6 +2268,16 @@ export const config: Config = {
         },
         {
             id: ChainId.HYPEREVM_MAINNET,
+            chain: chainData(ChainId.HYPEREVM_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0xDA1C70C902746996A8C989bB07AA6C408Ef880D8',
+                executor: '0xfdD61c0CF946a775E6cD572Ffb7b686a70f44039',
+            },
+            legacyFeeCollector: '0x6AEb9b27590387b8Fd0560C52f6B968C59C10Fab',
+            approvableMetaRouter: {
+                gateway: '0xA738e84fdE890Bc60b99AF7ccE43990E534304de',
+                executor: '0x5074b7cA7162F793318B65D8BeCC5975DF327C80',
+            },
             rpc: 'https://rpc.hyperliquid.xyz/evm',
             spareRpcs: [],
             filterBlockOffset: 450,
@@ -1899,7 +2285,7 @@ export const config: Config = {
                 {
                     name: 'Unit ETH',
                     symbol: 'UETH',
-                    address: '0xbe6727b535545c67d5caa73dea54865b92cf7907',
+                    address: '0xBe6727B535545C67d5cAa73dEa54865B92CF7907',
                     chainId: ChainId.HYPEREVM_MAINNET,
                     decimals: 18,
                     origin: 'hyperunit',
@@ -1923,7 +2309,7 @@ export const config: Config = {
                 {
                     name: 'ApeCoin',
                     symbol: 'APE',
-                    address: '0xab11329560fa9c9c860bb21a9342215a1265bbb0',
+                    address: '0xab11329560Fa9C9c860Bb21A9342215a1265BBB0',
                     chainId: ChainId.HYPEREVM_MAINNET,
                     decimals: 18,
                     origin: 'layerzero-oft',
@@ -1946,6 +2332,17 @@ export const config: Config = {
         },
         {
             id: ChainId.KATANA_MAINNET,
+            chain: chainData(ChainId.KATANA_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x6B1bbd301782FF636601fC594Cd7Bfe74871bfaA',
+                executor: '0x210941a9fe976Ac0985aDC619EA7fA89B29a025D',
+            },
+            legacyFeeCollector: '0xf1C374D065719Ce1Fdc63E2c5C13146813c0A83b',
+            approvableMetaRouter: {
+                gateway: '0xA738e84fdE890Bc60b99AF7ccE43990E534304de',
+                executor: '0x5074b7cA7162F793318B65D8BeCC5975DF327C80',
+            },
+            unwrapper: '0x2b7Aa8bDc40B6d3d19d0dE7480c4db8d5B6495e2',
             rpc: 'https://rpc.katana.network',
             spareRpcs: [],
             filterBlockOffset: 450,
@@ -2001,6 +2398,17 @@ export const config: Config = {
         },
         {
             id: ChainId.APECHAIN_MAINNET,
+            chain: chainData(ChainId.APECHAIN_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x7775b274f0C3fA919B756b22A4d9674e55927ab8',
+                executor: '0xB52E582263c1d0189b3cc1402c1B7205b7F2E9Ba',
+            },
+            legacyFeeCollector: '0x2b7Aa8bDc40B6d3d19d0dE7480c4db8d5B6495e2',
+            approvableMetaRouter: {
+                gateway: '0xf85FC807D05d3Ab2309364226970aAc57b4e1ea4',
+                executor: '0xcd7C056b39DdFB568E451923ABEDb9B6a7Aeb885',
+            },
+            unwrapper: '0x6AEb9b27590387b8Fd0560C52f6B968C59C10Fab',
             rpc: 'https://rpc.apechain.com',
             spareRpcs: [],
             filterBlockOffset: 450,
@@ -2008,7 +2416,7 @@ export const config: Config = {
                 {
                     name: 'Wrapped APE',
                     symbol: 'WAPE',
-                    address: '0x48b62137edfa95a428d35c09e44256a739f6b557',
+                    address: '0x48b62137EdfA95a428D35C09E44256a739F6B557',
                     chainId: ChainId.APECHAIN_MAINNET,
                     decimals: 18,
                     origin: 'native',
@@ -2031,6 +2439,16 @@ export const config: Config = {
         },
         {
             id: ChainId.PLASMA_MAINNET,
+            chain: chainData(ChainId.PLASMA_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0xA738e84fdE890Bc60b99AF7ccE43990E534304de',
+                executor: '0x5074b7cA7162F793318B65D8BeCC5975DF327C80',
+            },
+            legacyFeeCollector: '0x6AEb9b27590387b8Fd0560C52f6B968C59C10Fab',
+            approvableMetaRouter: {
+                gateway: '0x45CFd6FB7999328F189aaD2739Fba4Be6C45E5bf',
+                executor: '0xdfFF1eb1792277133c8471cCe94acB78D7f604ea',
+            },
             rpc: 'https://rpc.plasma.to',
             spareRpcs: [],
             filterBlockOffset: 450,
@@ -2061,6 +2479,16 @@ export const config: Config = {
         },
         {
             id: ChainId.MONAD_MAINNET,
+            chain: chainData(ChainId.MONAD_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0xBbAD2fe9558e55EbfA04b3B5Bff0b6c4E2ffDD2C',
+                executor: '0xDA411E3b9047AE198DfB7448E97Ca900FE793035',
+            },
+            legacyFeeCollector: '0x6AEb9b27590387b8Fd0560C52f6B968C59C10Fab',
+            approvableMetaRouter: {
+                gateway: '0x81aB74A9f9d7457fF47dfD102e78A340cF72EC39',
+                executor: '0x79d930aBe53dd56B66Ed43f8f6a7C6a1b84655cA',
+            },
             rpc: 'https://rpc1.monad.xyz',
             spareRpcs: ['https://rpc2.monad.xyz', 'https://monad-mainnet.drpc.org'],
             filterBlockOffset: 450,
@@ -2091,6 +2519,23 @@ export const config: Config = {
         },
         {
             id: ChainId.CITREA_MAINNET,
+            chain: chainData(ChainId.CITREA_MAINNET),
+            multicallRouterV2: '0xf85FC807D05d3Ab2309364226970aAc57b4e1ea4',
+            onchainSwapRouter: {
+                gateway: '0x17efC1d70eA32eb04c6979c6500d12eEE9e3Dcbd',
+                executor: '0x04A1F3030A2fc5ECe3227567e98b20ef2241820c',
+            },
+            onchainZeroFeeSwapRouter: {
+                gateway: '0x17efC1d70eA32eb04c6979c6500d12eEE9e3Dcbd',
+                executor: '0x04A1F3030A2fc5ECe3227567e98b20ef2241820c',
+            },
+            // TODO: a zero-fee collector until Citrea has one with a fee.
+            legacyFeeCollector: '0x45CFd6FB7999328F189aaD2739Fba4Be6C45E5bf',
+            legacyZeroFeeCollector: '0x45CFd6FB7999328F189aaD2739Fba4Be6C45E5bf',
+            approvableMetaRouter: {
+                gateway: '0x6F0f6393e45fE0E7215906B6f9cfeFf53EA139cf',
+                executor: '0x4cfA66497Fa84D739a0f785FBcEe9196f1C64e4a',
+            },
             rpc: 'https://rpc.mainnet.citrea.xyz',
             spareRpcs: [],
             filterBlockOffset: 450,
@@ -2125,6 +2570,16 @@ export const config: Config = {
         },
         {
             id: ChainId.QUAI_MAINNET,
+            chain: chainData(ChainId.QUAI_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x005274c33887c66d638Cd6Fc33CCECD4cc40Fb50',
+                executor: '0x005578951002C3EF5e1b924C66a68A2090Cd3E02',
+            },
+            legacyFeeCollector: '0x002552D322dDACe745FC143A2f838769da92AFc0',
+            approvableMetaRouter: {
+                gateway: '0x0008F51F17A6F4082b1f03B63Ba2f5fBeCFD432a',
+                executor: '0x003b18b64E6770b562172B8aBcdd56B26D50171E',
+            },
             rpc: 'https://rpc.quai.network/cyprus1',
             spareRpcs: [],
             filterBlockOffset: 450,
@@ -2155,6 +2610,12 @@ export const config: Config = {
         },
         {
             id: ChainId.TEMPO_MAINNET,
+            chain: chainData(ChainId.TEMPO_MAINNET),
+            multicallRouterV2: '0x1cEaeda3D17936916D0F3E866Aa5Ef861F544840',
+            approvableMetaRouter: {
+                gateway: '0x5B1baB64961cF72822817Ef32950fF7FCaB28b62',
+                executor: '0x4870a76443945006ADDe4518254B0d6fC3f72721',
+            },
             rpc: 'https://rpc.tempo.xyz',
             spareRpcs: [],
             filterBlockOffset: 450,
@@ -2162,7 +2623,7 @@ export const config: Config = {
                 {
                     name: 'USD Coin',
                     symbol: 'USDC.e',
-                    address: '0x20c000000000000000000000b9537d11c60e8b50',
+                    address: '0x20C000000000000000000000b9537d11c60E8b50',
                     chainId: ChainId.TEMPO_MAINNET,
                     decimals: 6,
                     origin: 'stargate-layerzero',
@@ -2185,6 +2646,16 @@ export const config: Config = {
         },
         {
             id: ChainId.ROBINHOOD_MAINNET,
+            chain: chainData(ChainId.ROBINHOOD_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x6AEb9b27590387b8Fd0560C52f6B968C59C10Fab',
+                executor: '0x145878e7527a442549eD2c8434B0477C676824fa',
+            },
+            approvableMetaRouter: {
+                gateway: '0xcE8f24A58D85eD5c5A6824f7be1F8d4711A0eb4C',
+                executor: '0xAdB2d3b711Bb8d8Ea92ff70292c466140432c278',
+            },
+            unwrapper: '0x1cEaeda3D17936916D0F3E866Aa5Ef861F544840',
             rpc: 'https://rpc.mainnet.chain.robinhood.com',
             spareRpcs: [],
             filterBlockOffset: 450,
@@ -2242,6 +2713,11 @@ export const config: Config = {
         },
         {
             id: ChainId.STABLE_MAINNET,
+            chain: chainData(ChainId.STABLE_MAINNET),
+            approvableMetaRouter: {
+                gateway: '0xcE8f24A58D85eD5c5A6824f7be1F8d4711A0eb4C',
+                executor: '0xAdB2d3b711Bb8d8Ea92ff70292c466140432c278',
+            },
             rpc: 'https://rpc.stable.xyz',
             spareRpcs: ['https://stable-mainnet.rpc.sentio.xyz'],
             filterBlockOffset: 450,
@@ -2273,6 +2749,11 @@ export const config: Config = {
         },
         {
             id: ChainId.ARC_MAINNET,
+            chain: chainData(ChainId.ARC_MAINNET),
+            approvableMetaRouter: {
+                gateway: '0xcE8f24A58D85eD5c5A6824f7be1F8d4711A0eb4C',
+                executor: '0xAdB2d3b711Bb8d8Ea92ff70292c466140432c278',
+            },
             rpc: 'https://rpc.mainnet.arc.io',
             spareRpcs: [],
             filterBlockOffset: 450,
@@ -2303,6 +2784,15 @@ export const config: Config = {
         },
         {
             id: ChainId.X_LAYER_MAINNET,
+            chain: chainData(ChainId.X_LAYER_MAINNET),
+            onchainSwapRouter: {
+                gateway: '0x45CFd6FB7999328F189aaD2739Fba4Be6C45E5bf',
+                executor: '0xdfFF1eb1792277133c8471cCe94acB78D7f604ea',
+            },
+            approvableMetaRouter: {
+                gateway: '0xcE8f24A58D85eD5c5A6824f7be1F8d4711A0eb4C',
+                executor: '0xAdB2d3b711Bb8d8Ea92ff70292c466140432c278',
+            },
             rpc: 'https://xlayerrpc.okx.com',
             spareRpcs: ['https://rpc.xlayer.tech'],
             filterBlockOffset: 160,
@@ -2310,7 +2800,7 @@ export const config: Config = {
                 {
                     name: 'USD Coin',
                     symbol: 'USDC',
-                    address: '0xb6ceceab302e2e4948951ee7843fc24e92933061',
+                    address: '0xB6CEceAB302E2E4948951eE7843FC24E92933061',
                     chainId: ChainId.X_LAYER_MAINNET,
                     decimals: 6,
                     origin: 'circle',

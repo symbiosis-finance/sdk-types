@@ -1,16 +1,16 @@
+import JSBI from 'jsbi'
 import invariant from 'tiny-invariant'
 
 import { ONE, TradeType, ZERO } from '../constants'
-import { InsufficientInputAmountError, InsufficientReservesError } from '../errors'
-import { sortedInsert } from '../utils'
 import { Fraction } from './fractions/fraction'
-import { Percent } from './fractions/percent'
+import { basisPointsToPercent, Percent } from './fractions/percent'
 import { Price } from './fractions/price'
 import { TokenAmount } from './fractions/tokenAmount'
 import type { Pair } from './pair'
+import { type BestTradeOptions, type BestTrades, PairGraph } from './pairGraph'
 import { Route } from './route'
 import type { Token } from './token'
-import { tokenEquals, WETH } from './token'
+import { WETH } from './token'
 
 /**
  * Returns the percent difference between the mid price and the execution price, i.e. price impact.
@@ -35,8 +35,8 @@ interface InputOutput {
 // in increasing order. i.e. the best trades have the most outputs for the least inputs and are sorted first
 export function inputOutputComparator(a: InputOutput, b: InputOutput): number {
     // must have same input and output token for comparison
-    invariant(tokenEquals(a.inputAmount.token, b.inputAmount.token), 'INPUT_CURRENCY')
-    invariant(tokenEquals(a.outputAmount.token, b.outputAmount.token), 'OUTPUT_CURRENCY')
+    invariant(a.inputAmount.token.equals(b.inputAmount.token), 'INPUT_CURRENCY')
+    invariant(a.outputAmount.token.equals(b.outputAmount.token), 'OUTPUT_CURRENCY')
     if (a.outputAmount.equalTo(b.outputAmount)) {
         if (a.inputAmount.equalTo(b.inputAmount)) {
             return 0
@@ -75,22 +75,31 @@ export function tradeComparator(a: Trade, b: Trade) {
     return a.route.path.length - b.route.path.length
 }
 
-export interface BestTradeOptions {
-    // how many results to return
-    maxNumResults?: number
-    // the maximum number of hops a trade should contain
-    maxHops?: number
+/**
+ * @deprecated Use the amount's `wrapped` (TokenAmount) instead. On a chain without a wrapped gas token, this function
+ * gives an amount of WETH's placeholder token, while `wrapped` keeps the gas token.
+ */
+export function wrappedAmount(tokenAmount: TokenAmount): TokenAmount {
+    return tokenAmount.token.isNative ? new TokenAmount(wrappedToken(tokenAmount.token), tokenAmount.raw) : tokenAmount
 }
 
 /**
- * Given a token amount and a chain ID, returns the equivalent representation as the token amount.
+ * @deprecated Use the token's `wrapped` (Token) instead. On a chain without a wrapped gas token, this function gives
+ * WETH's placeholder token, while `wrapped` keeps the gas token.
  */
-export function wrappedAmount(tokenAmount: TokenAmount): TokenAmount {
-    return tokenAmount.token.isNative ? new TokenAmount(WETH[tokenAmount.token.chainId], tokenAmount.raw) : tokenAmount
-}
-
 export function wrappedToken(token: Token): Token {
     return token.isNative ? WETH[token.chainId] : token
+}
+
+/** A trade's price impact, split into the pools' fee and the rest. */
+export interface PriceBreakdown {
+    /**
+     * The price impact of the constant product formula alone (x * y = k), without the fee. It is negative for a loss,
+     * the opposite sign of Trade.priceImpact.
+     */
+    priceImpactWithoutFee: Percent
+    /** The fee the trade pays the liquidity providers, in the input token. */
+    realizedLPFee: TokenAmount
 }
 
 /**
@@ -149,22 +158,22 @@ export class Trade {
         const amounts: TokenAmount[] = new Array(route.path.length)
         const nextPairs: Pair[] = new Array(route.pairs.length)
         if (tradeType === TradeType.EXACT_INPUT) {
-            invariant(tokenEquals(amount.token, route.input), 'INPUT')
-            amounts[0] = wrappedAmount(amount)
+            invariant(amount.token.equals(route.input), 'INPUT')
+            amounts[0] = amount.wrapped
             for (let i = 0; i < route.path.length - 1; i++) {
                 const pair = route.pairs[i]
-                const [outputAmount, nextPair] = pair.getOutputAmount(amounts[i])
-                amounts[i + 1] = outputAmount
-                nextPairs[i] = nextPair
+                const swap = pair.getOutputAmount(amounts[i])
+                amounts[i + 1] = swap.amount
+                nextPairs[i] = swap.pairAfter
             }
         } else {
-            invariant(tokenEquals(amount.token, route.output), 'OUTPUT')
-            amounts[amounts.length - 1] = wrappedAmount(amount)
+            invariant(amount.token.equals(route.output), 'OUTPUT')
+            amounts[amounts.length - 1] = amount.wrapped
             for (let i = route.path.length - 1; i > 0; i--) {
                 const pair = route.pairs[i - 1]
-                const [inputAmount, nextPair] = pair.getInputAmount(amounts[i])
-                amounts[i - 1] = inputAmount
-                nextPairs[i - 1] = nextPair
+                const swap = pair.getInputAmount(amounts[i])
+                amounts[i - 1] = swap.amount
+                nextPairs[i - 1] = swap.pairAfter
             }
         }
 
@@ -181,7 +190,7 @@ export class Trade {
             this.inputAmount.raw,
             this.outputAmount.raw
         )
-        this.nextMidPrice = Price.fromRoute(new Route(nextPairs, route.input))
+        this.nextMidPrice = Price.fromRoute(new Route(route.chain, nextPairs, route.input, route.output))
         this.priceImpact = computePriceImpact(route.midPrice, this.inputAmount, this.outputAmount)
     }
 
@@ -219,163 +228,53 @@ export class Trade {
     }
 
     /**
-     * Given a list of pairs, and a fixed amount in, returns the top `maxNumResults` trades that go from an input token
-     * amount to an output token, making at most `maxHops` hops.
-     * Note this does not consider aggregation, as routes are linear. It's possible a better route exists by splitting
-     * the amount in among multiple routes.
-     * @param pairs the pairs to consider in finding the best trade
-     * @param tokenAmountIn exact amount of input token to spend
-     * @param tokenOut the desired token out
-     * @param maxNumResults maximum number of results to return
-     * @param maxHops maximum number of hops a returned trade can make, e.g. 1 hop goes through a single pair
-     * @param currentPairs used in recursion; the current list of pairs
-     * @param originalAmountIn used in recursion; the original value of the tokenAmountIn parameter
-     * @param bestTrades used in recursion; the current list of best trades
+     * Returns the trade's price impact split into the fee and the rest, at `dexFee`. `dexFee` is the fee of each hop, in
+     * basis points (ChainConfig.dexFee).
      */
+    public priceBreakdown(dexFee: number): PriceBreakdown {
+        const baseFee = basisPointsToPercent(dexFee)
+        const oneHundredPercent = basisPointsToPercent(10000)
+        const inputFractionAfterFee = oneHundredPercent.subtract(baseFee)
+
+        // each hop takes its fee off what passes through it: for 2 hops at 0.3%, 1 - (1 - 0.003) * (1 - 0.003)
+        const realizedLPFee = oneHundredPercent.subtract(
+            this.route.pairs.reduce<Fraction>(
+                (currentFee: Fraction): Fraction => currentFee.multiply(inputFractionAfterFee),
+                oneHundredPercent
+            )
+        )
+        const priceImpactWithoutFee = this.priceImpact.subtract(realizedLPFee)
+        return {
+            priceImpactWithoutFee: new Percent(
+                JSBI.multiply(priceImpactWithoutFee.numerator, JSBI.BigInt('-1')),
+                priceImpactWithoutFee.denominator
+            ),
+            realizedLPFee: new TokenAmount(
+                this.inputAmount.token,
+                realizedLPFee.multiply(this.inputAmount.raw).quotient
+            ),
+        }
+    }
+
+    /** @deprecated Use a PairGraph of the pairs' chain (`new PairGraph(chain, pairs).bestTradesExactIn(…)`) instead. */
     public static bestTradeExactIn(
         pairs: Pair[],
         tokenAmountIn: TokenAmount,
         tokenOut: Token,
-        { maxNumResults = 3, maxHops = 3 }: BestTradeOptions = {},
-        // used in recursion.
-        currentPairs: Pair[] = [],
-        originalAmountIn: TokenAmount = tokenAmountIn,
-        bestTrades: Trade[] = []
-    ): { trades: Trade[]; errors: Error[] } {
+        options: BestTradeOptions = {}
+    ): BestTrades {
         invariant(pairs.length > 0, 'PAIRS')
-        invariant(maxHops > 0, 'MAX_HOPS')
-        invariant(originalAmountIn === tokenAmountIn || currentPairs.length > 0, 'INVALID_RECURSION')
-
-        const amountIn = wrappedAmount(tokenAmountIn)
-        const errors = []
-        for (let i = 0; i < pairs.length; i++) {
-            const pair = pairs[i]
-            // pair irrelevant
-            if (!pair.token0.equals(amountIn.token) && !pair.token1.equals(amountIn.token)) continue
-            if (pair.reserve0.equalTo(ZERO) || pair.reserve1.equalTo(ZERO)) continue
-
-            let amountOut: TokenAmount
-            try {
-                ;[amountOut] = pair.getOutputAmount(amountIn)
-            } catch (error) {
-                // input too low
-                if (error instanceof InsufficientInputAmountError) {
-                    errors.push(error)
-                    continue
-                }
-                throw error
-            }
-            // we have arrived at the output token, so this is the final trade of one of the paths
-            if (amountOut.token.equals(wrappedToken(tokenOut))) {
-                sortedInsert(
-                    bestTrades,
-                    new Trade(
-                        new Route([...currentPairs, pair], originalAmountIn.token, tokenOut),
-                        originalAmountIn,
-                        TradeType.EXACT_INPUT
-                    ),
-                    maxNumResults,
-                    tradeComparator
-                )
-            } else if (maxHops > 1 && pairs.length > 1) {
-                const pairsExcludingThisPair = pairs.slice(0, i).concat(pairs.slice(i + 1, pairs.length))
-
-                // otherwise, consider all the other paths that lead from this token as long as we have not exceeded maxHops
-                Trade.bestTradeExactIn(
-                    pairsExcludingThisPair,
-                    amountOut,
-                    tokenOut,
-                    {
-                        maxNumResults,
-                        maxHops: maxHops - 1,
-                    },
-                    [...currentPairs, pair],
-                    originalAmountIn,
-                    bestTrades
-                )
-            }
-        }
-
-        return { trades: bestTrades, errors }
+        return new PairGraph(pairs[0].requiredChain, pairs).bestTradesExactIn(tokenAmountIn, tokenOut, options)
     }
 
-    /**
-     * similar to the above method but instead targets a fixed output amount
-     * given a list of pairs, and a fixed amount out, returns the top `maxNumResults` trades that go from an input token
-     * to an output token amount, making at most `maxHops` hops
-     * note this does not consider aggregation, as routes are linear. it's possible a better route exists by splitting
-     * the amount in among multiple routes.
-     * @param pairs the pairs to consider in finding the best trade
-     * @param tokenIn the token to spend
-     * @param tokenAmountOut the exact amount of token out
-     * @param maxNumResults maximum number of results to return
-     * @param maxHops maximum number of hops a returned trade can make, e.g. 1 hop goes through a single pair
-     * @param currentPairs used in recursion; the current list of pairs
-     * @param originalAmountOut used in recursion; the original value of the currencyAmountOut parameter
-     * @param bestTrades used in recursion; the current list of best trades
-     */
+    /** @deprecated Use a PairGraph of the pairs' chain (`new PairGraph(chain, pairs).bestTradesExactOut(…)`) instead. */
     public static bestTradeExactOut(
         pairs: Pair[],
         tokenIn: Token,
         tokenAmountOut: TokenAmount,
-        { maxNumResults = 3, maxHops = 3 }: BestTradeOptions = {},
-        // used in recursion.
-        currentPairs: Pair[] = [],
-        originalAmountOut: TokenAmount = tokenAmountOut,
-        bestTrades: Trade[] = []
+        options: BestTradeOptions = {}
     ): Trade[] {
         invariant(pairs.length > 0, 'PAIRS')
-        invariant(maxHops > 0, 'MAX_HOPS')
-        invariant(originalAmountOut === tokenAmountOut || currentPairs.length > 0, 'INVALID_RECURSION')
-
-        const amountOut = wrappedAmount(tokenAmountOut)
-        for (let i = 0; i < pairs.length; i++) {
-            const pair = pairs[i]
-            // pair irrelevant
-            if (!pair.token0.equals(amountOut.token) && !pair.token1.equals(amountOut.token)) continue
-            if (pair.reserve0.equalTo(ZERO) || pair.reserve1.equalTo(ZERO)) continue
-
-            let amountIn: TokenAmount
-            try {
-                ;[amountIn] = pair.getInputAmount(amountOut)
-            } catch (error) {
-                // not enough liquidity in this pair
-                if (error instanceof InsufficientReservesError) {
-                    continue
-                }
-                throw error
-            }
-            // we have arrived at the input token, so this is the first trade of one of the paths
-            if (amountIn.token.equals(wrappedToken(tokenIn))) {
-                sortedInsert(
-                    bestTrades,
-                    new Trade(
-                        new Route([pair, ...currentPairs], tokenIn, originalAmountOut.token),
-                        originalAmountOut,
-                        TradeType.EXACT_OUTPUT
-                    ),
-                    maxNumResults,
-                    tradeComparator
-                )
-            } else if (maxHops > 1 && pairs.length > 1) {
-                const pairsExcludingThisPair = pairs.slice(0, i).concat(pairs.slice(i + 1, pairs.length))
-
-                // otherwise, consider all the other paths that arrive at this token as long as we have not exceeded maxHops
-                Trade.bestTradeExactOut(
-                    pairsExcludingThisPair,
-                    tokenIn,
-                    amountIn,
-                    {
-                        maxNumResults,
-                        maxHops: maxHops - 1,
-                    },
-                    [pair, ...currentPairs],
-                    originalAmountOut,
-                    bestTrades
-                )
-            }
-        }
-
-        return bestTrades
+        return new PairGraph(pairs[0].requiredChain, pairs).bestTradesExactOut(tokenIn, tokenAmountOut, options).trades
     }
 }

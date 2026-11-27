@@ -2,11 +2,10 @@ import { AddressZero } from '@ethersproject/constants'
 import { Contract } from '@ethersproject/contracts'
 import { StaticJsonRpcProvider } from '@ethersproject/providers'
 import fs from 'fs'
+import type { z } from 'zod'
 
-import type { TokenConstructor } from '../../src/entities'
 import { Token } from '../../src/entities'
 import ERC20 from './abis/ERC20.json' with { type: 'json' }
-import { isBtcChainId, isPerpChainId, isSolanaChainId, isTonChainId, isTronChainId } from '../../src/constants'
 import { isChangellyNativeChainId, isThorChainL1DestChainId } from '../../src/crosschain/constants'
 import type { Bridge, Fabric, MetaRouter, OmniPool, Portal, Synthesis } from './contracts'
 import {
@@ -17,36 +16,22 @@ import {
     Portal__factory,
     Synthesis__factory,
 } from './contracts'
-import type { ConfigName } from '../../src/crosschain/types'
+import { type configCacheDataSchema, parseConfigCacheData } from '../../src/crosschain/config/cache/types'
+import type { ConfigName } from '../../src/crosschain/deployment'
 import type { ChainConfig, Config, OmniPoolConfig } from '../../src/crosschain/types'
 import { ChainId } from '../../src/constants'
 import { getMulticall, tryAggregateChunked } from './multicall'
+import { evmRpcUrl } from '../shared/rpc'
 import { config as beta } from '../../src/crosschain/config/beta'
 import { config as dev } from '../../src/crosschain/config/dev'
 import { config as mainnet } from '../../src/crosschain/config/mainnet'
 import { config as testnet } from '../../src/crosschain/config/testnet'
 
-export type Id = number
-
-export type TokenInfo = TokenConstructor & {
-    id: Id
-    originalId?: Id
-}
-
-export type OmniPoolToken = {
-    index: number
-    tokenId: Id
-}
-
-export type OmniPoolInfo = OmniPoolConfig & {
-    id: Id
-    tokens: OmniPoolToken[]
-}
-
-export type ConfigCacheData = {
-    tokens: TokenInfo[]
-    omniPools: OmniPoolInfo[]
-}
+// The data as the build writes it, before parseConfigCacheData checks it.
+type ConfigCacheJson = z.input<typeof configCacheDataSchema>
+type TokenInfo = ConfigCacheJson['tokens'][number]
+type OmniPoolInfo = ConfigCacheJson['omniPools'][number]
+type OmniPoolToken = OmniPoolInfo['tokens'][number]
 
 export class Builder {
     public readonly config: Config
@@ -68,11 +53,10 @@ export class Builder {
         this.providers = new Map(
             this.config.chains
                 .filter((chainConfig) => !isChangellyNativeChainId(chainConfig.id))
-                .map((chainConfig) => {
-                    const rpc = isTronChainId(chainConfig.id) ? `${chainConfig.rpc}/jsonrpc` : chainConfig.rpc
-
-                    return [chainConfig.id, new StaticJsonRpcProvider(rpc, chainConfig.id)]
-                })
+                .map((chainConfig) => [
+                    chainConfig.id,
+                    new StaticJsonRpcProvider(evmRpcUrl(chainConfig), chainConfig.id),
+                ])
         )
     }
 
@@ -84,10 +68,7 @@ export class Builder {
             const tokens = await this.buildTokensList()
             const omniPools = await this.buildOmniPools(tokens)
 
-            const jsonData = JSON.stringify({
-                omniPools,
-                tokens,
-            } as ConfigCacheData)
+            const jsonData = JSON.stringify(parseConfigCacheData({ omniPools, tokens }))
             fs.writeFile(`./src/crosschain/config/cache/${this.configName}.json`, jsonData, function (err) {
                 if (err) {
                     console.error(err)
@@ -106,7 +87,7 @@ export class Builder {
         for (let i = 0; i < chains.length; i++) {
             const chain = chains[i]
 
-            if (isTonChainId(chain.id) || isSolanaChainId(chain.id) || isChangellyNativeChainId(chain.id)) {
+            if (chain.chain.kind === 'ton' || chain.chain.kind === 'solana' || isChangellyNativeChainId(chain.id)) {
                 continue
             }
 
@@ -134,7 +115,7 @@ export class Builder {
         for (let i = 0; i < chains.length; i++) {
             const chain = chains[i]
 
-            if (isTonChainId(chain.id) || isSolanaChainId(chain.id) || isChangellyNativeChainId(chain.id)) {
+            if (chain.chain.kind === 'ton' || chain.chain.kind === 'solana' || isChangellyNativeChainId(chain.id)) {
                 continue
             }
             const portal = this.portal(chain.id)
@@ -177,10 +158,10 @@ export class Builder {
             const metaRouterAddressFromConfig = chain.metaRouter.toLowerCase()
 
             if (
-                isBtcChainId(chain.id) ||
-                isTonChainId(chain.id) ||
-                isSolanaChainId(chain.id) ||
-                isPerpChainId(chain.id) ||
+                chain.chain.kind === 'btc' ||
+                chain.chain.kind === 'ton' ||
+                chain.chain.kind === 'solana' ||
+                chain.chain.kind === 'perp' ||
                 isChangellyNativeChainId(chain.id) ||
                 isThorChainL1DestChainId(chain.id)
             ) {

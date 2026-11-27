@@ -1,3 +1,5 @@
+import JSBI from 'jsbi'
+
 import type { BigintIsh, Rounding } from '../../constants'
 import { _100 } from '../../constants'
 import { Fraction } from './fraction'
@@ -17,4 +19,9 @@ export class Percent extends Fraction {
     public toFixed(decimalPlaces = 2, format?: object, rounding?: Rounding): string {
         return this.multiply(_100_PERCENT).toFixed(decimalPlaces, format, rounding)
     }
+}
+
+/** Returns `bps` basis points as a Percent, rounded down to a whole basis point. */
+export function basisPointsToPercent(bps: number): Percent {
+    return new Percent(JSBI.BigInt(Math.floor(bps)), JSBI.BigInt(10000))
 }

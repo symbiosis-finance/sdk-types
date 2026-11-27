@@ -1,0 +1,190 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Trade.bestTradeExactIn/Out (deprecated) > finds the same trades from DAI@1 1`] = `
+{
+  "errors": [],
+  "trades": [
+    {
+      "breakdown": "-0.148136 5991000000000000000",
+      "impact": "0.747236",
+      "in": "1000000000000000000000 DAI",
+      "out": "992527642 USDT",
+      "pairs": "0xAE461cA67B15dc8dc81CE7615e0320dA1A9aB8D5,0x3041CbD36888bECc7bbCBc0045E3B1f144466f5f",
+      "path": "DAI>USDC>USDT",
+    },
+    {
+      "breakdown": "-0.195182 8973027000000000000",
+      "impact": "1.092485",
+      "in": "1000000000000000000000 DAI",
+      "out": "982033969 USDT",
+      "pairs": "0xA478c2975Ab1Ea89e8196811F51A7B7Ade33eB11,0xB4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc,0x3041CbD36888bECc7bbCBc0045E3B1f144466f5f",
+      "path": "DAI>WETH>USDC>USDT",
+    },
+  ],
+}
+`;
+
+exports[`Trade.bestTradeExactIn/Out (deprecated) > finds the same trades from DAI@1 to an exact USDT@1 1`] = `
+[
+  {
+    "breakdown": "-0.000751 30135769803638728",
+    "impact": "0.599851",
+    "in": "5030173560947876617 DAI",
+    "out": "5000000 USDT",
+    "pairs": "0xAE461cA67B15dc8dc81CE7615e0320dA1A9aB8D5,0x3041CbD36888bECc7bbCBc0045E3B1f144466f5f",
+    "path": "DAI>USDC>USDT",
+  },
+  {
+    "breakdown": "-0.000999 45596411256670929",
+    "impact": "0.898301",
+    "in": "5081497164409616684 DAI",
+    "out": "5000000 USDT",
+    "pairs": "0xA478c2975Ab1Ea89e8196811F51A7B7Ade33eB11,0xB4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc,0x3041CbD36888bECc7bbCBc0045E3B1f144466f5f",
+    "path": "DAI>WETH>USDC>USDT",
+  },
+]
+`;
+
+exports[`Trade.bestTradeExactIn/Out (deprecated) > finds the same trades from ETH@1 1`] = `
+{
+  "errors": [],
+  "trades": [
+    {
+      "breakdown": "-0.346192 5991000000000000",
+      "impact": "0.945292",
+      "in": "1000000000000000000 ETH",
+      "out": "2992947919 USDC",
+      "pairs": "0xA478c2975Ab1Ea89e8196811F51A7B7Ade33eB11,0xAE461cA67B15dc8dc81CE7615e0320dA1A9aB8D5",
+      "path": "WETH>DAI>USDC",
+    },
+    {
+      "breakdown": "-0.099302 3000000000000000",
+      "impact": "0.399302",
+      "in": "1000000000000000000 ETH",
+      "out": "2988020943 USDC",
+      "pairs": "0xB4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc",
+      "path": "WETH>USDC",
+    },
+  ],
+}
+`;
+
+exports[`Trade.bestTradeExactIn/Out (deprecated) > finds the same trades from ETH@1 to an exact USDC@1 1`] = `
+[
+  {
+    "breakdown": "-0.231338 3998774234648679",
+    "impact": "0.830438",
+    "in": "667463567793136210 ETH",
+    "out": "2000000000 USDC",
+    "pairs": "0xA478c2975Ab1Ea89e8196811F51A7B7Ade33eB11,0xAE461cA67B15dc8dc81CE7615e0320dA1A9aB8D5",
+    "path": "WETH>DAI>USDC",
+  },
+  {
+    "breakdown": "-0.066467 2007356291690280",
+    "impact": "0.366467",
+    "in": "669118763896760328 ETH",
+    "out": "2000000000 USDC",
+    "pairs": "0xB4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc",
+    "path": "WETH>USDC",
+  },
+]
+`;
+
+exports[`Trade.bestTradeExactIn/Out (deprecated) > finds the same trades from USDT@1 1`] = `
+{
+  "errors": [],
+  "trades": [
+    {
+      "breakdown": "-0.131879 5991000",
+      "impact": "0.730979",
+      "in": "1000000000 USDT",
+      "out": "331062184548811310 ETH",
+      "pairs": "0x3041CbD36888bECc7bbCBc0045E3B1f144466f5f,0xB4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc",
+      "path": "USDT>USDC>WETH",
+    },
+    {
+      "breakdown": "-0.212645 8973027",
+      "impact": "1.109947",
+      "in": "1000000000 USDT",
+      "out": "327450505321491823 ETH",
+      "pairs": "0x3041CbD36888bECc7bbCBc0045E3B1f144466f5f,0xAE461cA67B15dc8dc81CE7615e0320dA1A9aB8D5,0xA478c2975Ab1Ea89e8196811F51A7B7Ade33eB11",
+      "path": "USDT>USDC>DAI>WETH",
+    },
+  ],
+}
+`;
+
+exports[`Trade.bestTradeExactIn/Out (deprecated) > finds the same trades from USDT@1 2`] = `
+{
+  "errors": [
+    "InsufficientInputAmountError",
+  ],
+  "trades": [],
+}
+`;
+
+exports[`Trade.bestTradeExactIn/Out (deprecated) > finds the same trades from USDT@1 to an exact ETH@1 1`] = `
+[
+  {
+    "breakdown": "-0.398351 18145005",
+    "impact": "0.997451",
+    "in": "3028710668 USDT",
+    "out": "1000000000000000000 ETH",
+    "pairs": "0x3041CbD36888bECc7bbCBc0045E3B1f144466f5f,0xB4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc",
+    "path": "USDT>USDC>WETH",
+  },
+  {
+    "breakdown": "-0.649395 27524258",
+    "impact": "1.546698",
+    "in": "3067444081 USDT",
+    "out": "1000000000000000000 ETH",
+    "pairs": "0x3041CbD36888bECc7bbCBc0045E3B1f144466f5f,0xAE461cA67B15dc8dc81CE7615e0320dA1A9aB8D5,0xA478c2975Ab1Ea89e8196811F51A7B7Ade33eB11",
+    "path": "USDT>USDC>DAI>WETH",
+  },
+]
+`;
+
+exports[`Trade.bestTradeExactIn/Out (deprecated) > finds the same trades from WETH@1 1`] = `
+{
+  "errors": [],
+  "trades": [
+    {
+      "breakdown": "-3.802463 59910000000000000",
+      "impact": "4.401563",
+      "in": "10000000000000000000 WETH",
+      "out": "28665198515 USDT",
+      "pairs": "0xB4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc,0x3041CbD36888bECc7bbCBc0045E3B1f144466f5f",
+      "path": "WETH>USDC>USDT",
+    },
+    {
+      "breakdown": "-6.037909 89730270000000000",
+      "impact": "6.935211",
+      "in": "10000000000000000000 WETH",
+      "out": "28105566189 USDT",
+      "pairs": "0xA478c2975Ab1Ea89e8196811F51A7B7Ade33eB11,0xAE461cA67B15dc8dc81CE7615e0320dA1A9aB8D5,0x3041CbD36888bECc7bbCBc0045E3B1f144466f5f",
+      "path": "WETH>DAI>USDC>USDT",
+    },
+  ],
+}
+`;
+
+exports[`Trade.bestTradeExactIn/Out (deprecated) > finds the same trades from WETH@1 to an exact USDT@1 1`] = `
+[
+  {
+    "breakdown": "-0.214830 3004616303969555",
+    "impact": "1.112132",
+    "in": "334849800849764004 WETH",
+    "out": "1000000000 USDT",
+    "pairs": "0xA478c2975Ab1Ea89e8196811F51A7B7Ade33eB11,0xAE461cA67B15dc8dc81CE7615e0320dA1A9aB8D5,0x3041CbD36888bECc7bbCBc0045E3B1f144466f5f",
+    "path": "WETH>DAI>USDC>USDT",
+  },
+  {
+    "breakdown": "-0.132651 2012726645046755",
+    "impact": "0.731751",
+    "in": "335958378408739040 WETH",
+    "out": "1000000000 USDT",
+    "pairs": "0xB4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc,0x3041CbD36888bECc7bbCBc0045E3B1f144466f5f",
+    "path": "WETH>USDC>USDT",
+  },
+]
+`;

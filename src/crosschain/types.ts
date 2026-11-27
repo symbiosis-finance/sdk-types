@@ -1,4 +1,14 @@
-import type { ChainId } from '../constants'
+import { z } from 'zod'
+
+import {
+    eip1191ChainIdOf,
+    type EvmAddress,
+    type EvmAddressSchema,
+    type EvmAddressText,
+    evmAddressSchema,
+    onChain,
+} from '../addresses'
+import { ChainId, type Icons } from '../constants'
 import type { Percent, ProfilerItem, Token, TokenAmount, TokenConstructor } from '../entities'
 import type { Cache } from './cache'
 import type { TronTransactionData } from './tronTypes'
@@ -45,15 +55,22 @@ export enum Field {
     OUTPUT = 'OUTPUT',
 }
 
-export type EvmAddress = `0x${string}`
+export { evmAddressSchema, parseEvmAddress, ZERO_EVM_ADDRESS } from '../addresses'
+export type { EvmAddress, EvmAddressText } from '../addresses'
 export type TronAddress = `T${string}`
 export type TonBounceableAddress = `E${string}`
 export type TonNonbounceableAddress = `U${string}`
 export type TonAddress = TonBounceableAddress | TonNonbounceableAddress
 export type BtcAddress = `bc1${string}` | `1${string}` | `3${string}`
 export type EmptyAddress = ''
-export type NonEmptyAddress = EvmAddress | TronAddress | TonAddress | BtcAddress
+export type NonEmptyAddress = EvmAddressText | TronAddress | TonAddress | BtcAddress
+/** An address of any kind as it is written, not yet parsed (README, "Addresses"). */
 export type Address = NonEmptyAddress | EmptyAddress
+/**
+ * The address of a token's contract in EIP-55 form, converted to EVM form on Tron (README, "Deployments and chains").
+ * A native gas token (`Token.isNative`) has the empty address.
+ */
+export type TokenAddress = EvmAddress | EmptyAddress
 
 export interface VolumeFeeCollector {
     chainId: ChainId
@@ -65,6 +82,10 @@ export interface VolumeFeeCollector {
 
 export type BridgeDirection = 'burn' | 'mint' | 'v2'
 
+// The data's types are written once, generic in the type of their EVM addresses `A`: `…Of<EvmAddressText>` is the
+// data as written (the `…Input` types), and `…Of<EvmAddress>` is the data parsed, which code reads (README,
+// "Addresses"). Each type's schema below parses the one into the other, and is checked against both.
+
 export type PriceEstimationConfig = {
     enabled: boolean
     slippageMax: number // Maximum slippage - used for tokenAmountOutMin calculation and delayed solving.
@@ -72,28 +93,108 @@ export type PriceEstimationConfig = {
 }
 
 // Addresses of Intent contracts (intent-based swap protocol)
-export interface IntentConfig {
-    depositorySrc: EvmAddress // Depository contract on the src chain
-    depositoryDst: EvmAddress // Depository contract on the dst chain
-    deadlineUnlocker: EvmAddress // DeadlineUnlocker contract on the src chain
-    bridge: EvmAddress
+export type IntentConfigOf<A extends EvmAddressText> = {
+    depositorySrc: A // Depository contract on the src chain
+    depositoryDst: A // Depository contract on the dst chain
+    deadlineUnlocker: A // DeadlineUnlocker contract on the src chain
+    bridge: A
 }
+export type IntentConfig = IntentConfigOf<EvmAddress>
+export type IntentConfigInput = IntentConfigOf<EvmAddressText>
 
 // Addresses of Depository contracts
-export interface DepositoryConfig {
-    depository: EvmAddress
-    withdrawUnlocker: EvmAddress
-    branchedUnlocker: EvmAddress
-    timedUnlocker: EvmAddress
-    timedSwapUnlocker: EvmAddress
-    btcRefundUnlocker?: EvmAddress
+export type DepositoryConfigOf<A extends EvmAddressText> = {
+    depository: A
+    withdrawUnlocker: A
+    branchedUnlocker: A
+    timedUnlocker: A
+    timedSwapUnlocker: A
+    btcRefundUnlocker?: A
     priceEstimation: PriceEstimationConfig
     refundDelay?: number // Minimal delay before refund
     withdrawDelay: number // Minimal delay before withdraw
     minAmountDelay: number // Minimal delay before swap with minimal amount
 }
+export type DepositoryConfig = DepositoryConfigOf<EvmAddress>
+export type DepositoryConfigInput = DepositoryConfigOf<EvmAddressText>
 
-export type ChainConfig = {
+/**
+ * The data of a chain that is the same in every deployment. A deployment's setup on the chain is its ChainConfig
+ * (README, "Deployments and chains").
+ */
+export type ChainDataOf<A extends EvmAddressText> =
+    EvmChainDataOf<A> | BtcChainDataOf<A> | (ChainDataBaseOf<A> & { kind: Exclude<ChainKind, 'evm' | 'btc'> })
+export type ChainData = ChainDataOf<EvmAddress>
+export type ChainDataInput = ChainDataOf<EvmAddressText>
+
+export type EvmChainDataOf<A extends EvmAddressText> = ChainDataBaseOf<A> & {
+    kind: 'evm'
+    /** The checksum of mixed-case addresses on this chain, when it is not EIP-55 (README, "Addresses"). */
+    addressChecksum?: 'eip1191'
+}
+export type EvmChainData = EvmChainDataOf<EvmAddress>
+export type EvmChainDataInput = EvmChainDataOf<EvmAddressText>
+
+export type BtcChainDataOf<A extends EvmAddressText> = ChainDataBaseOf<A> & {
+    kind: 'btc'
+    /** The address format of a Bitcoin chain. */
+    btcNetwork: 'bitcoin' | 'testnet' | 'regtest'
+}
+export type BtcChainData = BtcChainDataOf<EvmAddress>
+export type BtcChainDataInput = BtcChainDataOf<EvmAddressText>
+
+type ChainDataBaseOf<A extends EvmAddressText> = {
+    id: ChainId
+    name: string
+    explorer: string
+    icons: Icons
+    gasToken: TokenConstructor
+    /** The wrapped gas token, such as WETH, WBNB or WTRX. */
+    wrappedGasToken?: TokenConstructor
+    multicall?: A
+    /** The Uniswap V2 factory whose pair addresses are derived (CREATE2), or the pairs' addresses themselves. */
+    uniswapV2: { factory: A; initCodeHash: string } | { pairs: UniV2PairAddressOf<A>[] }
+    coinGecko?: { platform?: string; gasTokenId?: string }
+}
+
+/**
+ * The kind of a chain. It decides the chain's address format and how a transfer to it is built. A `perp` chain is a
+ * perp venue (Hyperliquid, Lighter). It is a deposit destination only, and its balances come from the venue's API, not
+ * from an RPC. An `other` chain is one that only partners (Changelly, THORChain) reach.
+ */
+export type ChainKind = 'evm' | 'btc' | 'tron' | 'ton' | 'solana' | 'quai' | 'perp' | 'other'
+
+/** A Uniswap V2 pair's address. The order of the two tokens does not matter. */
+export type UniV2PairAddressOf<A extends EvmAddressText> = {
+    token0: A
+    token1: A
+    pair: A
+}
+export type UniV2PairAddress = UniV2PairAddressOf<EvmAddress>
+export type UniV2PairAddressInput = UniV2PairAddressOf<EvmAddressText>
+
+/**
+ * A router that takes both the approval and the call at `gateway`. Users never approve `executor`, which runs the inner
+ * DEX swaps.
+ */
+export type GatewayRouterOf<A extends EvmAddressText> = {
+    gateway: A
+    executor: A
+}
+export type GatewayRouter = GatewayRouterOf<EvmAddress>
+export type GatewayRouterInput = GatewayRouterOf<EvmAddressText>
+
+/** @deprecated Use `GatewayRouter`. */
+export type ApprovableMetaRouter = GatewayRouter
+
+/** @deprecated Use `GatewayRouter`. */
+export type OnchainSwapRouter = GatewayRouter
+
+/** A deployment's setup on one chain (README, "Deployments and chains"). */
+export type ChainConfigOf<A extends EvmAddressText> = {
+    /** The chain's parsed data: `chainData(id)` for a chain sdk-types knows, else `chainDataSchema.parse(data)`. */
+    chain: ChainData
+    /** Equals chain.id. A Deployment errors otherwise. */
     id: ChainId
     rpc: string
     headers?: Record<string, string>
@@ -101,24 +202,41 @@ export type ChainConfig = {
     dexFee: number
     filterBlockOffset: number
     stables: TokenConstructor[]
-    metaRouter: Address
-    metaRouterGateway: Address
+    metaRouter: A
+    metaRouterGateway: A
     // Inner-swap executor for the legacy scheme. Only needed on new-metaRouter-only chains where
     // metaRouter points at the new gateway (which delegates inner swaps to a dedicated executor
     // instead of running them itself). When absent, the legacy scheme executes via metaRouter.
-    metaRouterExecutor?: Address
-    multicallRouter: Address
-    router: Address
-    bridge: Address
-    synthesis: Address
-    portal: Address
-    pauser?: Address
-    fabric: Address
+    metaRouterExecutor?: A
+    multicallRouter: A
+    router: A
+    bridge: A
+    synthesis: A
+    portal: A
+    pauser?: A
+    fabric: A
     tonPortal?: string
-    partnerFeeCollector?: string
-    depository?: DepositoryConfig
-    intentConfig?: IntentConfig
+    partnerFeeCollector?: A
+    depository?: DepositoryConfigOf<A>
+    intentConfig?: IntentConfigOf<A>
+    multicallRouterV2?: A
+    /** The Symbiosis fee of a swap through this router is read from its gateway contract, not from the config. */
+    onchainSwapRouter?: GatewayRouterOf<A>
+    /** The zero-fee router for on-chain zaps into Bitcoin. A chain without one uses `onchainSwapRouter`. */
+    onchainZeroFeeSwapRouter?: GatewayRouterOf<A>
+    /** A legacy FeeCollector, for partners that whitelisted it in their contracts. */
+    legacyFeeCollector?: A
+    /**
+     * A zero-fee legacy FeeCollector for on-chain zaps into Bitcoin, for partners that whitelisted it in their
+     * contracts.
+     */
+    legacyZeroFeeCollector?: A
+    approvableMetaRouter?: GatewayRouterOf<A>
+    /** The Unwrapper (core-contracts periphery/Unwrapper.sol), which pays out in the gas token. */
+    unwrapper?: A
 }
+export type ChainConfig = ChainConfigOf<EvmAddress>
+export type ChainConfigInput = ChainConfigOf<EvmAddressText>
 
 export type AdvisorConfig = {
     url: string
@@ -134,22 +252,37 @@ export type PerpbotConfig = {
     url: string
 }
 
-export type OmniPoolConfig = {
+/** The omni pool contract on the host chain. It swaps between the synthetics of one asset's tokens. */
+export type OmniPoolConfigOf<A extends EvmAddressText> = {
+    /** The chain the pool's contract is on (the deployment's host chain). */
     chainId: ChainId
-    address: Address
-    oracle: string
+    address: A
+    /** The address of the pool's oracle contract (`OmniPoolOracle`), which quotes swaps through the pool. */
+    oracle: A
+    /**
+     * True if a route may swap on its source or destination chain to reach this pool's tokens (USDC, WETH on mainnet).
+     * False if a route through the pool carries only the pool's own asset.
+     */
     generalPurpose: boolean
-    coinGeckoId:
-        | 'usd-coin'
-        | 'weth'
-        | 'bitcoin'
-        | 'g-token'
-        | 'binancecoin'
-        | 'symbiosis-finance'
-        | 'apecoin'
-        | 'evaa-protocol'
-        | 'dropee'
+    /** The CoinGecko id of the asset that the pool holds. It also names the pool. */
+    coinGeckoId: OmniPoolCoinGeckoId
 }
+export type OmniPoolConfig = OmniPoolConfigOf<EvmAddress>
+export type OmniPoolConfigInput = OmniPoolConfigOf<EvmAddressText>
+
+export const OMNI_POOL_COIN_GECKO_IDS = [
+    'usd-coin',
+    'weth',
+    'bitcoin',
+    'g-token',
+    'binancecoin',
+    'symbiosis-finance',
+    'apecoin',
+    'evaa-protocol',
+    'dropee',
+] as const
+
+export type OmniPoolCoinGeckoId = (typeof OMNI_POOL_COIN_GECKO_IDS)[number]
 
 export type SwapLimit = {
     chainId: ChainId
@@ -158,37 +291,214 @@ export type SwapLimit = {
     max: string
 }
 
-export type BtcConfig = {
+export type BtcConfigOf<A extends EvmAddressText> = {
     btc: Token
     // The SymBtc helper contract, not the symBTC token: it packs the wrap tail
     // and computes BTC external IDs. chainId is where the portal mints symBTC.
     symBtcHelper: {
-        address: EvmAddress
+        address: A
         chainId: ChainId
         // The portal's own Synthesis and Fabric on symBtcHelper.chainId, when they
         // differ from the chain's general ones in ChainConfig.
-        synthesis?: EvmAddress
-        fabric?: EvmAddress
+        synthesis?: A
+        fabric?: A
     }
     forwarderUrl: string
 }
+export type BtcConfig = BtcConfigOf<EvmAddress>
+export type BtcConfigInput = BtcConfigOf<EvmAddressText>
 
 export type CoinGeckoConfig = {
     url: string
 }
 
-export type Config = {
+/** A deployment's config (README, "Deployments and chains"). */
+export type ConfigOf<A extends EvmAddressText> = {
     advisor: AdvisorConfig
     coinGecko?: CoinGeckoConfig
-    omniPools: OmniPoolConfig[]
-    revertableAddress: Partial<Record<ChainId, EvmAddress>> & { default: EvmAddress }
+    omniPools: OmniPoolConfigOf<A>[]
+    revertableAddress: Partial<Record<ChainId, A>> & { default: A }
     limits: SwapLimit[]
-    chains: ChainConfig[]
-    fallbackReceiver: EvmAddress
-    btcConfigs: BtcConfig[]
+    chains: ChainConfigOf<A>[]
+    fallbackReceiver: A
+    btcConfigs: BtcConfigOf<A>[]
     solver?: SolverConfig
     perpbot?: PerpbotConfig
 }
+export type Config = ConfigOf<EvmAddress>
+export type ConfigInput = ConfigOf<EvmAddressText>
+
+// The schemas. A type with an `…On` schema builder is part of one chain's data, whose addresses also take that chain's
+// own checksum (`onChain`).
+
+/** The schema of a chain id. It checks only that the id is an integer. */
+export const chainIdSchema = z.custom<ChainId>((value) => Number.isInteger(value), 'a chain id')
+
+// An object schema's shape that names each field of T and no other, which `satisfies z.ZodType` alone does not check
+// for optional fields.
+type Fields<T> = Record<keyof T, unknown>
+
+// A value that is not checked here, such as a token's data, which `new Token` checks.
+const unchecked = <T>(what: string) => z.custom<T>((value) => typeof value === 'object' && value !== null, what)
+
+const tokenConstructorSchema = unchecked<TokenConstructor>('a token')
+const urlSchema = z.object({ url: z.string() })
+
+export const priceEstimationConfigSchema = z.object({
+    enabled: z.boolean(),
+    slippageMax: z.number(),
+    slippageNorm: z.number(),
+} satisfies Fields<PriceEstimationConfig>) satisfies z.ZodType<PriceEstimationConfig, PriceEstimationConfig>
+
+const intentConfigOn = (address: EvmAddressSchema) =>
+    z.object({
+        depositorySrc: address,
+        depositoryDst: address,
+        deadlineUnlocker: address,
+        bridge: address,
+    } satisfies Fields<IntentConfig>) satisfies z.ZodType<IntentConfig, IntentConfigInput>
+export const intentConfigSchema = intentConfigOn(evmAddressSchema)
+
+const depositoryConfigOn = (address: EvmAddressSchema) =>
+    z.object({
+        depository: address,
+        withdrawUnlocker: address,
+        branchedUnlocker: address,
+        timedUnlocker: address,
+        timedSwapUnlocker: address,
+        btcRefundUnlocker: address.optional(),
+        priceEstimation: priceEstimationConfigSchema,
+        refundDelay: z.number().optional(),
+        withdrawDelay: z.number(),
+        minAmountDelay: z.number(),
+    } satisfies Fields<DepositoryConfig>) satisfies z.ZodType<DepositoryConfig, DepositoryConfigInput>
+export const depositoryConfigSchema = depositoryConfigOn(evmAddressSchema)
+
+const uniV2PairAddressOn = (address: EvmAddressSchema) =>
+    z.object({
+        token0: address,
+        token1: address,
+        pair: address,
+    } satisfies Fields<UniV2PairAddress>) satisfies z.ZodType<UniV2PairAddress, UniV2PairAddressInput>
+export const uniV2PairAddressSchema = uniV2PairAddressOn(evmAddressSchema)
+
+const chainDataBaseOn = (address: EvmAddressSchema) => ({
+    id: chainIdSchema,
+    name: z.string(),
+    explorer: z.string(),
+    icons: z.object({ large: z.string().optional(), small: z.string().optional() }),
+    gasToken: tokenConstructorSchema,
+    wrappedGasToken: tokenConstructorSchema.optional(),
+    multicall: address.optional(),
+    uniswapV2: z.union([
+        z.object({ factory: address, initCodeHash: z.string() }),
+        z.object({ pairs: z.array(uniV2PairAddressOn(address)) }),
+    ]),
+    coinGecko: z.object({ platform: z.string().optional(), gasTokenId: z.string().optional() }).optional(),
+})
+
+const chainDataOn = (address: EvmAddressSchema): z.ZodType<ChainData, ChainDataInput> =>
+    z.discriminatedUnion('kind', [
+        z.object({
+            ...chainDataBaseOn(address),
+            kind: z.literal('evm'),
+            addressChecksum: z.literal('eip1191').optional(),
+        } satisfies Fields<EvmChainData>) satisfies z.ZodType<EvmChainData, EvmChainDataInput>,
+        z.object({
+            ...chainDataBaseOn(address),
+            kind: z.literal('btc'),
+            btcNetwork: z.enum(['bitcoin', 'testnet', 'regtest']),
+        } satisfies Fields<BtcChainData>) satisfies z.ZodType<BtcChainData, BtcChainDataInput>,
+        z.object({
+            ...chainDataBaseOn(address),
+            kind: z.enum(['tron', 'ton', 'solana', 'quai', 'perp', 'other'] satisfies Exclude<
+                ChainKind,
+                'evm' | 'btc'
+            >[]),
+        }),
+    ]) satisfies z.ZodType<ChainData, ChainDataInput>
+
+/** The schema of a chain's data. Its addresses also take the chain's own checksum (`addressChecksum`). */
+export const chainDataSchema = onChain(chainDataOn, eip1191ChainIdOf) satisfies z.ZodType<ChainData, ChainDataInput>
+
+const gatewayRouterOn = (address: EvmAddressSchema) =>
+    z.object({ gateway: address, executor: address } satisfies Fields<GatewayRouter>) satisfies z.ZodType<
+        GatewayRouter,
+        GatewayRouterInput
+    >
+export const gatewayRouterSchema = gatewayRouterOn(evmAddressSchema)
+
+const chainConfigOn = (address: EvmAddressSchema): z.ZodType<ChainConfig, ChainConfigInput> =>
+    z.object({
+        chain: unchecked<ChainData>("a chain's data"),
+        id: chainIdSchema,
+        rpc: z.string(),
+        headers: z.record(z.string(), z.string()).optional(),
+        spareRpcs: z.array(z.string()).optional(),
+        dexFee: z.number(),
+        filterBlockOffset: z.number(),
+        stables: z.array(tokenConstructorSchema),
+        metaRouter: address,
+        metaRouterGateway: address,
+        metaRouterExecutor: address.optional(),
+        multicallRouter: address,
+        router: address,
+        bridge: address,
+        synthesis: address,
+        portal: address,
+        pauser: address.optional(),
+        fabric: address,
+        tonPortal: z.string().optional(),
+        partnerFeeCollector: address.optional(),
+        depository: depositoryConfigOn(address).optional(),
+        intentConfig: intentConfigOn(address).optional(),
+        multicallRouterV2: address.optional(),
+        onchainSwapRouter: gatewayRouterOn(address).optional(),
+        onchainZeroFeeSwapRouter: gatewayRouterOn(address).optional(),
+        legacyFeeCollector: address.optional(),
+        legacyZeroFeeCollector: address.optional(),
+        approvableMetaRouter: gatewayRouterOn(address).optional(),
+        unwrapper: address.optional(),
+    } satisfies Fields<ChainConfig>) satisfies z.ZodType<ChainConfig, ChainConfigInput>
+
+/** The schema of a chain config. Its addresses also take its chain's own checksum. */
+export const chainConfigSchema = onChain(
+    chainConfigOn,
+    ({ chain }) => chain && eip1191ChainIdOf(chain)
+) satisfies z.ZodType<ChainConfig, ChainConfigInput>
+
+export const omniPoolConfigSchema = z.object({
+    chainId: chainIdSchema,
+    address: evmAddressSchema,
+    oracle: evmAddressSchema,
+    generalPurpose: z.boolean(),
+    coinGeckoId: z.enum(OMNI_POOL_COIN_GECKO_IDS),
+} satisfies Fields<OmniPoolConfig>) satisfies z.ZodType<OmniPoolConfig, OmniPoolConfigInput>
+
+export const btcConfigSchema = z.object({
+    btc: unchecked<Token>('a token'),
+    symBtcHelper: z.object({
+        address: evmAddressSchema,
+        chainId: chainIdSchema,
+        synthesis: evmAddressSchema.optional(),
+        fabric: evmAddressSchema.optional(),
+    }),
+    forwarderUrl: z.string(),
+} satisfies Fields<BtcConfig>) satisfies z.ZodType<BtcConfig, BtcConfigInput>
+
+/** The schema of a deployment's config. `new Deployment` parses its config with it. */
+export const configSchema = z.object({
+    advisor: urlSchema,
+    coinGecko: urlSchema.optional(),
+    omniPools: z.array(omniPoolConfigSchema),
+    revertableAddress: z.object({ default: evmAddressSchema }).and(z.partialRecord(z.enum(ChainId), evmAddressSchema)),
+    limits: z.array(unchecked<SwapLimit>('a swap limit')),
+    chains: z.array(chainConfigSchema),
+    fallbackReceiver: evmAddressSchema,
+    btcConfigs: z.array(btcConfigSchema),
+    solver: urlSchema.optional(),
+    perpbot: urlSchema.optional(),
+} satisfies Fields<Config>) satisfies z.ZodType<Config, ConfigInput>
 
 export type OverrideChainConfig = {
     id: ChainId
@@ -213,10 +523,16 @@ export type ChangellyConfig = {
     privateSwapRefundAddress?: string
 }
 
-export type * from './config/cache/types'
-
-// ConfigName lives here (pure types module) to avoid a cache <-> symbiosis import cycle.
-export type ConfigName = 'mainnet' | 'testnet' | 'dev' | 'beta'
+export type {
+    ConfigCacheData,
+    Id,
+    OmniPoolId,
+    OmniPoolInfo,
+    OmniPoolToken,
+    OmniPoolTokenIndex,
+    TokenId,
+    TokenInfo,
+} from './config/cache/types'
 
 export interface Logger {
     error(message: string, ...args: unknown[]): void
@@ -226,7 +542,7 @@ export interface Logger {
 }
 
 export type OverrideConfig = {
-    btcConfigs?: BtcConfig[]
+    btcConfigs?: BtcConfigInput[]
     chains?: OverrideChainConfig[]
     limits?: SwapLimit[]
     fetch?: typeof fetch
@@ -239,7 +555,7 @@ export type OverrideConfig = {
     changellyConfig?: Partial<ChangellyConfig>
     volumeFeeCollectors?: VolumeFeeCollector[]
     cache?: Cache
-    config?: Config
+    config?: ConfigInput
     configCache?: ConfigCacheData
     logger?: Logger
 }

@@ -1,4 +1,4 @@
-import type { ConfigName } from '../../src/crosschain/types'
+import type { ConfigName } from '../../src/crosschain/deployment'
 import { Builder } from './builder'
 
 const env = process.env.ENV as ConfigName

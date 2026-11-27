@@ -8,12 +8,14 @@ import { AddressZero } from '@ethersproject/constants'
 import { Contract } from '@ethersproject/contracts'
 import { StaticJsonRpcProvider } from '@ethersproject/providers'
 
-import { ChainId, isTronChainId } from '../../src/constants'
+import { ChainId } from '../../src/constants'
 import { config as beta } from '../../src/crosschain/config/beta'
 import { config as dev } from '../../src/crosschain/config/dev'
 import { config as mainnet } from '../../src/crosschain/config/mainnet'
 import { config as testnet } from '../../src/crosschain/config/testnet'
-import type { ChainConfig, Config, ConfigName } from '../../src/crosschain/types'
+import type { ConfigName } from '../../src/crosschain/deployment'
+import type { ChainConfig, Config } from '../../src/crosschain/types'
+import { evmRpcUrl } from '../shared/rpc'
 
 const env = (process.env.ENV ?? 'mainnet') as ConfigName
 const configs: Record<ConfigName, Config> = { mainnet, testnet, dev, beta }
@@ -31,8 +33,7 @@ function chainName(id: ChainId): string {
 }
 
 async function checkChain(chain: ChainConfig & { pauser: string }): Promise<Result[]> {
-    const rpc = isTronChainId(chain.id) ? `${chain.rpc}/jsonrpc` : chain.rpc
-    const provider = new StaticJsonRpcProvider(rpc, chain.id)
+    const provider = new StaticJsonRpcProvider(evmRpcUrl(chain), chain.id)
     const expected = chain.pauser.toLowerCase()
 
     return Promise.all(

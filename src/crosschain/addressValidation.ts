@@ -1,6 +1,5 @@
 import { ChainId } from '../constants'
 
-
 export const RECIPIENT_ADDRESS_PATTERNS: Partial<Record<ChainId, RegExp>> = {
     // Monero mainnet: 95 chars (standard) or 106 chars (integrated, +11 trailing).
     // Prefix [48][0-9AB] reflects the network-byte encoding for primary/subaddress.
@@ -21,10 +20,9 @@ export const RECIPIENT_ADDRESS_PATTERNS: Partial<Record<ChainId, RegExp>> = {
     [ChainId.ADA_MAINNET]:
         /^addr1[a-z0-9]{50,110}$|^Ae2[1-9A-HJ-NP-Za-km-z]{50,120}$/,
 
-    // Bitcoin Cash: legacy (1/3 prefix) or CashAddr (q/p prefix).
-    // The "bitcoincash:" scheme prefix is stripped by normalizeRecipientAddress first.
+    // Bitcoin Cash: legacy (1/3 prefix) or CashAddr (q/p prefix), after an optional `bitcoincash:` in any case.
     [ChainId.BCH_MAINNET]:
-        /^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$|^[qp][a-z0-9]{41,120}$/,
+        /^(?:[bB][iI][tT][cC][oO][iI][nN][cC][aA][sS][hH]:)?(?:[13][a-km-zA-HJ-NP-Z1-9]{25,34}|[qp][a-z0-9]{41,120})$/,
 
     // Dogecoin: starts with D, 34 base58 chars
     [ChainId.DOGE_MAINNET]: /^D[5-9A-HJ-NP-U][1-9A-HJ-NP-Za-km-z]{32}$/,
@@ -40,26 +38,19 @@ export const RECIPIENT_ADDRESS_PATTERNS: Partial<Record<ChainId, RegExp>> = {
         /^t[13][1-9A-HJ-NP-Za-km-z]{33}$|^zs1[a-z0-9]{75}$|^zc[1-9A-HJ-NP-Za-km-z]{93}$/,
 }
 
-// THORChain memos are colon-delimited, so a BCH "bitcoincash:" scheme prefix
-// would break memo parsing — strip it. (CashAddr is expected in canonical
-// lowercase; there's no QR-scan path that would produce uppercase.)
-export function normalizeRecipientAddress(
-    chainId: ChainId,
-    address: string
-): string {
-    if (chainId !== ChainId.BCH_MAINNET) {
-        return address
-    }
-    return address.replace(/^bitcoincash:/i, '')
+/**
+ * Checks whether `address` has the address format of the chain `chainId`, or, on a chain with no known format, whether
+ * it is not empty. It checks the format only, not a checksum (svc-symbiosis-api task rdyrn, State).
+ */
+export function isValidRecipientAddress(chainId: ChainId, address: string): boolean {
+    const pattern = RECIPIENT_ADDRESS_PATTERNS[chainId]
+    return pattern ? pattern.test(address) : address.length > 0
 }
 
-export function isValidRecipientAddress(
-    chainId: ChainId,
-    address: string
-): boolean {
-    const pattern = RECIPIENT_ADDRESS_PATTERNS[chainId]
-    if (!pattern) {
-        return address.length > 0
-    }
-    return pattern.test(normalizeRecipientAddress(chainId, address))
+/**
+ * @deprecated Parse the address where it is sent onward instead (svc-symbiosis-api task rdyrn, State). Returns
+ * the address without its `bitcoincash:` prefix on Bitcoin Cash, and unchanged on other chains.
+ */
+export function normalizeRecipientAddress(chainId: ChainId, address: string): string {
+    return chainId === ChainId.BCH_MAINNET ? address.replace(/^bitcoincash:/i, '') : address
 }

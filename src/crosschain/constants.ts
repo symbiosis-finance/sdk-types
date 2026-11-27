@@ -1,16 +1,8 @@
-import {
-    ChainId,
-    isBtcChainId,
-    isPerpChainId,
-    isQuaiChainId,
-    isSolanaChainId,
-    isTonChainId,
-    isTronChainId,
-} from '../constants'
+import { ChainId } from '../constants'
+import { CHAIN_DATA } from './chainData'
 import type { EvmAddress } from './types'
 import { GAS_TOKEN, Token, WETH } from '../entities'
-
-const AddressZero = '0x0000000000000000000000000000000000000000' as EvmAddress
+import { chainEntries } from '../utils'
 
 // a list of tokens by chain
 type ChainTokensList = {
@@ -91,212 +83,32 @@ export const WETH_ONLY: ChainTokensList = {
     [ChainId.X_LAYER_MAINNET]: [WETH[ChainId.X_LAYER_MAINNET]],
 }
 
-export const MULTICALL_ADDRESSES: { [chainId in ChainId]?: EvmAddress } = {
-    [ChainId.ETH_MAINNET]: '0x5BA1e12693Dc8F9c48aAD8770482f4739bEeD696',
-    [ChainId.ETH_RINKEBY]: '0x5BA1e12693Dc8F9c48aAD8770482f4739bEeD696',
-    [ChainId.ETH_KOVAN]: '0x5BA1e12693Dc8F9c48aAD8770482f4739bEeD696',
-    [ChainId.BSC_MAINNET]: '0xfF6FD90A470Aaa0c1B8A54681746b07AcdFedc9B',
-    [ChainId.BSC_TESTNET]: '0xbC4F726A6dB460DcFE49E6a56886470B94Dfc302',
-    [ChainId.MATIC_MAINNET]: '0x275617327c958bD06b5D6b871E7f491D76113dd8',
-    [ChainId.MATIC_MUMBAI]: '0xe9939e7Ea7D7fb619Ac57f648Da7B1D425832631',
-    [ChainId.AVAX_MAINNET]: '0x29b6603d17b9d8f021ecb8845b6fd06e1adf89de',
-    [ChainId.AVAX_TESTNET]: '0x9A9b5Ef5CeAbaC69d3B4A71c4da782554A35B638',
-    [ChainId.HECO_MAINNET]: AddressZero,
-    [ChainId.HECO_TESTNET]: '0x9a9b5ef5ceabac69d3b4a71c4da782554a35b638',
-    [ChainId.OKEX_MAINNET]: AddressZero,
-    [ChainId.OKEX_TESTNET]: '0x9A9b5Ef5CeAbaC69d3B4A71c4da782554A35B638',
-    [ChainId.BOBA_MAINNET]: '0xaeD5b25BE1c3163c907a471082640450F928DDFE',
-    [ChainId.BOBA_AVALANCHE]: '0x92C5b5B66988E6B8931a8CD3faa418b42003DF2F',
-    [ChainId.SYMBIOSIS_TESTNET]: '0x7F373f8033D64Abd491ceBeAc2dE070050F97229',
-    [ChainId.SYMBIOSIS_MAINNET]: '0x6148FD6C649866596C3d8a971fC313E5eCE84882',
-    [ChainId.BOBA_RINKEBY]: '0x773ccf8ba321c9f96a100b4b0fa1ecf7046645f5',
-    [ChainId.MILKOMEDA_MAINNET]: '0xa46157Cda2D019Ba4cDcd8cE12A04760c15C355b',
-    [ChainId.MILKOMEDA_DEVNET]: '0x41b5984f45AfB2560a0ED72bB69A98E8b32B3cCA',
-    [ChainId.AURORA_MAINNET]: '0xbf69a56d35b8d6f5a8e0e96b245a72f735751e54',
-    [ChainId.AURORA_TESTNET]: '0x4a5143B13C84DB00E6d8c19b9EA00f3b91416d20',
-    [ChainId.TELOS_MAINNET]: '0x53dC7535028e2fcaCa0d847AD108b9240C0801b1',
-    [ChainId.TELOS_TESTNET]: '0x9a01bf917477dd9f5d715d188618fc8b7350cd22',
-    [ChainId.SHARDEUM_TESTNET_2]: '0x41b5984f45AfB2560a0ED72bB69A98E8b32B3cCA',
-    [ChainId.SCROLL_SEPOLIA]: '0xF3Cfa393be621097669BcD2bD4923CEC347E1210',
-    [ChainId.ZKSYNC_MAINNET]: '0x52192C3De01535a9Ad2743A5Fe4f774868103C20',
-    [ChainId.ARBITRUM_MAINNET]: '0x80c7dd17b01855a6d2347444a0fcc36136a314de',
-    [ChainId.OPTIMISM_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.TRON_TESTNET]: '0x00e08cb2cd7480ddf6c54430207dff81ce359887',
-    [ChainId.TRON_MAINNET]: '0x32A4F47A74A6810BD0BF861CABAB99656A75DE9E',
-    [ChainId.LINEA_TESTNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.LINEA_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.MANTLE_MAINNET]: '0xb55cc6B5B402437b66c13c0CEd0EF367aa7c26da',
-    [ChainId.MANTLE_TESTNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.BASE_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.SCROLL_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.MANTA_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.METIS_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.OKX_X1_TESTNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.MODE_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.RSK_MAINNET]: '0xca11bde05977b3631167028862be2a173976ca11',
-    [ChainId.MERLIN_MAINNET]: '0x45CFd6FB7999328F189aaD2739Fba4Be6C45E5bf',
-    [ChainId.SEPOLIA_TESTNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.TAIKO_MAINNET]: '0x076f5925112b13a4D4c70fc83d9019f1854e4415',
-    [ChainId.SEI_EVM_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.CRONOS_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.FRAXTAL_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.BSQUARED_MAINNET]: '0xd8db4fb1fEf63045A443202d506Bcf30ef404160',
-    [ChainId.CRONOS_ZK_MAINNET]: '0x4c398CB4b7D4d31a54D254d8Aed09B9e8353E80E',
-    [ChainId.SOLANA_MAINNET]: AddressZero,
-    [ChainId.GOAT_MAINNET]: '0xd8db4fb1fEf63045A443202d506Bcf30ef404160',
-    [ChainId.SONIC_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.ABSTRACT_MAINNET]: '0xBf63C7944B1635c79a0f0eE7e07b1702837AD1F9',
-    [ChainId.GNOSIS_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.BERACHAIN_MAINNET]: '0xd8db4fb1fEf63045A443202d506Bcf30ef404160',
-    [ChainId.UNICHAIN_MAINNET]: '0xd8db4fb1fEf63045A443202d506Bcf30ef404160',
-    [ChainId.SONEIUM_MAINNET]: '0xd8db4fb1fEf63045A443202d506Bcf30ef404160',
-    [ChainId.OPBNB_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.HYPEREVM_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.KATANA_MAINNET]: '0x6AEb9b27590387b8Fd0560C52f6B968C59C10Fab',
-    [ChainId.APECHAIN_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.PLASMA_MAINNET]: '0xd8db4fb1fEf63045A443202d506Bcf30ef404160',
-    [ChainId.MONAD_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.CITREA_MAINNET]: '0xA738e84fdE890Bc60b99AF7ccE43990E534304de',
-    [ChainId.QUAI_MAINNET]: '0x007898652F1670d7211dB3Be09a9A77798103343',
-    [ChainId.TEMPO_MAINNET]: '0x6AEb9b27590387b8Fd0560C52f6B968C59C10Fab',
-    [ChainId.ROBINHOOD_MAINNET]: '0xd8db4fb1fEf63045A443202d506Bcf30ef404160',
-    [ChainId.STABLE_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-    [ChainId.ARC_MAINNET]: '0x2b7Aa8bDc40B6d3d19d0dE7480c4db8d5B6495e2',
-    [ChainId.X_LAYER_MAINNET]: '0xcA11bde05977b3631167028862bE2a173976CA11',
-}
+/** @deprecated Read `chainData(id).multicall` instead. */
+export const MULTICALL_ADDRESSES: { [chainId in ChainId]?: EvmAddress } = Object.fromEntries(
+    chainEntries(CHAIN_DATA, (data) => data.multicall || undefined)
+)
 
-export const MULTICALL_ROUTER_V2: Partial<Record<ChainId, EvmAddress>> = {
-    [ChainId.ETH_MAINNET]: '0x09D479E04D2dd46AaD77618435e5c639EA769264',
-    [ChainId.ARBITRUM_MAINNET]: '0x5ad095DE83693ba063941f2f2C5A0dF02383B651',
-    [ChainId.ZKSYNC_MAINNET]: '0x7D2172C9bf79263FFf6E456c423a5e3E69F9AA4b',
-    [ChainId.BSC_MAINNET]: '0xeB278638fFa33CC776230dE4FF88eD5142ed8c1A',
-    [ChainId.RSK_MAINNET]: '0xca506793a420e901bbca8066be5661e3c52c84c2',
-    [ChainId.CITREA_MAINNET]: '0xf85FC807D05d3Ab2309364226970aAc57b4e1ea4',
-    [ChainId.TEMPO_MAINNET]: '0x1cEaeda3D17936916D0F3E866Aa5Ef861F544840', // not used
-    [ChainId.AVAX_MAINNET]: '0x0F28F4a0250710adF2d95c7E7E297B2edD31AeC8',
-    [ChainId.TRON_MAINNET]: '0xFA18454b16d59b34d01a8eA0572Ab31B34098AAb',
-}
+/** @deprecated Read `chainData(id).uniswapV2.factory` instead. */
+export const FACTORY_ADDRESS = Object.fromEntries(
+    chainEntries(CHAIN_DATA, ({ uniswapV2 }) => ('factory' in uniswapV2 ? uniswapV2.factory : undefined))
+) as Record<ChainId, EvmAddress>
+
+/** @deprecated Read `chainData(id).uniswapV2.initCodeHash` instead. */
+export const INIT_CODE_HASH = Object.fromEntries(
+    chainEntries(CHAIN_DATA, ({ uniswapV2 }) => ('initCodeHash' in uniswapV2 ? uniswapV2.initCodeHash : undefined))
+) as Record<ChainId, string>
 
 // --- CoinGecko platform/gas-token maps ---
 
-export const COINGECKO_PLATFORMS = new Map([
-    [ChainId.BASE_MAINNET, 'base'],
-    [ChainId.ETH_MAINNET, 'ethereum'],
-    [ChainId.BSC_MAINNET, 'binance-smart-chain'],
-    [ChainId.AVAX_MAINNET, 'avalanche'],
-    [ChainId.MATIC_MAINNET, 'polygon-pos'],
-    [ChainId.TELOS_MAINNET, 'telos'],
-    [ChainId.BOBA_MAINNET, 'boba'],
-    [ChainId.ZKSYNC_MAINNET, 'zksync'],
-    [ChainId.ARBITRUM_MAINNET, 'arbitrum-one'],
-    [ChainId.OPTIMISM_MAINNET, 'optimistic-ethereum'],
-    [ChainId.LINEA_MAINNET, 'linea'],
-    [ChainId.MANTLE_MAINNET, 'mantle'],
-    [ChainId.SCROLL_MAINNET, 'scroll'],
-    [ChainId.MANTA_MAINNET, 'manta-pacific'],
-    [ChainId.METIS_MAINNET, 'metis-andromeda'],
-    [ChainId.MODE_MAINNET, 'mode'],
-    [ChainId.RSK_MAINNET, 'rootstock'],
-    [ChainId.MERLIN_MAINNET, 'merlin-chain'],
-    [ChainId.TON_MAINNET, 'the-open-network'],
-    [ChainId.BTC_MAINNET, 'bitcoin'],
-    [ChainId.TRON_MAINNET, 'tron'],
-    [ChainId.TAIKO_MAINNET, 'taiko'],
-    [ChainId.CRONOS_MAINNET, 'cronos'],
-    [ChainId.FRAXTAL_MAINNET, 'fraxtal'],
-    [ChainId.BSQUARED_MAINNET, 'bsquared-network'],
-    [ChainId.CRONOS_ZK_MAINNET, 'cronos-zkevm'],
-    [ChainId.SOLANA_MAINNET, 'solana'],
-    [ChainId.GNOSIS_MAINNET, 'xdai'],
-    [ChainId.SONIC_MAINNET, 'sonic'],
-    [ChainId.ABSTRACT_MAINNET, 'abstract'],
-    [ChainId.BERACHAIN_MAINNET, 'berachain'],
-    [ChainId.UNICHAIN_MAINNET, 'unichain'],
-    [ChainId.SONEIUM_MAINNET, 'soneium'],
-    [ChainId.OPBNB_MAINNET, 'opbnb'],
-    [ChainId.HYPEREVM_MAINNET, 'hyperevm'],
-    [ChainId.KATANA_MAINNET, 'katana'],
-    [ChainId.APECHAIN_MAINNET, 'apechain'],
-    [ChainId.PLASMA_MAINNET, 'plasma'],
-    [ChainId.MONAD_MAINNET, 'monad'],
-    [ChainId.CITREA_MAINNET, 'citrea'],
-    [ChainId.QUAI_MAINNET, 'quai-network'],
-    [ChainId.XMR_MAINNET, 'monero'],
-    [ChainId.XLM_MAINNET, 'stellar'],
-    [ChainId.XRP_MAINNET, 'ripple'],
-    [ChainId.ADA_MAINNET, 'cardano'],
-    [ChainId.BCH_MAINNET, 'bitcoin-cash'],
-    [ChainId.SUI_MAINNET, 'sui'],
-    [ChainId.DOGE_MAINNET, 'dogecoin'],
-    [ChainId.LTC_MAINNET, 'litecoin'],
-    [ChainId.CANTON_MAINNET, 'canton-network'],
-    [ChainId.ZCASH_MAINNET, 'zcash'],
-    [ChainId.TEMPO_MAINNET, 'tempo'],
-    [ChainId.ROBINHOOD_MAINNET, 'robinhood'],
-    [ChainId.STABLE_MAINNET, 'stable'],
-    [ChainId.ARC_MAINNET, 'arc'],
-    [ChainId.X_LAYER_MAINNET, 'x-layer'],
-])
+/** @deprecated Read `chainData(id).coinGecko?.platform` instead. */
+export const COINGECKO_PLATFORMS = new Map<ChainId, string>(
+    chainEntries(CHAIN_DATA, (data) => data.coinGecko?.platform)
+)
 
-export const COINGECKO_GAS_TOKEN_IDS = new Map([
-    [ChainId.BASE_MAINNET, 'ethereum'],
-    [ChainId.ETH_MAINNET, 'ethereum'],
-    [ChainId.BSC_MAINNET, 'binancecoin'],
-    [ChainId.AVAX_MAINNET, 'avalanche-2'],
-    [ChainId.MATIC_MAINNET, 'matic-network'],
-    [ChainId.TELOS_MAINNET, 'telos'],
-    [ChainId.BOBA_MAINNET, 'ethereum'],
-    [ChainId.ZKSYNC_MAINNET, 'ethereum'],
-    [ChainId.ARBITRUM_MAINNET, 'ethereum'],
-    [ChainId.OPTIMISM_MAINNET, 'ethereum'],
-    [ChainId.LINEA_MAINNET, 'ethereum'],
-    [ChainId.MANTLE_MAINNET, 'mantle'],
-    [ChainId.SCROLL_MAINNET, 'ethereum'],
-    [ChainId.MANTA_MAINNET, 'ethereum'],
-    [ChainId.METIS_MAINNET, 'metis-token'],
-    [ChainId.MODE_MAINNET, 'ethereum'],
-    [ChainId.RSK_MAINNET, 'rootstock'],
-    [ChainId.MERLIN_MAINNET, 'bitcoin'],
-    [ChainId.TON_MAINNET, 'the-open-network'],
-    [ChainId.BTC_MAINNET, 'bitcoin'],
-    [ChainId.TRON_MAINNET, 'tron'],
-    [ChainId.TAIKO_MAINNET, 'ethereum'],
-    [ChainId.SEI_EVM_MAINNET, 'sei-network'],
-    [ChainId.CRONOS_MAINNET, 'crypto-com-chain'],
-    [ChainId.FRAXTAL_MAINNET, 'frax-share'],
-    [ChainId.BSQUARED_MAINNET, 'bitcoin'],
-    [ChainId.CRONOS_ZK_MAINNET, 'cronos-zkevm-cro'],
-    [ChainId.SOLANA_MAINNET, 'solana'],
-    [ChainId.GNOSIS_MAINNET, 'xdai'],
-    [ChainId.SONIC_MAINNET, 'sonic-3'],
-    [ChainId.ABSTRACT_MAINNET, 'ethereum'],
-    [ChainId.BERACHAIN_MAINNET, 'berachain-bera'],
-    [ChainId.UNICHAIN_MAINNET, 'ethereum'],
-    [ChainId.SONEIUM_MAINNET, 'ethereum'],
-    [ChainId.OPBNB_MAINNET, 'binancecoin'],
-    [ChainId.HYPEREVM_MAINNET, 'hyperliquid'],
-    [ChainId.KATANA_MAINNET, 'ethereum'],
-    [ChainId.APECHAIN_MAINNET, 'apecoin'],
-    [ChainId.PLASMA_MAINNET, 'plasma'],
-    [ChainId.MONAD_MAINNET, 'monad'],
-    [ChainId.CITREA_MAINNET, 'bitcoin'], // cBTC is pegged 1:1 to BTC
-    [ChainId.QUAI_MAINNET, 'quai-network'],
-    [ChainId.XMR_MAINNET, 'monero'],
-    [ChainId.XLM_MAINNET, 'stellar'],
-    [ChainId.XRP_MAINNET, 'ripple'],
-    [ChainId.ADA_MAINNET, 'cardano'],
-    [ChainId.BCH_MAINNET, 'bitcoin-cash'],
-    [ChainId.SUI_MAINNET, 'sui'],
-    [ChainId.DOGE_MAINNET, 'dogecoin'],
-    [ChainId.LTC_MAINNET, 'litecoin'],
-    [ChainId.CANTON_MAINNET, 'canton-network'],
-    [ChainId.ZCASH_MAINNET, 'zcash'],
-    [ChainId.TEMPO_MAINNET, ''], // NOTE: no gas token on tempo
-    [ChainId.ROBINHOOD_MAINNET, 'ethereum'],
-    [ChainId.STABLE_MAINNET, 'usdt0'],
-    [ChainId.ARC_MAINNET, 'usd-coin'],
-    [ChainId.X_LAYER_MAINNET, 'okb'],
-])
+/** @deprecated Read `chainData(id).coinGecko?.gasTokenId` instead. */
+export const COINGECKO_GAS_TOKEN_IDS = new Map<ChainId, string>(
+    chainEntries(CHAIN_DATA, (data) => data.coinGecko?.gasTokenId)
+)
 
 // --- Changelly constants + chain predicates ---
 
@@ -360,21 +172,6 @@ export function isChangellyNativeChainId(chainId: ChainId | undefined): boolean 
 export function isThorChainL1DestChainId(chainId: ChainId | undefined): boolean {
     if (chainId === undefined) return false
     return THORCHAIN_L1_DEST_CHAIN_IDS.includes(chainId)
-}
-
-// Lives here rather than in ../constants to avoid a module-init cycle (depends on isChangellyNativeChainId).
-export function isEvmChainId(chainId: ChainId | undefined): boolean {
-    if (!chainId) return false
-    return (
-        !isBtcChainId(chainId) &&
-        !isTronChainId(chainId) &&
-        !isTonChainId(chainId) &&
-        !isSolanaChainId(chainId) &&
-        !isQuaiChainId(chainId) &&
-        !isPerpChainId(chainId) &&
-        !isChangellyNativeChainId(chainId) &&
-        !isThorChainL1DestChainId(chainId)
-    )
 }
 
 export function isChangellyTradeChainId(chainId: ChainId): boolean {
